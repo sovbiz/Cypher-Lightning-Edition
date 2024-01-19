@@ -2,8 +2,8 @@
 
 ![Licence](https://img.shields.io/github/license/cypher-space/V0.9-Beta) ![Issues](https://img.shields.io/github/issues/cypher-space/V0.9-Beta) 
 
-<a href="https://coracle.social/npub1nkmta4dmsa7pj25762qxa6yqxvrhzn7ug0gz5frp9g7p3jdscnhsu049fn" target="_blank">
-<img alt="Join us on Nostr" src="https://coracle.social/npub1nkmta4dmsa7pj25762qxa6yqxvrhzn7ug0gz5frp9g7p3jdscnhsu049fn" width="120"/>
+<a href="https://cypher-beta.pages.dev" target="_blank">
+Live Build Preview
 </a>
 
 ## Build Setup
