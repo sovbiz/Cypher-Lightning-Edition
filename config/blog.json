@@ -1,0 +1,42 @@
+[
+  {
+     "id":"1",
+     "title":"Simple Post",
+     "href":"/articles/simple-post",
+     "featured":true,
+     "description":"Simple Post Example",
+     "imageUrl":"/project/blog-img/simple-post.jpg",
+     "date":"Jan 13, 2024",
+     "datetime":"2020-03-16",
+     "category":{
+        "title":"Development",
+        "href":"#"
+     },
+     "author":{
+      "name":"Cypher Space",
+      "role":"Bitcoin Mass Adoption",
+      "href":"https://coracle.social/npub1nkmta4dmsa7pj25762qxa6yqxvrhzn7ug0gz5frp9g7p3jdscnhsu049fn",
+      "imageUrl":"https://imgproxy.coracle.social/x/s:280:280/aHR0cHM6Ly9wZnAubm9zdHIuYnVpbGQvNmQ1NzA1MDNjMGI3NWJlNzU5NDYxYWQ0ODUwMzk4YTMzOGZkNTFkOGU2MzEzMTRjODczMWMwZDNlMWI0ZGViNy5wbmc="
+   }
+  },
+  {
+     "id":"2",
+     "title":"Advanced post",
+     "href":"/articles/advanced-post",
+     "featured":true,
+     "description":"Example of Advanced Front Matter Markdown Post",
+     "imageUrl":"/project/blog-img/advanced-post.jpg",
+     "date":"Jan 11, 2024",
+     "datetime":"2020-03-16",
+     "category":{
+        "title":"Finance",
+        "href":"#"
+     },
+     "author":{
+      "name":"Cypher Space",
+      "role":"Bitcoin Mass Adoption",
+      "href":"https://coracle.social/npub1nkmta4dmsa7pj25762qxa6yqxvrhzn7ug0gz5frp9g7p3jdscnhsu049fn",
+      "imageUrl":"https://imgproxy.coracle.social/x/s:280:280/aHR0cHM6Ly9wZnAubm9zdHIuYnVpbGQvNmQ1NzA1MDNjMGI3NWJlNzU5NDYxYWQ0ODUwMzk4YTMzOGZkNTFkOGU2MzEzMTRjODczMWMwZDNlMWI0ZGViNy5wbmc="
+   }
+  }
+]
