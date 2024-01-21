@@ -4,13 +4,13 @@
      "identity":"1",
      "type":"Product",
      "category":"New",
-     "title":"Cypher Sticker",
-     "description":"Simple Black with logo Support Sticker",
+     "title":"Cypher Product 1",
+     "description":"Order an Example Product",
      "stock":"",
      "inStock":true,
      "price":{
-        "usd":4.20,
-        "eur":4.20
+        "usd":0.10,
+        "eur":0.10
      },
      "image":"/stock/CypherSticker.jpg",
      "imagelocal":"/stock/CypherSticker.jpg",
@@ -52,13 +52,13 @@
      "identity":"2",
      "type":"Product",
      "category":"New",
-     "title":"Example Product: Rose Gold",
+     "title":"Cypher Product 2: Rose Gold",
      "description":"The most elegant cold storage you can buy",
      "stock":"low",
      "inStock":true,
      "price":{
-        "usd":65,
-        "eur":65
+        "usd":0.1,
+        "eur":0.1
      },
      "image":"/stock/product-2/image1.png",
      "imagelocal":"/stock/product-2/image1.png",
