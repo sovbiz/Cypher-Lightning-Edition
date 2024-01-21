@@ -2,7 +2,7 @@
 
 ![Licence](https://img.shields.io/github/license/cypher-space/V0.9-Beta) ![Issues](https://img.shields.io/github/issues/cypher-space/V0.9-Beta) 
 
-<a href="https://cypher-beta.pages.dev" target="_blank">
+<a href="https://demo.cypher.space" target="_blank">
 Live Build Preview
 </a>
 
