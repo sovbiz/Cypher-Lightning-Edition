@@ -36,33 +36,77 @@ head:
 
 # Advanced Markdown Front Matter Setup
 
-## Section 1
+## Introduction
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.
 
-- Ut enim ad minim veniam
-- Quis nostrud exercitation ullamco laboris
-- Nisi ut aliquip ex ea commodo consequat
+### Subsection
 
-### Subsection 1.1
+Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+## Paragraphs
+
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 
-1. Excepteur sint occaecat cupidatat non proident
-2. Sunt in culpa qui officia deserunt mollit anim id est laborum
+## Block Quote
 
-## Section 2
+> Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-*Etiam at risus et justo dignissim congue. Donec congue lacinia dui, a porttitor lectus condimentum laoreet.*
+## Images
 
-**Nunc eu ullamcorper orci. Quisque eget odio ac lectus vestibulum faucibus eget in metus.**
+![Alt text for the image](https://cypher.space/project/cypher-home.gif)
 
-### Subsection 2.1
+## List
 
-In hac habitasse platea dictumst. Fusce sed ligula lectus. Nulla metus metus, ullamcorper vel, tincidunt sed, euismod in, nibh.
+### Unordered List
 
-- Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae
-- Mauris sit amet eros. Suspendisse accumsan tortor quis turpis
+- Item 1
+- Item 2
+  - Subitem 2.1
+  - Subitem 2.2
+- Item 3
+
+### Ordered List
+
+1. First item
+2. Second item
+3. Third item
+
+## Code
+
+Inline `code` in a paragraph.
+
+### Code Block
+
+```python
+# Python code example
+def hello_world():
+    print("Hello, world!")
+```
+
+## Table
+
+| Header 1 | Header 2 | Header 3 |
+| -------- | -------- | -------- |
+| Row 1    | Data 1   | Data 2   |
+| Row 2    | Data 3   | Data 4   |
+| Row 3    | Data 5   | Data 6   |
+
+## Horizontal Rule
+
+---
+
+## Emphasis
+
+*Italic*, **Bold**, and `Monospace`.
+
+## Links
+
+[OpenAI](https://www.openai.com/)
+
+
 
 
 ::
