@@ -24,3 +24,5 @@ head:
 :Hero 
 
 :FundsTicker
+
+:FundsInvoicewidget
