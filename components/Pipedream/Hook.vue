@@ -20,7 +20,7 @@ const comply = ref(false);
 
 const formData = ref({
   name: firstname,
-  email: lastname,
+  lastname: lastname,
   company: company,
   email: email,
   address: address,
