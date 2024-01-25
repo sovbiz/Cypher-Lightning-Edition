@@ -313,7 +313,7 @@
       </div>
 
       <div>
-        <Script async src="/SimpleCartBtc.js"></Script>
+        <Script async src="/BTCart-Checkout.js"></Script>
         <div class="mt-12"></div>
         <div class="" v-if="launchStep == 'view' || displaymode == true">
 
