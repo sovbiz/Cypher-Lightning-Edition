@@ -6,11 +6,11 @@
         name=""
         accent="#"
         :to="data.lnurl"
-        image=""
-        button-text="Pay with Alby"
+        image="https://yt3.googleusercontent.com/Bzg7FZWqeAqJJd8_4nGvQ6I36WJMYLdznrNMg970S5e_7fOetIyeSPYt3bUGZ1pLCNdB_iwPWF4=s900-c-k-c0x00ffffff-no-rj"
+        button-text="Unlock with Alby"
         amounts="10,105,1000"
         orderid="#42069"
-        wizard=false
+        :wizard=wizardkey
         freeamount=true
       />
     </div>
@@ -18,4 +18,15 @@
 </template>
 <script setup>
 import data from "~/config/setup";
+
+
+const wizardkey = ref(false)
+
+
+watch(wizardkey, (newValue, oldValue) => {
+  console.log('myData changed from', oldValue, 'to', newValue);
+});
+
+
+
 </script>
