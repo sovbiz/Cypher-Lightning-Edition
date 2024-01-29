@@ -1,20 +1,18 @@
 <script setup>
 </script>
 <template>
-  <div>
+  <div class="h-80 rounded-3xl w-full ">
 
-    <p class="text-white pt-24">This Posdst requires you to pay sats to read</p>
 
-  <div
-    class="max-w-4xl dark:prose-invert prose md:prose-lg lg:prose-xl dark:md:proxe-lg-invert dark:lg:proxe-xl-invert mx-auto dark:text-transparent pb-16 px-5 md:px-12 mt-24"
-  >
+  <div class="flex h-80 bg-colorBgLight dark:bg-colorBgDark dark:border-colorBgLight border-colorBgDark border-2 mx-auto max-w-4xl rounded-3xl ">
+    <div class="mt-12 mx-12 w-1/2"> 
+      <h1 class="text-2xl">This Post requires you to pay sats to read</h1>
 
-    <ContentSlot :use="$slots.default" unwrap="p" class="text-transparent"/>
-  </div>
-  <div class=" border-2 flex ">
     <p>This Post requires you to pay sats to read</p>
+  </div>
+  <div class="mx-24 my-auto w-1/2"> 
     <FundsPaylock />
-
+  </div>
   </div>
 
 </div>
