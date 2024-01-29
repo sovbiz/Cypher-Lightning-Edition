@@ -1,7 +1,7 @@
 
 <template>
   <div class="max-h-screen">
-    <ContainerPaywall class="z-10 absolute top-1/2"/>
+    <ContainerPaywall class="z-10 absolute top-1/4 md:top-1/2 px-6"/>
 
       <div class="max-h-screen p-4 mx-auto overflow-hidden relative after:content-[''] after:absolute after:inset-x-0 after:bottom-0 after:h-full after:bg-gradient-to-b after:from-transparent after:to-colorBgLight dark:after:to-colorBgDark">
 
