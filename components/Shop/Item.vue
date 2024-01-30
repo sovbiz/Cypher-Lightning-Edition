@@ -63,7 +63,7 @@
           <div class="mt-6">
             <div class="sm:flex-col flex">
               <button
-                class="mt-2 w-full snipcart-add-item hover:shadow-lg font-semibold py-2 px-4 rounded shadow max-h-10 text-black dark:text-white dark:hover:text-black hover:text-white bg-white hover:bg-black dark:bg-gray-700 dark:hover:bg-white"
+                class="mt-2 w-full snipcart-add-item hover:shadow-lg font-semibold py-1 px-4 rounded shadow max-h-10 text-black dark:text-white dark:hover:text-black hover:text-white bg-white hover:bg-black dark:bg-gray-700 dark:hover:bg-white"
                 @click="
                   addToCart({
                     id: product.id,
@@ -78,7 +78,7 @@
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
-                  class="w-6 h-6 fill-gray-400 inline mr-4"
+                  class="w-6 h-6 fill-gray-400 inline mr-4 -mt-2"
                 >
                   <path fill="none" d="M0 0h24v24H0z" />
                   <path
