@@ -6,7 +6,7 @@
         name=""
         accent="#"
         :to="data.lnurl"
-        image="https://yt3.googleusercontent.com/Bzg7FZWqeAqJJd8_4nGvQ6I36WJMYLdznrNMg970S5e_7fOetIyeSPYt3bUGZ1pLCNdB_iwPWF4=s900-c-k-c0x00ffffff-no-rj"
+        image="/project/alby.png"
         button-text="Unlock with Alby"
         amounts="10,105,1000"
         orderid="#42069"
