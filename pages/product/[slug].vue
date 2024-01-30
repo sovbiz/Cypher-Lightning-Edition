@@ -8,7 +8,7 @@
         <div class="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
           <TabGroup as="div" class="flex flex-col-reverse">
             <div
-              class="mx-auto mt-6 hidden w-full max-w-2xl sm:block lg:max-w-none"
+              class="mx-auto mt-6 w-full max-w-2xl block lg:max-w-none"
             >
               <TabList class="grid grid-cols-4 gap-6">
                 <Tab
@@ -239,8 +239,8 @@
             </section>
           </div>
         </div>
-        <div class="mt-12">
-          <div v-html="product[0].fulldescription" class="max-w-7xl dark:prose-invert prose md:prose-lg lg:prose-xl dark:md:proxe-lg-invert dark:lg:proxe-xl-invert mx-auto dark:text-white pb-16 px-5 md:px-12 mt-24"></div>
+        <div class="mt-0 md:mt-12">
+          <div v-html="product[0].fulldescription" class="max-w-7xl dark:prose-invert prose md:prose-lg lg:prose-xl dark:md:proxe-lg-invert dark:lg:proxe-xl-invert mx-auto dark:text-white pb-16 px-4 md:px-0  mt-24"></div>
         
         
         
