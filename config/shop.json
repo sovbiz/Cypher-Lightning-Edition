@@ -6,6 +6,7 @@
      "category":"New",
      "title":"Cypher Product 1",
      "description":"Order an Example Product",
+     "fulldescription":"<h1>Eco-Friendly Sticker </h1><p>Stay hydrated and eco-conscious with our Eco-Friendly Water Bottle. Made from 100% recycled materials, this bottle is perfect for your daily adventures. Its sleek design and durable construction make it your ideal companion for work, workouts, and everything in between. Plus, its insulation keeps your drink cold for up to 24 hours!</p><img style='height:500px' src='/stock/product-1/image1.png' alt='Eco-Friendly Water Bottle'><p>Stay hydrated and eco-conscious with our Eco-Friendly Water Bottle. Made from 100% recycled materials, this bottle is perfect for your daily adventures. Its sleek design and durable construction make it your ideal companion for work, workouts, and everything in between. Plus, its insulation keeps your drink cold for up to 24 hours!</p>",
      "stock":"",
      "inStock":true,
      "price":{
@@ -54,6 +55,8 @@
      "category":"New",
      "title":"Cypher Product 2: Rose Gold",
      "description":"The most elegant cold storage you can buy",
+     "fulldescription":"<h1>Eco-Friendly Sticker </h1><p>Stay hydrated and eco-conscious with our Eco-Friendly Water Bottle. Made from 100% recycled materials, this bottle is perfect for your daily adventures. Its sleek design and durable construction make it your ideal companion for work, workouts, and everything in between. Plus, its insulation keeps your drink cold for up to 24 hours!</p><img style='height:500px' src='/stock/product-2/image1.png' alt='Eco-Friendly Water Bottle'><p>Stay hydrated and eco-conscious with our Eco-Friendly Water Bottle. Made from 100% recycled materials, this bottle is perfect for your daily adventures. Its sleek design and durable construction make it your ideal companion for work, workouts, and everything in between. Plus, its insulation keeps your drink cold for up to 24 hours!</p>",
+
      "stock":"low",
      "inStock":true,
      "price":{
@@ -81,6 +84,8 @@
      "category":"New",
      "title":"Example Product: Silver",
      "description":"The Standard for Cold Bitcoin Storage",
+     "fulldescription":"<h1>Eco-Friendly Sticker </h1><p>Stay hydrated and eco-conscious with our Eco-Friendly Water Bottle. Made from 100% recycled materials, this bottle is perfect for your daily adventures. Its sleek design and durable construction make it your ideal companion for work, workouts, and everything in between. Plus, its insulation keeps your drink cold for up to 24 hours!</p><img style='height:500px' src='/stock/product-4/image1.png' alt='Eco-Friendly Water Bottle'><p>Stay hydrated and eco-conscious with our Eco-Friendly Water Bottle. Made from 100% recycled materials, this bottle is perfect for your daily adventures. Its sleek design and durable construction make it your ideal companion for work, workouts, and everything in between. Plus, its insulation keeps your drink cold for up to 24 hours!</p>",
+
      "stock":"out",
      "inStock":true,
      "price":{

@@ -239,7 +239,17 @@
             </section>
           </div>
         </div>
+        <div class="mt-12">
+          <div v-html="product[0].fulldescription" class="max-w-7xl dark:prose-invert prose md:prose-lg lg:prose-xl dark:md:proxe-lg-invert dark:lg:proxe-xl-invert mx-auto dark:text-white pb-16 px-5 md:px-12 mt-24"></div>
+        
+        
+        
+        </div>
+
       </div>
+
+
+
     </div>
   </div>
 </template>
