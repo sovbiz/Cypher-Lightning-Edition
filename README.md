@@ -20,3 +20,12 @@ $ npm run build
 
 
 ```
+
+
+Core Repo Values
+
+- Repo must be open 
+- No fiat integrations except for the fiat ticker. ( this is bitcoin only )
+- Flat file / Static Build First Nostr Second ( json objects )
+- External hooks are necessary ( Fiat Ticker, Blockstream, GetAlby )
+- Zero Cost ( it should not cost a penny to host this on a cloud edge )
