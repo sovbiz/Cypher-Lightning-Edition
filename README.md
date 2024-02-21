@@ -6,6 +6,29 @@
 Live Build Preview
 </a>
 
+
+## TODO
+### CLI
+- a node js command to add products.
+
+### Future integrations:
+- Nostr Osty 
+- Simple CLI for adding products
+- Pull Content & Products from Nostr
+- Better pay flow integration ( Updated Vue3 widgets, bitcoin connect, Inform )
+
+### Bugs & Loose ends
+- Paywall integration 
+- Bitaxe multi vendor test 
+- Find Local invoice creation
+- Alby Open Finance
+- Bitcoin Price Ticker
+- a local front-end to add markdown & products
+- Order forfilment ( currently pipedream webhook )
+- Inventory management 
+
+
+
 ## Build Setup
 
 ```bash
