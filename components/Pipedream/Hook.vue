@@ -34,12 +34,16 @@ const formData = ref({
 
 const submitData = async () => {
   try {
-    const response = await fetch("ENTER YOUR PIPEDREAM URL HERE", {
+    const response = await fetch("https://discord.com/api/webhooks/1210611039666839582/__g4VCyZbBeejGiB8Ul85gx8DObjRJ10pUCjR04WLJj-ezCPHNxM7de4VaKABmlkRu4k", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData.value),
+      body: JSON.stringify({
+        username: "The Bot",
+        avatar_url: "https://i.imgur.com/oBPXx0D.png",
+        content: "Some Message"
+        }),
     });
 
     if (!response.ok) {

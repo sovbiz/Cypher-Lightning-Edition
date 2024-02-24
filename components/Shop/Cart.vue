@@ -704,15 +704,16 @@ else{
 
 // SENDING OFF THE DATA
 
-const webhookUrl = data.orderwebhook; // Replace with your webhook URL
-
-
-fetch(webhookUrl, {
+fetch(data.orderwebhook, {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
   },
-  body: JSON.stringify(formData.value),
+  body: JSON.stringify({
+        username: "The Order Bot",
+        avatar_url: "https://i.imgur.com/oBPXx0D.png",
+        content: JSON.stringify(formData.value)
+        }),
 })
 .then(response => {
   if (!response.ok) {
@@ -721,7 +722,7 @@ fetch(webhookUrl, {
   return response.json();
 })
 .then(data => {
-  //console.log('Success:', data);  Handle success response
+  console.log('Success:', data);  //Handle success response
 })
 .catch(error => {
   console.error('Error:', error); // Handle errors
