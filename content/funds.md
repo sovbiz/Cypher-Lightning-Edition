@@ -25,7 +25,7 @@ head:
 ::ContainerProse
 # Financial Strategy with Bitcoin
 
-At Cypher, we've embraced Bitcoin as a core component of our financial operations, aligning with our innovative and transparent business model. Bitcoin serves not only as our primary funding and payment method but also plays a vital role in building community incentives.
+At Cypher, we've embraced Bitcoin as a core component of our financial operations, aligning with our innovative and transparent business model. Bitcoin serves not only as our primary funding and payment method but also plays a vital role in building community incentives. This part is still experimental and in early development.
 <br><br>
 Why Bitcoin?  Its decentralized nature allows for efficient and global transactions, making it ideal for our diverse and widespread community. The transparency and security of Bitcoin transactions align with our values of trust and openness.
 <br><br>

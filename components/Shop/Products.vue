@@ -200,7 +200,7 @@ const btcprice = await $fetch('https://app.yieldmonitor.io/api/v2/symbol/ym/3391
           <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
-              class="w-6 h-6 fill-gray-400 inline mr-4 mt-2"
+              class="w-6 h-6 fill-gray-400 inline mr-4 "
             >
               <path fill="none" d="M0 0h24v24H0z" />
               <path

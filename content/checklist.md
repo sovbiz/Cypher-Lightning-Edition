@@ -30,6 +30,8 @@ head:
 - [ ] Favicon
 - [ ] Lightning URL
 - [ ] Bitcoin BIP84 Address
+- [ ] Order webhook (Discord)
+- [ ] Alby Read only token
 - [ ] Emailadress
 
 

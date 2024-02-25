@@ -27,7 +27,7 @@
      "instagram":"",
      "twitter":"",
      "github":"https://github.com/cypher-space",
-     "discord":"",
+     "discord":"https://discord.gg/2MDsHHy6Yv",
      "dribble":"",
      "linkedin":"",
      "telegram":"",
@@ -40,16 +40,8 @@
          "href":"/"
       },
         {
-           "name":"Funding",
-           "href":"/funds"
-        },
-        {
            "name":"Product",
            "href":"/product"
-        },
-        {
-           "name":"Blog",
-           "href":"/blog"
         }
      ],
      "MenuPopupName":"",
@@ -66,7 +58,7 @@
         {
            "column1":"Support",
            "column2":"Products",
-           "column3":"Development",
+           "column3":"Articles",
            "column4":"Legal"
         }
      ],
@@ -76,10 +68,7 @@
               "name":"Home",
               "href":"/"
            },
-           {
-              "name":"Funds",
-              "href":"/funds"
-           },
+
            {
               "name":"Product",
               "href":"/product"
@@ -100,14 +89,19 @@
            }
         ],
         "col3":[
-           {
-              "name":"Checklist",
-              "href":"/checklist"
-           },
+
            {
               "name":"Blog",
               "href":"/blog"
-           }
+           },
+           {
+            "name":"Funds",
+            "href":"/funds"
+         },
+         {
+            "name":"Checklist",
+            "href":"/checklist"
+         }
         ],
         "col4":[
            {

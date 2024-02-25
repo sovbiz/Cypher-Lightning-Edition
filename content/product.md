@@ -23,19 +23,15 @@ head:
 
 ::ContainerProse 
 
-# Development Bounties Open
+# Example Page
 
-We are excited to announce that we have several **development bounties** currently open for talented developers. If you're looking to contribute to a dynamic project and earn rewards, this is your chance!
+This is a example page you can find in the content directory, named product.md it showcase a simple product component you can set based on the ID of a product. Other example pages can be found in the articles directory these examples are automaticaly displayed in the blog section.
 
-## Open Tasks
+## Adding Products
 
-Below are the tasks for which we are currently offering bounties:
+The way to add products is change or add them in the config directory's shop.json object. All product data gets requested from there.
 
-Each task has its own set of requirements and rewards. For detailed information, please visit our [Bounties Page](https://cypher.space/roadmap).
 
-## Embedding a Single Product
-
-We also wanted to showcase how easy it is to embed one of your products wrapped in your posts.
 
 :ShopItem{productid=1}
 

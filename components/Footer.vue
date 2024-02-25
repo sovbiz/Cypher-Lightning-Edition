@@ -57,47 +57,7 @@ import data from "~/config/setup";
                 </li>
               </ul>
             </div>
-            <div class="mt-10 md:mt-0 text-center">
-              <h3
-                class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
-              >
-                {{ data.Footernavigation.columntitels[0].column2 }}
-              </h3>
-              <ul role="list" class="mt-6 space-y-4">
-                <li
-                  v-for="itemlink in data.Footernavigation.FooterColums.col2"
-                  :key="itemlink.name"
-                >
-                  <NuxtLink
-                    :to="localePath(itemlink.href)"
-                    class="text-sm leading-6 text-gray-600 dark:text-white hover:text-gray-900"
-                    >{{ itemlink.name }}</NuxtLink
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="md:grid md:grid-cols-2 md:gap-8">
-            <div class="text-center">
-              <h3
-                class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
-              >
-                {{ data.Footernavigation.columntitels[0].column3 }}
-              </h3>
-              <ul role="list" class="mt-6 space-y-4">
-                <li
-                  v-for="itemlink in data.Footernavigation.FooterColums.col3"
-                  :key="itemlink.name"
-                >
-                  <NuxtLink
-                    :to="localePath(itemlink.href)"
-                    class="text-sm leading-6 text-gray-600 dark:text-white hover:text-gray-900"
-                    >{{ itemlink.name }}</NuxtLink
-                  >
-                </li>
-              </ul>
-            </div>
-            <div class="mt-10 md:mt-0 text-center">
+            <div class="mt-10 md:mt-0 text-center" >
               <h3
                 class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
               >
@@ -117,6 +77,51 @@ import data from "~/config/setup";
                 </li>
               </ul>
             </div>
+          </div>
+          <div class="md:grid md:grid-cols-2 md:gap-8" >
+            <div class="text-center" v-if="data.blog">
+              <h3
+                class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
+              >
+                {{ data.Footernavigation.columntitels[0].column3 }}
+              </h3>
+              <ul role="list" class="mt-6 space-y-4">
+                <li
+                  v-for="itemlink in data.Footernavigation.FooterColums.col3"
+                  :key="itemlink.name"
+                >
+                  <NuxtLink
+                    :to="localePath(itemlink.href)"
+                    class="text-sm leading-6 text-gray-600 dark:text-white hover:text-gray-900"
+                    >{{ itemlink.name }}</NuxtLink
+                  >
+                </li>
+              </ul>
+            </div>
+
+
+            <div class="mt-10 md:mt-0 text-center" v-if="data.shop">
+              <h3
+                class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
+              >
+                {{ data.Footernavigation.columntitels[0].column2 }}
+              </h3>
+              <ul role="list" class="mt-6 space-y-4">
+                <li
+                  v-for="itemlink in data.Footernavigation.FooterColums.col2"
+                  :key="itemlink.name"
+                >
+                  <NuxtLink
+                    :to="localePath(itemlink.href)"
+                    class="text-sm leading-6 text-gray-600 dark:text-white hover:text-gray-900"
+                    >{{ itemlink.name }}</NuxtLink
+                  >
+                </li>
+              </ul>
+            </div>
+
+
+
           </div>
         </div>
       </div>

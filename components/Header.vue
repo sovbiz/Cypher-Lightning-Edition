@@ -133,6 +133,37 @@ onMounted(() => {
           {{ item.name }}</NuxtLink
         >
 
+
+        <NuxtLink
+        v-if="data.blog"
+          :to="localePath('/blog')"
+          class="text-sm font-semibold leading-6 text-black dark:text-white"
+        >
+          Blog</NuxtLink
+        >
+
+        <NuxtLink
+          v-if="data.shop"
+          class="text-sm font-semibold leading-6 text-black dark:text-white"
+          :to="localePath('/shop')"
+        >
+          Shop
+        </NuxtLink>
+
+        <NuxtLink
+        v-if="data.openfinance"
+          :to="localePath('/funds')"
+
+          class="text-sm font-semibold leading-6 text-black dark:text-white"
+        >
+          Open Finance</NuxtLink
+        >
+
+
+
+
+
+
         <Popover class="relative"  v-if="data.Headernavigation.MenuPopupName">
           <PopoverButton
             class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-black dark:text-white"
@@ -194,13 +225,7 @@ onMounted(() => {
           </transition>
         </Popover>
 
-        <NuxtLink
-          v-if="data.shop"
-          class="text-sm font-semibold leading-6 text-black dark:text-white"
-          :to="localePath('/shop')"
-        >
-          Shop
-        </NuxtLink>
+
       </PopoverGroup>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <NuxtLink
@@ -335,6 +360,15 @@ onMounted(() => {
                 {{ item.name }}</NuxtLink
               ></div>
 
+        <NuxtLink
+                v-if="data.blog"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-black dark:text-white"
+                :to="localePath('/blog')"
+                @click="mobileMenuOpen = false"
+              >
+                Blog
+              </NuxtLink>
+
               <NuxtLink
                 v-if="data.shop"
                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-black dark:text-white"
@@ -343,6 +377,18 @@ onMounted(() => {
               >
                 Shop
               </NuxtLink>
+
+              <NuxtLink
+                v-if="data.openfinance"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-black dark:text-white"
+                :to="localePath('/funds')"
+                @click="mobileMenuOpen = false"
+              >
+                Open Finance
+              </NuxtLink>
+
+
+
             </div>
 
             <div class="py-6">

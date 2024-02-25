@@ -25,4 +25,3 @@ head:
 
 :FundsTicker
 
-:FundsInvoicewidget
