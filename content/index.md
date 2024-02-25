@@ -26,5 +26,3 @@ head:
 :FundsTicker
 
 :FundsInvoicewidget
-
-:PipedreamHook
