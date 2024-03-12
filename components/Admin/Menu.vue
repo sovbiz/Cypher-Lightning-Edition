@@ -127,13 +127,13 @@
                 <span class="sr-only">{{ data.name }}</span>
 
                 <img
-                  class="block dark:hidden -rotate-180"
+                  class="block dark:hidden -rotate-90"
                   src="/Logo-Holder-Light.gif"
                   :alt="data.name"
                   width="180"
                 />
                 <img
-                  class="hidden dark:block -rotate-90"
+                  class="hidden dark:block "
                   src="/Logo-Holder-Dark.gif"
                   :alt="data.name"
                   width="180"
