@@ -771,7 +771,6 @@ const timenow = Date.now()
 const formData = ref({
     firstname: firstname,
     lastname: lastname,
-    email: lastname,
     company: company,
     email: email,
     address: address,

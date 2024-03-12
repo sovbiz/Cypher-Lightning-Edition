@@ -1,12 +1,8 @@
 <script setup>
-
-import { PencilSquareIcon,TrashIcon } from '@heroicons/vue/20/solid'
-
+import { PencilSquareIcon, TrashIcon } from "@heroicons/vue/20/solid";
 
 const { data } = await useAsyncData("", () =>
-  queryContent("/articles")
-    .sort({ datetime: -1 })
-    .find()
+  queryContent("/articles").sort({ datetime: -1 }).find()
 );
 
 const posts = data;
@@ -44,7 +40,9 @@ const { t } = useI18n({ useScope: "local" });
 </i18n>
 
 <template>
-  <div class="bg-colorBgLight dark:bg-colorBgDark pb-6 sm:pb-0 mt-12 max-w-4xl mx-auto">
+  <div
+    class="bg-colorBgLight dark:bg-colorBgDark pb-6 sm:pb-0 mt-12 max-w-4xl mx-auto"
+  >
     <!-- <div class="mx-auto max-w-2xl text-center">
       <h2
         class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
@@ -55,7 +53,7 @@ const { t } = useI18n({ useScope: "local" });
         {{ t("subtitle") }}
       </p>
     </div> -->
-    <div class="mx-auto ">
+    <div class="mx-auto">
       <div class="mx-auto max-w-2xl lg:max-w-7xl">
         <div class="space-y-20 lg:mt-20 lg:space-y-20">
           <article
@@ -64,7 +62,6 @@ const { t } = useI18n({ useScope: "local" });
             class="relative isolate flex flex-col gap-8 lg:flex-row"
           >
             <div
-              
               class="relative aspect-[16/9] sm:aspect-[4/3] lg:w-1/3 lg:shrink-0"
             >
               <NuxtLink :to="localePath(post.href)">
@@ -80,30 +77,19 @@ const { t } = useI18n({ useScope: "local" });
             </div>
             <div>
               <div class="flex items-center gap-x-4 text-xs">
-
-
-
-
-
-
                 <div
-                v-if="post._draft == false"
+                  v-if="post._draft == false"
                   class="relative z-10 rounded-full bg-green-300 px-3 py-1.5 font-medium text-gray-900 hover:bg-green-100"
                 >
                   published
                 </div>
 
                 <div
-                v-else
+                  v-else
                   class="relative z-10 rounded-full bg-orange-300 px-3 py-1.5 font-medium text-gray-900 hover:bg-orange-100"
                 >
-                    Draft
+                  Draft
                 </div>
-
-
-
-
-
 
                 <time
                   :datetime="post.date"
@@ -111,7 +97,7 @@ const { t } = useI18n({ useScope: "local" });
                   >{{ post.date }}</time
                 >
                 <div
-                v-if="post.categorytitle"
+                  v-if="post.categorytitle"
                   class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-900 hover:bg-gray-100"
                 >
                   {{ post.categorytitle }}
@@ -154,27 +140,31 @@ const { t } = useI18n({ useScope: "local" });
                   </div>
                 </div> -->
 
-    
-  <span class="isolate inline-flex rounded-md shadow-sm">
-    <NuxtLink :to="localePath('/admin/note/edit')" class="relative inline-flex items-center gap-x-1.5 rounded-l-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">
-      <PencilSquareIcon class="-ml-0.5 h-5 w-5 text-gray-400" aria-hidden="true" />
-      Edit Note
-    </NuxtLink>
-    <button type="button" class="relative -ml-px inline-flex items-center rounded-r-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10">
-      <TrashIcon class="-ml-0.5 h-5 w-5 text-gray-400" aria-hidden="true" />
+                <span class="isolate inline-flex rounded-md shadow-sm">
+                  <NuxtLink
+                    :to="localePath('/admin/note/edit')"
+                    class="relative inline-flex items-center gap-x-1.5 rounded-l-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
+                  >
+                    <PencilSquareIcon
+                      class="-ml-0.5 h-5 w-5 text-gray-400"
+                      aria-hidden="true"
+                    />
+                    Edit Note
+                  </NuxtLink>
+                  <button
+                    type="button"
+                    class="relative -ml-px inline-flex items-center rounded-r-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-10"
+                  >
+                    <TrashIcon
+                      class="-ml-0.5 h-5 w-5 text-gray-400"
+                      aria-hidden="true"
+                    />
 
-      Delete Note</button>
-  </span>
-
-
-
-
-
-
+                    Delete Note
+                  </button>
+                </span>
               </div>
-              
             </div>
-
           </article>
         </div>
       </div>
