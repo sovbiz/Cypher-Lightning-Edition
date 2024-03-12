@@ -26,7 +26,6 @@ const stats = [
   <div class="max-w-7xl mx-auto px-12">
 
     <div>
-    <h3 class="text-base font-semibold leading-6 text-gray-900">Last 30 days</h3>
 
     <dl class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-1 lg:grid-cols-3">
       <div v-for="item in stats" :key="item.id" class="relative overflow-hidden rounded-lg bg-white px-4 pb-12 pt-5 shadow sm:px-6 sm:pt-6">

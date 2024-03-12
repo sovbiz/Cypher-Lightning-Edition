@@ -23,6 +23,11 @@ import data from "~/config/setup";
         <div class="mt-2 text-sm text-yellow-700">
           <p>{{ t('line2') }} <a href="https://discord.gg/2MDsHHy6Yv" target="blank" class="underline" >{{ t('line3') }}</a>  {{ t('line4') }}</p>
           <p class="mt-6">{{ t('line5') }} <NuxtLink :to="localePath('/checklist')" class="underline"> {{ t('line6') }} </NuxtLink> {{ t('line7') }}</p>
+
+
+          <p class="mt-6">{{ t('line8') }} <NuxtLink :to="localePath('/admin')" class="underline"> {{ t('adminpanel') }}</NuxtLink> </p>
+
+          
         </div>
       </div>
     </div>
@@ -37,6 +42,11 @@ import data from "~/config/setup";
         <!-- <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-white">{{ t('buildBitcoinNostrDescription') }}</p> -->
         <div class="mt-10 flex items-center justify-center gap-x-6">
             <NuxtLink :to="localePath('/shop')" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">{{ t('viewProjectsButton') }}</NuxtLink>
+       
+            <NuxtLink :to="localePath('/admin')" v-if="data.lnurl =='cypherspace@getalby.com' || data.btcadress =='bc1q5j9h5dfr6gctjc0tl9gaz02f0p0qs7ecdlcat8' || data.orderwebhook =='https://discord.com/api/webhooks/1210994387660705923/ndfQLtY2aEXIV7Cjui9Hna3_dXEN2m_IjRTLr8M-H0OQIAKZ9N8VqicoeAz-GB1kZaCG'" class="rounded-md bg-orange-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">{{ t('adminpanel') }} </NuxtLink>
+
+       
+       
             <NuxtLink :to="localePath('/blog')" class="text-sm font-semibold leading-6 text-gray-900 dark:text-white">{{ t('getStartedLink') }} <span aria-hidden="true">→</span></NuxtLink>
         </div>
       </div>
@@ -55,6 +65,8 @@ import data from "~/config/setup";
       "line5": "Du kan også kigge på",
       "line6": "tjeklisten",
       "line7": "dette er ting, du stadig bør brande / tilpasse før du sætter i produktion.",
+      "line8": "du kan se det aktuelle WIP lokale admin UI",
+    "adminPanel": "Admin Panel",
       "bitcoinWebstackTitle": "Sovereign Space",
       "proofOfWorkPudding": "Velkommen til vores digitale hjørne udforsk indhold og produkter",
       "buildBitcoinNostrDescription": "Byg Bitcoin & Nostr Ecosystem virksomheder og udnyt den bedste måde at farme bitcoin og stable sats! Leverer varer, tjenester og løsninger til bitcoin adoption og integration.",
@@ -69,6 +81,8 @@ import data from "~/config/setup";
       "line5": "Sie können auch einen Blick werfen auf",
       "line6": "die Checkliste",
       "line7": "das sind Dinge, die Sie noch markieren / anpassen sollten, bevor Sie in Produktion gehen.",
+      "line8": "Sie können die aktuelle WIP lokale Admin-Oberfläche einsehen",
+    "adminPanel": "Admin-Panel",
       "bitcoinWebstackTitle": "Sovereign Space",
       "proofOfWorkPudding": "Willkommen in unserer digitalen Ecke erkunden Sie Inhalte und Produkte",
       "buildBitcoinNostrDescription": "Bauen Sie Bitcoin & Nostr Ökosystem-Unternehmen und nutzen Sie den besten Weg, um Bitcoin zu farmen und Sats zu stapeln! Bereitstellung von Waren, Dienstleistungen und Lösungen für die Bitcoin-Adoption und Integration.",
@@ -83,6 +97,8 @@ import data from "~/config/setup";
       "line5": "También puedes echar un vistazo a",
       "line6": "la lista de verificación",
       "line7": "estas son cosas que aún deberías personalizar antes de poner en producción.",
+      "line8": "puedes ver la UI de administración local WIP actual",
+    "adminPanel": "Panel de Administración",
       "bitcoinWebstackTitle": "Espacio Soberano",
       "proofOfWorkPudding": "Bienvenido a nuestro rincón digital, explora contenido y productos",
       "buildBitcoinNostrDescription": "Construye negocios del ecosistema Bitcoin & Nostr y utiliza la mejor manera de farmear bitcoin y apilar sats! Ofreciendo bienes, servicios y soluciones para la adopción e integración de bitcoin.",
@@ -97,6 +113,8 @@ import data from "~/config/setup";
     "line5": "You can also have a look at",
     "line6": "the checklist ",
     "line7": "these are things you should still brand / customise before putting in production.",
+    "line8": "you can view the current WIP local admin UI ",
+    "adminpanel": "Admin Panel",
     "bitcoinWebstackTitle": "Sovereign Space",
     "proofOfWorkPudding": "Welcome to our digital corner explore content and products",
     "buildBitcoinNostrDescription": "Build Bitcoin & Nostr Ecosystem Businesses and utilise the best way to farm bitcoin and stack sats! Providing goods, services and solutions for bitcoin adoption and integrations.",
@@ -111,6 +129,8 @@ import data from "~/config/setup";
       "line5": "Vous pouvez également jeter un œil à",
       "line6": "la liste de contrôle",
       "line7": "ce sont des choses que vous devriez encore personnaliser avant de mettre en production.",
+      "line8": "vous pouvez consulter l'interface administrateur locale WIP actuelle",
+    "adminPanel": "Panneau d'Administration",
       "bitcoinWebstackTitle": "Espace Souverain",
       "proofOfWorkPudding": "Bienvenue dans notre coin numérique explorez le contenu et les produits",
       "buildBitcoinNostrDescription": "Construisez des entreprises de l'écosystème Bitcoin & Nostr et utilisez la meilleure façon de farmer des bitcoins et d'empiler des sats ! Fournissant des biens, des services et des solutions pour l'adoption et l'intégration du bitcoin.",
@@ -125,6 +145,8 @@ import data from "~/config/setup";
       "line5": "Je kunt ook kijken naar",
       "line6": "de checklist",
       "line7": "dit zijn dingen die je nog moet merken / aanpassen voordat je in productie gaat.",
+      "line8": "u kunt de huidige WIP lokale beheerdersinterface bekijken",
+    "adminPanel": "Admin Paneel",
       "bitcoinWebstackTitle": "Soevereine Ruimte",
       "proofOfWorkPudding": "Welkom in onze digitale hoek, verken inhoud en producten",
       "buildBitcoinNostrDescription": "Bouw Bitcoin & Nostr Ecosysteem Bedrijven en gebruik de beste manier om bitcoin te farmen en sats te stapelen! Het leveren van goederen, diensten en oplossingen voor bitcoin adoptie en integratie.",

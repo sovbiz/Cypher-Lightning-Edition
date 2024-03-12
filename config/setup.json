@@ -1,4 +1,5 @@
 {
+  "version": "1.0.1 Beta",
   "name":"Cypher.Space",
   "tagline":"Bitcoin Standard First",
   "contactmail":"",
@@ -13,11 +14,13 @@
   "shop":true,
   "openfinance":true,
   "basecurrency":"btc",
+  "testnet":"false",
   "btcadress":"bc1q5j9h5dfr6gctjc0tl9gaz02f0p0qs7ecdlcat8",
   "lnurl":"cypherspace@getalby.com",
   "albytoken":"MDQ3YZNJYJYTYMFLMI0ZODDHLTK0ODMTNTHJZTYYMZJLZDBH",
   "orderwebhook":"https://discord.com/api/webhooks/1210994387660705923/ndfQLtY2aEXIV7Cjui9Hna3_dXEN2m_IjRTLr8M-H0OQIAKZ9N8VqicoeAz-GB1kZaCG",
   "nostr":true,
+  "nostradmin":"npub",
   "nostrrelay":"wss://relay.damus.io",
   "footerlanguage":true,
   "footersocials":true,
@@ -27,11 +30,11 @@
      "instagram":"",
      "twitter":"",
      "github":"https://github.com/cypher-space",
-     "discord":"https://discord.gg/2MDsHHy6Yv",
+     "discord":"https://discord.gg/Ueh4qkJYsz",
      "dribble":"",
      "linkedin":"",
-     "telegram":"",
-     "nostr":"https://snort.social/nprofile1qqsfmd476kacwlqe920d9qrwazqrxpm3flwy85p2y3sj50qcexcvfmc4y69w0"
+     "telegram":"https://t.me/+TcCsAJNJrRxkNDk0",
+     "nostr":"https://nostrcheck.me/u/cypher"
   },
   "Headernavigation":{
      "basicmenu":[

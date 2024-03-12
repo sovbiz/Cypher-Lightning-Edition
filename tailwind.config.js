@@ -1,12 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 const colors = require('tailwindcss/colors')
 
-let Primary = "#e8e1e1"
-let Secondary = "#e8e1e1"
+let Primary = "#fbf7e8"
+let Secondary = "#fbf7e8"
 let Tertiary = "#000"
 
-let PrimaryDark = "#171e1e"
-let SecondaryDark = "#171e1e"
+let PrimaryDark = "#363636"
+let SecondaryDark = "#363636"
 let TertiaryDark = "#FFF"
 
 let HighlightPrimary = "#171e1e"
