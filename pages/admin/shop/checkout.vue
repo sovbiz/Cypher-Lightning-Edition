@@ -1,6 +1,6 @@
 <template>
   <div class="px-6">
-    <h1 class="text-black text-4xl max-w-2xl mx-auto my-6 dark:text-white">
+    <h1 class="text-black text-4xl max-w-4xl mx-auto my-6 dark:text-white">
       Checkout
     </h1>
 
@@ -9,7 +9,13 @@
 <p> Shipping rates </p>
          -->
 
-    <form class="max-w-2xl mx-auto">
+
+         <AdminSubshop class="mt-12"/>
+
+
+
+
+    <form class="max-w-4xl mx-auto">
       <div class="space-y-12">
         <div class="border-b border-gray-900/10 pb-12">
           <!-- <h2 class="text-base font-semibold leading-7 text-gray-900 dark:text-white">Shopping cart</h2> -->

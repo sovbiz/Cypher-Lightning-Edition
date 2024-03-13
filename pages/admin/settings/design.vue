@@ -1,10 +1,14 @@
 <template>
   <div class="px-6">
-    <h1 class="text-black text-4xl max-w-2xl mx-auto my-6 dark:text-white">
+    <h1 class="text-black text-4xl max-w-4xl mx-auto my-6 dark:text-white">
       Design
     </h1>
 
-    <form class="max-w-2xl mx-auto">
+
+    <AdminSubsettings />
+
+
+    <form class="max-w-4xl mx-auto mt-12">
       <div class="space-y-12">
         <div class="border-b border-gray-900/10 pb-12">
           <h2

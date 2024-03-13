@@ -171,19 +171,7 @@ Your browser does not support the video tag.
                 {{ item.name }}</NuxtLink
               >
 
-              <NuxtLink
-                v-if="data.shop"
-                class="text-gray-400 hover:text-white hover:bg-gray-800 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold w-full"
-                :to="localePath('/cart')"
-                >Cart
 
-                <span
-                  id="numbered"
-                  class="text-center font-semibold text-xs align-text-top px-1 text-white dark:text-gray-900 dark:bg-white bg-gray-900 rounded-xl h-4"
-                >
-                  {{ totalItems }}</span
-                >
-              </NuxtLink>
             </nav>
           </div>
 
@@ -271,21 +259,5 @@ function togglemenu() {
   showMobileMenu.value = !showMobileMenu.value;
 }
 
-import { useProjectStore } from "~/store/shopcart";
 
-const store = useProjectStore();
-const totalItems = ref(store.getTotalItems());
-
-// Watch for changes in the cartItems array
-watch(
-  () => store.cartItems,
-  () => {
-    totalItems.value = store.getTotalItems();
-  },
-  { deep: true }
-);
-
-onMounted(() => {
-  totalItems.value = store.getTotalItems();
-});
 </script>

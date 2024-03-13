@@ -20,7 +20,7 @@
   "albytoken":"MDQ3YZNJYJYTYMFLMI0ZODDHLTK0ODMTNTHJZTYYMZJLZDBH",
   "orderwebhook":"https://discord.com/api/webhooks/1210994387660705923/ndfQLtY2aEXIV7Cjui9Hna3_dXEN2m_IjRTLr8M-H0OQIAKZ9N8VqicoeAz-GB1kZaCG",
   "nostr":true,
-  "nostradmin":"npub",
+  "nostradmin":"npub1nkmta4dmsa7pj25762qxa6yqxvrhzn7ug0gz5frp9g7p3jdscnhsu049fn",
   "nostrrelay":"wss://relay.damus.io",
   "footerlanguage":true,
   "footersocials":true,

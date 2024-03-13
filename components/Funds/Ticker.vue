@@ -15,15 +15,15 @@ import {
 const stats = [
 
 
-  { id: 1, description: 'Current +- Bitcoin Fiat Dollar Price', stat: btcprices.btcprice, icon: BitcoinIcon, denominator: ' $ ', changeType: 'increase' },
-  { id: 2, description: 'Current +- Amount of Sats per Dollar', stat: btcprices.onedollarsatprice, icon: SatoshiV2Icon, denominator: ' Sats ', changeType: 'increase' },
-  { id: 3, description: 'Current +- Amount of Btc per Dollar', stat: btcprices.onedollarbtcprice, icon: NoDollarsIcon, denominator: ' Btc ', changeType: 'decrease' },
+  { id: 1, description: 'Bitcoin Fiat Dollar Price', stat: btcprices.btcprice, icon: BitcoinIcon, denominator: ' $ ', changeType: 'increase' },
+  { id: 2, description: 'Sats per Dollar', stat: btcprices.onedollarsatprice, icon: SatoshiV2Icon, denominator: ' Sats ', changeType: 'increase' },
+  { id: 3, description: 'Btc per Dollar', stat: btcprices.onedollarbtcprice, icon: NoDollarsIcon, denominator: ' Btc ', changeType: 'decrease' },
 ]
 
 </script>
 
 <template>
-  <div class="max-w-7xl mx-auto px-12">
+  <div class="max-w-7xl mx-auto ">
 
     <div>
 

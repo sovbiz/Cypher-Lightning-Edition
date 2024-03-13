@@ -2,36 +2,24 @@
     "Headernavigation":{
        "basicmenu":[
         {
-           "name":"Dashboard",
+           "name":"Home",
            "href":"/admin"
         },
           {
-             "name":"Notes",
-             "href":"/admin/notes"
+             "name":"My Posts",
+             "href":"/admin/posts"
           },
           {
-            "name":"Products",
-            "href":"/admin/products"
+            "name":"My Shop",
+            "href":"/admin/shop"
          },
          {
             "name":"Settings",
             "href":"/admin/settings"
          },
          {
-            "name":"Design",
-            "href":"/admin/design"
-         },
-         {
-            "name":"Nostr",
-            "href":"/admin/nostr"
-         },
-         {
-            "name":"Checkout",
-            "href":"/admin/checkout"
-         },
-         {
-            "name":"Backup",
-            "href":"/admin/backup"
+            "name":"FAQ",
+            "href":"/admin/faq"
          }
        ]
     }
