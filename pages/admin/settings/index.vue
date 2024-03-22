@@ -396,6 +396,10 @@
         </button>
       </div>
     </form>
+
+    <AdminFooter />
+
+
   </div>
 </template>
 

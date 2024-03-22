@@ -1,6 +1,11 @@
 <template>
 
 <AdminFaq />
+
+<AdminFooter />
+
+
+
 </template>
 
 <script setup>

@@ -8,7 +8,9 @@ import data from "~/config/setup";
 </script>
 
 <template>
-  <div class="relative isolate px-6 pt-14 lg:px-8">
+  <div class="min-h-screen relative isolate px-6 pt-14 lg:px-8 bg-[url('/stock/nogood/NG_Cypher_Header_Light.png')] dark:bg-[url('/stock/nogood/NG_Cypher_Header_Dark.png')] bg-hero bg-no-repeat bg-cover bg-center bg-fixed" 
+bg-hero bg-no-repeat bg-cover bg-center bg-fixed
+   >
     <!-- ...other elements... -->
 
 
@@ -37,8 +39,8 @@ import data from "~/config/setup";
 
     <div class="mx-auto max-w-4xl py-32 sm:py-48 lg:py-24">
       <div class="text-center">
-        <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">{{data.name}}</h1>
-        <h1 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl my-4">{{ t('proofOfWorkPudding') }} <span class="text-4xl">🍮</span></h1>
+        <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">{{data.textlogo}}</h1>
+        <h1 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl my-4">{{ data.tagline }} <span class="text-4xl"></span></h1>
         <!-- <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-white">{{ t('buildBitcoinNostrDescription') }}</p> -->
         <div class="mt-10 flex items-center justify-center gap-x-6">
             <NuxtLink :to="localePath('/shop')" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">{{ t('viewProjectsButton') }}</NuxtLink>

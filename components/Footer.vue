@@ -1,5 +1,6 @@
 <script setup>
 import data from "~/config/setup";
+const currentDate = new Date();
 </script>
 <template>
   <footer
@@ -7,7 +8,7 @@ import data from "~/config/setup";
     aria-labelledby="footer-heading"
   >
     <h2 id="footer-heading" class="sr-only">Footer</h2>
-    <div class="mx-auto max-w-7xl px-3 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+    <div class="mx-auto max-w-7xl px-3 pb-8 pt-12 lg:px-8 ">
       <div class="xl:grid xl:grid-cols-3 xl:gap-8">
         <div class="text-center">
           <img
@@ -129,10 +130,11 @@ import data from "~/config/setup";
         class="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8"
       >
         <div class="flex w-full justify-center space-x-6 md:order-2">
+          
           <p
             class="text-xs leading-5 text-black dark:text-black dark:text-white mt-1"
           >
-            &copy; 2023 {{ data.name }}, Inc. All rights reserved.
+            &copy; {{ currentDate.getFullYear() }} {{ data.name }}, Inc. All rights reserved.
           </p>
         </div>
       </div>

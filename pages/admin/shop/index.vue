@@ -17,6 +17,10 @@
 
 
     <AdminProducts />
+
+    <AdminFooter />
+
+
   </div>
 </template>
 

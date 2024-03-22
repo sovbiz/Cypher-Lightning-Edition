@@ -221,6 +221,11 @@
         </div>
       </form>
     </div>
+
+
+    <AdminFooter />
+
+
   </div>
 </template>
 <script setup>

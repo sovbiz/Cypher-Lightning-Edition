@@ -10,6 +10,11 @@
 
 
     <AdminPos />
+
+
+    <AdminFooter />
+
+
   </div>
 </template>
 

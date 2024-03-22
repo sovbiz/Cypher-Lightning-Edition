@@ -11,7 +11,11 @@
       </div>
     </div>
     <AdminNotes />
-    <AdminBackground />
+
+
+
+    <AdminFooter />
+
 
   </div>
 </template>

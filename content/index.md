@@ -23,5 +23,7 @@ head:
 
 :Hero 
 
-:FundsTicker
+:ShopNew
+
+:BlogFeatured
 
