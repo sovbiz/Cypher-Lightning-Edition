@@ -8,8 +8,7 @@ import data from "~/config/setup";
 </script>
 
 <template>
-  <div class="min-h-screen relative isolate px-6 pt-14 lg:px-8 bg-[url('/stock/nogood/NG_Cypher_Header_Light.png')] dark:bg-[url('/stock/nogood/NG_Cypher_Header_Dark.png')] bg-hero bg-no-repeat bg-cover bg-center bg-fixed" 
-bg-hero bg-no-repeat bg-cover bg-center bg-fixed
+  <div class="min-h-screen relative isolate px-6 pt-14 lg:px-8 bg-[url('/stock/nogood/NG_Cypher_Header_Light.png')] dark:bg-[url('/stock/nogood/NG_Cypher_Header_Dark.png')] bg-hero bg-no-repeat md:bg-cover bg-center bg-fixed" 
    >
     <!-- ...other elements... -->
 
