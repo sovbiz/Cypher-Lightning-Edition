@@ -19,6 +19,9 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['"JetBrains Mono"','ui-sans-serif', 'system-ui' ],
+      },
       colors: {
         // IMPORTANT NOTICE: SETTING CUSTOM COLORS REQUIRES YOU TO REBUILD THE APP !
         // Hex: colorname: '#hexcolor',

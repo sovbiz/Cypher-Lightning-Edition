@@ -11,7 +11,9 @@ export default defineNuxtConfig({
 alias: {
   pinia: "/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs"
 },
-
+css: [
+  '@/assets/css/main.css',
+],
 components: {
      global: true,
      dirs: ['~/components']
