@@ -26,7 +26,7 @@ import data from "~/config/setup";
           <p class="mt-6">{{ t('line5') }} <NuxtLink :to="localePath('/checklist')" class="underline"> {{ t('line6') }} </NuxtLink> {{ t('line7') }}</p>
 
 
-          <p class="mt-6">{{ t('line8') }} <NuxtLink :to="localePath('/admin')" class="underline"> {{ t('adminpanel') }}</NuxtLink> </p>
+          <p class="mt-6">{{ t('line8') }} <NuxtLink :to="localePath('/admin')" class="underline"> {{ t('adminPanel') }}</NuxtLink> </p>
 
           
         </div>
@@ -38,13 +38,36 @@ import data from "~/config/setup";
 
     <div class="mx-auto max-w-4xl py-32 sm:py-48 lg:py-24">
       <div class="text-center">
-        <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">{{data.textlogo}}</h1>
+        <h1 v-if="!data.logo" class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">{{data.textlogo}}</h1>
+
+
+
+
+        <img
+            v-if="data.logo"
+            :class="[data.logodark ? 'block dark:hidden mx-auto h-12 md:h-32' : '', '']"
+            :src="'/project/' + data.logoimage"
+            :alt="data.name"
+
+          />
+          <img
+            v-if="data.logodark"
+            class="hidden dark:block mx-auto h-12 md:h-32"
+            :src="'/project/' + data.logodarkimage"
+            :alt="data.name"
+          />
+
+
+
+
+
+
         <h1 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-3xl my-4">{{ data.tagline }} <span class="text-4xl"></span></h1>
         <!-- <p class="mt-6 text-lg leading-8 text-gray-600 dark:text-white">{{ t('buildBitcoinNostrDescription') }}</p> -->
         <div class="mt-10 flex items-center justify-center gap-x-6">
             <NuxtLink :to="localePath('/shop')" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">{{ t('viewProjectsButton') }}</NuxtLink>
        
-            <NuxtLink :to="localePath('/admin')" v-if="data.lnurl =='cypherspace@getalby.com' || data.btcadress =='bc1q5j9h5dfr6gctjc0tl9gaz02f0p0qs7ecdlcat8' || data.orderwebhook =='https://discord.com/api/webhooks/1210994387660705923/ndfQLtY2aEXIV7Cjui9Hna3_dXEN2m_IjRTLr8M-H0OQIAKZ9N8VqicoeAz-GB1kZaCG'" class="rounded-md bg-orange-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">{{ t('adminpanel') }} </NuxtLink>
+            <NuxtLink :to="localePath('/admin')" v-if="data.lnurl =='cypherspace@getalby.com' || data.btcadress =='bc1q5j9h5dfr6gctjc0tl9gaz02f0p0qs7ecdlcat8' || data.orderwebhook =='https://discord.com/api/webhooks/1210994387660705923/ndfQLtY2aEXIV7Cjui9Hna3_dXEN2m_IjRTLr8M-H0OQIAKZ9N8VqicoeAz-GB1kZaCG'" class="rounded-md bg-orange-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">{{ t('adminPanel') }} </NuxtLink>
 
        
        
@@ -67,7 +90,7 @@ import data from "~/config/setup";
       "line6": "tjeklisten",
       "line7": "dette er ting, du stadig bør brande / tilpasse før du sætter i produktion.",
       "line8": "du kan se det aktuelle WIP lokale admin UI",
-    "adminPanel": "Admin Panel",
+      "adminPanel": "Admin Panel",
       "bitcoinWebstackTitle": "Sovereign Space",
       "proofOfWorkPudding": "Velkommen til vores digitale hjørne udforsk indhold og produkter",
       "buildBitcoinNostrDescription": "Byg Bitcoin & Nostr Ecosystem virksomheder og udnyt den bedste måde at farme bitcoin og stable sats! Leverer varer, tjenester og løsninger til bitcoin adoption og integration.",
@@ -83,7 +106,7 @@ import data from "~/config/setup";
       "line6": "die Checkliste",
       "line7": "das sind Dinge, die Sie noch markieren / anpassen sollten, bevor Sie in Produktion gehen.",
       "line8": "Sie können die aktuelle WIP lokale Admin-Oberfläche einsehen",
-    "adminPanel": "Admin-Panel",
+      "adminPanel": "Admin-Panel",
       "bitcoinWebstackTitle": "Sovereign Space",
       "proofOfWorkPudding": "Willkommen in unserer digitalen Ecke erkunden Sie Inhalte und Produkte",
       "buildBitcoinNostrDescription": "Bauen Sie Bitcoin & Nostr Ökosystem-Unternehmen und nutzen Sie den besten Weg, um Bitcoin zu farmen und Sats zu stapeln! Bereitstellung von Waren, Dienstleistungen und Lösungen für die Bitcoin-Adoption und Integration.",
@@ -99,7 +122,7 @@ import data from "~/config/setup";
       "line6": "la lista de verificación",
       "line7": "estas son cosas que aún deberías personalizar antes de poner en producción.",
       "line8": "puedes ver la UI de administración local WIP actual",
-    "adminPanel": "Panel de Administración",
+      "adminPanel": "Panel de Administración",
       "bitcoinWebstackTitle": "Espacio Soberano",
       "proofOfWorkPudding": "Bienvenido a nuestro rincón digital, explora contenido y productos",
       "buildBitcoinNostrDescription": "Construye negocios del ecosistema Bitcoin & Nostr y utiliza la mejor manera de farmear bitcoin y apilar sats! Ofreciendo bienes, servicios y soluciones para la adopción e integración de bitcoin.",
@@ -115,7 +138,7 @@ import data from "~/config/setup";
     "line6": "the checklist ",
     "line7": "these are things you should still brand / customise before putting in production.",
     "line8": "you can view the current WIP local admin UI ",
-    "adminpanel": "Admin Panel",
+    "adminPanel": "Admin Panel",
     "bitcoinWebstackTitle": "Sovereign Space",
     "proofOfWorkPudding": "Welcome to our digital corner explore content and products",
     "buildBitcoinNostrDescription": "Build Bitcoin & Nostr Ecosystem Businesses and utilise the best way to farm bitcoin and stack sats! Providing goods, services and solutions for bitcoin adoption and integrations.",

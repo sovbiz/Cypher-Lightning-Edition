@@ -51,7 +51,7 @@ onMounted(() => {
     class="bg-colorBgLight dark:bg-colorBgDark backdrop-blur-sm fixed w-full z-50 shadow-2xl dark:shadow-gray-700"
   >
     <nav
-      class="mx-auto flex max-w-7xl items-center justify-between p-3 lg:px-8"
+      class="mx-auto flex max-w-7xl items-center justify-between p-2 lg:px-8"
       aria-label="Global"
     >
       <div class="flex lg:flex-1">
@@ -60,23 +60,19 @@ onMounted(() => {
 
           <img
             v-if="data.logo"
-            :class="[data.logodark ? 'block dark:hidden' : '', '']"
+            :class="[data.logodark ? 'block dark:hidden h-12' : '', '']"
             :src="'/project/' + data.logoimage"
             :alt="data.name"
-            width="100"
-            height="60"
           />
           <img
             v-if="data.logodark"
-            class="hidden dark:block"
+            class="hidden dark:block h-12"
             :src="'/project/' + data.logodarkimage"
             :alt="data.name"
-            width="100"
-            height="60"
           />
 
           <span
-            v-if="data.textlogo"
+            v-if="!data.logo"
             class="mt-1.5 ml-4 text-xl font-bold dark:text-white"
             >{{ data.textlogo }}</span
           >

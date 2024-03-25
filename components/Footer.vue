@@ -4,7 +4,7 @@ const currentDate = new Date();
 </script>
 <template>
   <footer
-    class="bg-colorBgLight dark:bg-colorBgDark"
+    class="bg-colorBgLight dark:bg-colorBgDark border-t-4 md:mt-24"
     aria-labelledby="footer-heading"
   >
     <h2 id="footer-heading" class="sr-only">Footer</h2>
@@ -16,16 +16,14 @@ const currentDate = new Date();
             :class="[data.logodark ? 'block dark:hidden' : '', 'h-12 mx-auto']"
             :src="'/project/' + data.logoimage"
             :alt="data.name"
-            width="100"
-            height="60"
+
           />
           <img
             v-if="data.logodark"
             class="hidden dark:block h-12 mx-auto"
             :src="'/project/' + data.logodarkimage"
             :alt="data.name"
-            width="100"
-            height="60"
+
           />
 
           <!-- <p class="text-sm leading-6 text-gray-600 dark:text-white my-3">Nostr & Bitcoin Builders</p> -->

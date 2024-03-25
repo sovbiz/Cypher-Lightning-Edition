@@ -40,56 +40,69 @@ const btcprice = await $fetch('https://app.yieldmonitor.io/api/v2/symbol/ym/3391
 
 </script>
   <i18n lang="json">
-    {
-      "da": {
-        "Addtocart": "Tilføj til kurv",
-        "Nostock": "Udsolgt",
-        "Lastitems": "Få på lager",
-        "Instock": "På lager"
-      },
-      "de": {
-        "Addtocart": "In den Warenkorb legen",
-        "Nostock": "Ausverkauft",
-        "Lastitems": "Letzte Stücke",
-        "Instock": "Auf Lager"
-      },
-      "en": {
-        "Addtocart": "Add to cart",
-        "Nostock": "Out of stock",
-        "Lastitems": "Last items",
-        "Instock": "In stock"
-      },
-      "es": {
-        "Addtocart": "Añadir a la cesta",
-        "Nostock": "Agotado",
-        "Lastitems": "Ultimas piezas",
-        "Instock": "En stock"
-      },
-      "fr": {
-        "Addtocart": "Ajouter au panier",
-        "Nostock": "Rupture de stock",
-        "Lastitems": "Dernières pièces",
-        "Instock": "Disponible"
-      },
-      "nl": {
-        "Addtocart": "Voeg toe aan winkelkar",
-        "Nostock": "Uitverkocht",
-        "Lastitems": "Laatste stuks",
-        "Instock": "In voorraad"
-      }
-    }
+{
+  "da": {
+    "Addtocart": "Tilføj til kurv",
+    "Nostock": "Udsolgt",
+    "Lastitems": "Få på lager",
+    "Instock": "På lager",
+    "title": "Nyt lager",
+    "subtitle": "De nyeste drops fra din butiksfront"
+  },
+  "de": {
+    "Addtocart": "In den Warenkorb legen",
+    "Nostock": "Ausverkauft",
+    "Lastitems": "Letzte Stücke",
+    "Instock": "Auf Lager",
+    "title": "Neuer Lagerbestand",
+    "subtitle": "Die frischesten Drops aus deinem Storefront"
+  },
+  "en": {
+    "Addtocart": "Add to cart",
+    "Nostock": "Out of stock",
+    "title": "New Stock",
+    "subtitle": "Freshest Drops from your storefront",
+    "Lastitems": "Last items",
+    "Instock": "In stock"
+  },
+  "es": {
+    "Addtocart": "Añadir a la cesta",
+    "Nostock": "Agotado",
+    "Lastitems": "Ultimas piezas",
+    "Instock": "En stock",
+    "title": "Nuevo stock",
+    "subtitle": "Las novedades más frescas de tu tienda"
+  },
+  "fr": {
+    "Addtocart": "Ajouter au panier",
+    "Nostock": "Rupture de stock",
+    "Lastitems": "Dernières pièces",
+    "Instock": "Disponible",
+    "title": "Nouveau stock",
+    "subtitle": "Les dernières nouveautés de votre magasin"
+  },
+  "nl": {
+    "Addtocart": "Voeg toe aan winkelkar",
+    "Nostock": "Uitverkocht",
+    "Lastitems": "Laatste stuks",
+    "Instock": "In voorraad",
+    "title": "Nieuwe voorraad",
+    "subtitle": "De nieuwste drops van je winkel"
+  }
+}
+
     </i18n>
 <template>
-    <div class="z-50">
-      <div class="mx-auto max-w-2xl px-4 -mt-48 sm:px-6 lg:max-w-7xl lg:px-8">
+    <div class="border-t-4 pt-12">
+      <div class="mx-auto max-w-2xl px-4 -mt-24 lg:-mt-48 sm:px-6 lg:max-w-7xl lg:px-8">
         <div class="mx-auto max-w-2xl text-center ">
         <h2
           class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
         >
-          New Stock
+        {{ t("title") }}
         </h2>
         <p class="mt-2 text-lg leading-8 text-gray-900 dark:text-gray-100">
-          Fresh Drops
+          {{ t("subtitle") }}
         </p>
       </div>
         <div class="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 xl:gap-x-8">

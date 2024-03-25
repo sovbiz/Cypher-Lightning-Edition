@@ -1,18 +1,18 @@
 {
   "version": "1.0.1 Beta",
   "name":"Cypher.Space",
-  "tagline":"Bitcoin Standard First",
+  "tagline":"Building Bitcoin Only Businesses",
   "contactmail":"",
   "textlogo":"Cypher",
-  "logo":false,
-  "logoimage":"logo-light.png",
-  "logodark":false,
-  "logodarkimage":"logo-dark.png",
+  "logo":true,
+  "logoimage":"NG_Logo_CypherSpace.gif",
+  "logodark":true,
+  "logodarkimage":"NG_Logo_CypherSpace_Dark.gif",
   "multilang":true,
   "defaultlanguage":"en",
   "blog":true,
   "shop":true,
-  "openfinance":true,
+  "openfinance":false,
   "basecurrency":"btc",
   "testnet":"false",
   "btcadress":"bc1q5j9h5dfr6gctjc0tl9gaz02f0p0qs7ecdlcat8",
@@ -97,10 +97,6 @@
               "name":"Blog",
               "href":"/blog"
            },
-           {
-            "name":"Funds",
-            "href":"/funds"
-         },
          {
             "name":"Checklist",
             "href":"/checklist"

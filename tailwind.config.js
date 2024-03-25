@@ -5,8 +5,8 @@ let Primary = "#fbf7e8"
 let Secondary = "#fbf7e8"
 let Tertiary = "#000"
 
-let PrimaryDark = "#363636"
-let SecondaryDark = "#363636"
+let PrimaryDark = "#121826"
+let SecondaryDark = "#121826"
 let TertiaryDark = "#FFF"
 
 let HighlightPrimary = "#171e1e"

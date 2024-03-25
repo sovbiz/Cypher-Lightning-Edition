@@ -38,24 +38,21 @@
                 <span class="sr-only">{{ data.name }}</span>
 
                 <img
-                  v-if="data.logo"
-                  :class="[data.logodark ? 'block dark:hidden' : '', '']"
-                  :src="'/project/' + data.logoimage"
-                  :alt="data.name"
-                  width="40"
-                  height="40"
-                />
-                <img
-                  v-if="data.logodark"
-                  class="hidden dark:block"
-                  :src="'/project/' + data.logodarkimage"
-                  :alt="data.name"
-                  width="40"
-                  height="40"
-                />
+                :class="[data.logodark ? 'block dark:hidden h-12' : '', '']"
+                :src="'/project/' + data.logoimage"
+                :alt="data.name"
+
+              />
+              <img
+                v-if="data.logodark"
+                class="hidden dark:block h-12"
+                :src="'/project/' + data.logodarkimage"
+                :alt="data.name"
+
+              />
 
                 <span
-                  v-if="data.textlogo"
+                  v-if="data.logo"
                   class="mt-1.5 ml-4 text-xl font-bold dark:text-white"
                   >{{ data.textlogo }}
                 </span>
@@ -93,7 +90,7 @@
               </NuxtLink>
             </nav>
           </div>
-          <div class="flex-shrink-0 flex bg-gray-400 dark:bg-gray-700 p-4">
+          <div class="flex-shrink-0 flex bg-gray-400 dark:bg-gray-900 p-4">
             <div class="flex-shrink-0 w-full group block">
               <div class="flex items-center justify-around mx-auto max-w-sm">
                 <SettingsLanguage v-if="data.footerlanguage" />
@@ -127,17 +124,18 @@
                 <span class="sr-only">{{ data.name }}</span>
 
                 <img
-                  class="block dark:hidden -rotate-90"
-                  src="/Logo-Holder-Light.gif"
-                  :alt="data.name"
-                  width="180"
-                />
-                <img
-                  class="hidden dark:block "
-                  src="/Logo-Holder-Dark.gif"
-                  :alt="data.name"
-                  width="180"
-                />
+                :class="[data.logodark ? 'block dark:hidden h-12' : '', '']"
+                :src="'/project/' + data.logoimage"
+                :alt="data.name"
+
+              />
+              <img
+                v-if="data.logodark"
+                class="hidden dark:block h-12"
+                :src="'/project/' + data.logodarkimage"
+                :alt="data.name"
+
+              />
               </NuxtLink>
             </div>
             <nav
@@ -175,7 +173,7 @@ Your browser does not support the video tag.
             </nav>
           </div>
 
-          <div class="flex-shrink-0 flex bg-gray-400 dark:bg-gray-700 p-4">
+          <div class="flex-shrink-0 flex bg-gray-400 dark:bg-gray-900 p-4">
             <div class="flex-shrink-0 w-full group block">
               <div class="flex items-center justify-around mx-auto max-w-sm">
                 <SettingsLanguage v-if="data.footerlanguage" />
@@ -197,24 +195,22 @@ Your browser does not support the video tag.
           <NuxtLink :to="localePath('/')" class="flex">
             <span class="sr-only">{{ data.name }}</span>
 
-            <!-- <img
-                :class="[data.logodark ? 'block dark:hidden' : '', '']"
+            <img
+                :class="[data.logodark ? 'block dark:hidden h-12' : '', '']"
                 :src="'/project/' + data.logoimage"
                 :alt="data.name"
-                width="40"
-                height="40"
+
               />
               <img
                 v-if="data.logodark"
-                class="hidden dark:block"
+                class="hidden dark:block h-12"
                 :src="'/project/' + data.logodarkimage"
                 :alt="data.name"
-                width="40"
-                height="40"
-              /> -->
+
+              />
 
             <span
-              v-if="data.textlogo"
+              v-if="!data.logo"
               class="mt-1.5 ml-4 text-xl font-bold dark:text-white"
               >{{ data.textlogo }}</span
             >

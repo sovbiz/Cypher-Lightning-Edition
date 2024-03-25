@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-4xl mx-auto">
+  <div class="max-w-4xl mx-auto mt-16">
     <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">
       Build Stats:
     </h3>
