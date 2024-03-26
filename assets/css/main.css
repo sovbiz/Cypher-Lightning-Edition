@@ -11,3 +11,10 @@
     font-weight: 600;
     src: url('/fonts/JetBrainsMono-Bold.woff2') format('woff2');
   }
+
+  @font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 900;
+    src: url('/fonts/JetBrainsMono-ExtraBold.woff2') format('woff2');
+  }

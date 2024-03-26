@@ -94,7 +94,7 @@ const btcprice = await $fetch('https://app.yieldmonitor.io/api/v2/symbol/ym/3391
     </i18n>
 <template>
     <div class="border-t-4 pt-12">
-      <div class="mx-auto max-w-2xl px-4 -mt-24 lg:-mt-48 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <div class="mx-auto max-w-2xl text-center ">
         <h2
           class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"

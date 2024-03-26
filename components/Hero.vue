@@ -22,11 +22,9 @@ import data from "~/config/setup";
       <div class="ml-3">
         <h3 class="text-sm font-medium text-yellow-800">{{ t('line1') }}</h3>
         <div class="mt-2 text-sm text-yellow-700">
-          <p>{{ t('line2') }} <a href="https://discord.gg/2MDsHHy6Yv" target="blank" class="underline" >{{ t('line3') }}</a>  {{ t('line4') }}</p>
-          <p class="mt-6">{{ t('line5') }} <NuxtLink :to="localePath('/checklist')" class="underline"> {{ t('line6') }} </NuxtLink> {{ t('line7') }}</p>
+          <p>{{ t('line2') }} <NuxtLink :to="localePath('/admin')" class="underline"> {{ t('adminPanel') }}</NuxtLink> </p>
+            
 
-
-          <p class="mt-6">{{ t('line8') }} <NuxtLink :to="localePath('/admin')" class="underline"> {{ t('adminPanel') }}</NuxtLink> </p>
 
           
         </div>
@@ -36,29 +34,29 @@ import data from "~/config/setup";
 
 
 
-    <div class="mx-auto max-w-4xl py-32 sm:py-48 lg:py-24">
+    <div class="mx-auto max-w-4xl py-12 sm:py-12 lg:py-12">
       <div class="text-center">
-        <h1 v-if="!data.logo" class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-6xl">{{data.textlogo}}</h1>
 
 
 
 
         <img
-            v-if="data.logo"
-            :class="[data.logodark ? 'block dark:hidden mx-auto h-12 md:h-32' : '', '']"
-            :src="'/project/' + data.logoimage"
+            
+            class="block dark:hidden mx-auto h-48 md:h-96"
+            src="/stock/nogood/NG_Cypher_Block_LowRes.gif"
             :alt="data.name"
 
           />
           <img
-            v-if="data.logodark"
-            class="hidden dark:block mx-auto h-12 md:h-32"
-            :src="'/project/' + data.logodarkimage"
+            
+            class="hidden dark:block mx-auto h-48 md:h-96"
+            src="/stock/nogood/NG_Cypher_Block_LowRes.gif"
             :alt="data.name"
           />
 
 
 
+          <h1 v-if="!data.logo" class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-8xl">{{data.textlogo}}</h1>
 
 
 
@@ -82,56 +80,56 @@ import data from "~/config/setup";
 <i18n lang="json">
   {
     "da": {
-      "line1": "Opmærksomhed nødvendig",
-      "line2": "I øjeblikket er demo-legitimationsoplysninger indstillet, du skal ændre LNUrl, btcaddress og orderwebhook i config/setup.json-filen. hvis du bare vil demonstrere skabelonen, bør alt fungere, ordrer fra butikken sendes til",
-      "line3": "en åben discord-kanal",
-      "line4": "og midler sendes til en prism tegnebog for bidragydere.",
-      "line5": "Du kan også kigge på",
-      "line6": "tjeklisten",
-      "line7": "dette er ting, du stadig bør brande / tilpasse før du sætter i produktion.",
-      "line8": "du kan se det aktuelle WIP lokale admin UI",
-      "adminPanel": "Admin Panel",
-      "bitcoinWebstackTitle": "Sovereign Space",
-      "proofOfWorkPudding": "Velkommen til vores digitale hjørne udforsk indhold og produkter",
-      "buildBitcoinNostrDescription": "Byg Bitcoin & Nostr Ecosystem virksomheder og udnyt den bedste måde at farme bitcoin og stable sats! Leverer varer, tjenester og løsninger til bitcoin adoption og integration.",
-      "viewProjectsButton": "Se Butik",
-      "getStartedLink": "Begynd at læse"
+      "line1": "Demo-legitimationsoplysninger opdaget!",
+    "line2": "Skift LNaddress, btcaddress og orderwebhook i ",
+    "line3": "en åben Discord-kanal",
+    "line4": "og midler sendes til en Prism-tegnebog for bidragsydere.",
+    "line5": "Du kan også tage et kig på",
+    "line6": "tjeklisten",
+    "line7": "dette er ting, du stadig bør mærke / tilpasse før du sætter i produktion.",
+    "line8": "du kan se det aktuelle WIP lokale admin UI",
+    "adminPanel": "Admin Panel",
+    "bitcoinWebstackTitle": "Sovereign Space",
+    "proofOfWorkPudding": "Velkommen til vores digitale hjørne udforsk indhold og produkter",
+    "buildBitcoinNostrDescription": "Byg Bitcoin & Nostr Ecosystem virksomheder og udnyt den bedste måde at farme bitcoin og stable sats! Leverer varer, tjenester og løsninger til bitcoin adoption og integration.",
+    "viewProjectsButton": "Se Butik",
+    "getStartedLink": "Begynd at læse"
     },
     "de": {
-      "line1": "Aufmerksamkeit benötigt",
-      "line2": "Derzeit sind Demozugangsdaten eingestellt, Sie sollten LNUrl, btcaddress und orderwebhook in der Datei config/setup.json ändern. Wenn Sie nur die Vorlage demonstrieren möchten, sollte alles funktionieren, Bestellungen des Shops werden gesendet an",
-      "line3": "einen offenen Discord-Kanal",
-      "line4": "und Gelder werden an eine Prism-Wallet für Mitwirkende gesendet.",
-      "line5": "Sie können auch einen Blick werfen auf",
-      "line6": "die Checkliste",
-      "line7": "das sind Dinge, die Sie noch markieren / anpassen sollten, bevor Sie in Produktion gehen.",
-      "line8": "Sie können die aktuelle WIP lokale Admin-Oberfläche einsehen",
-      "adminPanel": "Admin-Panel",
-      "bitcoinWebstackTitle": "Sovereign Space",
-      "proofOfWorkPudding": "Willkommen in unserer digitalen Ecke erkunden Sie Inhalte und Produkte",
-      "buildBitcoinNostrDescription": "Bauen Sie Bitcoin & Nostr Ökosystem-Unternehmen und nutzen Sie den besten Weg, um Bitcoin zu farmen und Sats zu stapeln! Bereitstellung von Waren, Dienstleistungen und Lösungen für die Bitcoin-Adoption und Integration.",
-      "viewProjectsButton": "Shop ansehen",
-      "getStartedLink": "Beginnen Sie mit dem Lesen"
+      "line1": "Demo-Zugangsdaten erkannt!",
+    "line2": "Ändern Sie LNaddress, btcaddress und orderwebhook in der ",
+    "line3": "einen offenen Discord-Kanal",
+    "line4": "und Gelder werden an eine Prism-Wallet für Mitwirkende gesendet.",
+    "line5": "Sie können auch einen Blick werfen auf",
+    "line6": "die Checkliste",
+    "line7": "das sind Dinge, die Sie noch kennzeichnen / anpassen sollten, bevor Sie in Produktion gehen.",
+    "line8": "Sie können die aktuelle WIP lokale Admin-Oberfläche einsehen",
+    "adminPanel": "Admin-Panel",
+    "bitcoinWebstackTitle": "Sovereign Space",
+    "proofOfWorkPudding": "Willkommen in unserer digitalen Ecke erkunden Sie Inhalte und Produkte",
+    "buildBitcoinNostrDescription": "Bauen Sie Bitcoin & Nostr Ökosystem-Unternehmen und nutzen Sie den besten Weg, um Bitcoin zu farmen und Sats zu stapeln! Bereitstellung von Waren, Dienstleistungen und Lösungen für die Bitcoin-Adoption und Integration.",
+    "viewProjectsButton": "Shop ansehen",
+    "getStartedLink": "Beginnen Sie mit dem Lesen"
     },
     "es": {
-      "line1": "Atención necesaria",
-      "line2": "Actualmente se han configurado credenciales de demostración, debe cambiar el LNUrl, btcaddress y orderwebhook en el archivo config/setup.json. si solo desea demostrar la plantilla, todo debería funcionar, los pedidos de la tienda se envían a",
-      "line3": "un canal abierto de discord",
-      "line4": "y los fondos se envían a una billetera prism para los colaboradores.",
-      "line5": "También puedes echar un vistazo a",
-      "line6": "la lista de verificación",
-      "line7": "estas son cosas que aún deberías personalizar antes de poner en producción.",
-      "line8": "puedes ver la UI de administración local WIP actual",
-      "adminPanel": "Panel de Administración",
-      "bitcoinWebstackTitle": "Espacio Soberano",
-      "proofOfWorkPudding": "Bienvenido a nuestro rincón digital, explora contenido y productos",
-      "buildBitcoinNostrDescription": "Construye negocios del ecosistema Bitcoin & Nostr y utiliza la mejor manera de farmear bitcoin y apilar sats! Ofreciendo bienes, servicios y soluciones para la adopción e integración de bitcoin.",
-      "viewProjectsButton": "Ver Tienda",
-      "getStartedLink": "Comenzar a leer"
+      "line1": "¡Credenciales de demostración detectadas!",
+    "line2": "Cambia LNaddress, btcaddress y orderwebhook en el archivo ",
+    "line3": "un canal abierto de Discord",
+    "line4": "y los fondos se envían a una billetera Prism para colaboradores.",
+    "line5": "También puedes echar un vistazo a",
+    "line6": "la lista de verificación",
+    "line7": "estas son cosas que todavía deberías personalizar antes de poner en producción.",
+    "line8": "puedes ver la UI de administración local WIP actual",
+    "adminPanel": "Panel de Administración",
+    "bitcoinWebstackTitle": "Espacio Soberano",
+    "proofOfWorkPudding": "Bienvenido a nuestro rincón digital, explora contenido y productos",
+    "buildBitcoinNostrDescription": "Construye negocios del ecosistema Bitcoin & Nostr y utiliza la mejor manera de farmear bitcoin y apilar sats! Ofreciendo bienes, servicios y soluciones para la adopción e integración de bitcoin.",
+    "viewProjectsButton": "Ver Tienda",
+    "getStartedLink": "Comenzar a leer"
     },
     "en": {
-    "line1": "Attention needed",
-    "line2": "Currently demo credentials are set, you should change the LNUrl, btcaddress and orderwebhook in the config/setup.json file. if you just want to demo the template everything should work orders of the shop are send to",
+      "line1": "Demo Crendentials Detected!",
+    "line2": "Change the LNaddress, btcaddress and orderwebhook in the ",
     "line3": "an open discord chanel",
     "line4": "and funds are send to a prism wallet for contributors.",
     "line5": "You can also have a look at",
@@ -146,36 +144,36 @@ import data from "~/config/setup";
     "getStartedLink": "Start Reading "
   },
     "fr": {
-      "line1": "Attention nécessaire",
-      "line2": "Actuellement, les identifiants de démo sont définis, vous devriez changer le LNUrl, btcaddress et orderwebhook dans le fichier config/setup.json. si vous voulez juste démontrer le modèle, tout devrait fonctionner, les commandes du magasin sont envoyées à",
-      "line3": "un canal discord ouvert",
-      "line4": "et les fonds sont envoyés à un portefeuille prism pour les contributeurs.",
-      "line5": "Vous pouvez également jeter un œil à",
-      "line6": "la liste de contrôle",
-      "line7": "ce sont des choses que vous devriez encore personnaliser avant de mettre en production.",
-      "line8": "vous pouvez consulter l'interface administrateur locale WIP actuelle",
-    "adminPanel": "Panneau d'Administration",
-      "bitcoinWebstackTitle": "Espace Souverain",
-      "proofOfWorkPudding": "Bienvenue dans notre coin numérique explorez le contenu et les produits",
-      "buildBitcoinNostrDescription": "Construisez des entreprises de l'écosystème Bitcoin & Nostr et utilisez la meilleure façon de farmer des bitcoins et d'empiler des sats ! Fournissant des biens, des services et des solutions pour l'adoption et l'intégration du bitcoin.",
-      "viewProjectsButton": "Voir la Boutique",
-      "getStartedLink": "Commencer à lire"
+      "line1": "Identifiants de démo détectés !",
+  "line2": "Changez LNaddress, btcaddress et orderwebhook dans le fichier ",
+  "line3": "un canal Discord ouvert",
+  "line4": "et les fonds sont envoyés à un portefeuille Prism pour les contributeurs.",
+  "line5": "Vous pouvez également jeter un œil à",
+  "line6": "la liste de contrôle",
+  "line7": "ce sont des choses que vous devriez encore personnaliser avant de mettre en production.",
+  "line8": "vous pouvez consulter l'interface administrateur locale WIP actuelle",
+  "adminPanel": "Panneau d'Admin",
+  "bitcoinWebstackTitle": "Espace Souverain",
+  "proofOfWorkPudding": "Bienvenue dans notre coin numérique, explorez le contenu et les produits",
+  "buildBitcoinNostrDescription": "Construisez des entreprises de l'écosystème Bitcoin & Nostr et utilisez la meilleure façon de farmer des bitcoins et d'empiler des sats! Fournissant des biens, des services et des solutions pour l'adoption et l'intégration du bitcoin.",
+  "viewProjectsButton": "Voir la Boutique",
+  "getStartedLink": "Commencer à lire"
     },
     "nl": {
-      "line1": "Aandacht nodig",
-      "line2": "Op dit moment zijn demo-gegevens ingesteld, u moet de LNUrl, btcaddress en orderwebhook wijzigen in het config/setup.json-bestand. als u alleen de sjabloon wilt demonstreren, zou alles moeten werken, bestellingen van de winkel worden verzonden naar",
-      "line3": "een open discord-kanaal",
-      "line4": "en fondsen worden verzonden naar een prism portemonnee voor bijdragers.",
-      "line5": "Je kunt ook kijken naar",
-      "line6": "de checklist",
-      "line7": "dit zijn dingen die je nog moet merken / aanpassen voordat je in productie gaat.",
-      "line8": "u kunt de huidige WIP lokale beheerdersinterface bekijken",
-    "adminPanel": "Admin Paneel",
-      "bitcoinWebstackTitle": "Soevereine Ruimte",
-      "proofOfWorkPudding": "Welkom in onze digitale hoek, verken inhoud en producten",
-      "buildBitcoinNostrDescription": "Bouw Bitcoin & Nostr Ecosysteem Bedrijven en gebruik de beste manier om bitcoin te farmen en sats te stapelen! Het leveren van goederen, diensten en oplossingen voor bitcoin adoptie en integratie.",
-      "viewProjectsButton": "Bekijk Winkel",
-      "getStartedLink": "Begin met lezen"
+      "line1": "Demo-credentials gedetecteerd!",
+  "line2": "Wijzig LNaddress, btcaddress en orderwebhook in het ",
+  "line3": "een open Discord-kanaal",
+  "line4": "en fondsen worden verzonden naar een Prism-portemonnee voor bijdragers.",
+  "line5": "Je kunt ook kijken naar",
+  "line6": "de checklist",
+  "line7": "dit zijn dingen die je nog moet brandmerken / aanpassen voordat je in productie gaat.",
+  "line8": "u kunt de huidige WIP lokale admin UI bekijken",
+  "adminPanel": "Admin Paneel",
+  "bitcoinWebstackTitle": "Soevereine Ruimte",
+  "proofOfWorkPudding": "Welkom in onze digitale hoek, verken inhoud en producten",
+  "buildBitcoinNostrDescription": "Bouw Bitcoin & Nostr Ecosysteem Bedrijven en gebruik de beste manier om bitcoin te farmen en sats te stapelen! Het leveren van goederen, diensten en oplossingen voor bitcoin adoptie en integratie.",
+  "viewProjectsButton": "Bekijk Winkel",
+  "getStartedLink": "Begin met lezen"
     }
   }
   

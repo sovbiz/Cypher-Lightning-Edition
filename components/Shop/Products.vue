@@ -48,7 +48,7 @@ const btcprice = await $fetch('https://app.yieldmonitor.io/api/v2/symbol/ym/3391
         "Instock": "På lager"
       },
       "de": {
-        "Addtocart": "In den Warenkorb legen",
+        "Addtocart": "In den Warenkorb",
         "Nostock": "Ausverkauft",
         "Lastitems": "Letzte Stücke",
         "Instock": "Auf Lager"
@@ -72,7 +72,7 @@ const btcprice = await $fetch('https://app.yieldmonitor.io/api/v2/symbol/ym/3391
         "Instock": "Disponible"
       },
       "nl": {
-        "Addtocart": "Voeg toe aan winkelkar",
+        "Addtocart": "winkelkar toevoegen",
         "Nostock": "Uitverkocht",
         "Lastitems": "Laatste stuks",
         "Instock": "In voorraad"
@@ -81,7 +81,7 @@ const btcprice = await $fetch('https://app.yieldmonitor.io/api/v2/symbol/ym/3391
     </i18n>
 <template>
     <div class="bg-colorBgLight dark:bg-colorBgDark">
-      <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+      <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-2">
   
         <div class="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
           <div v-for="product in products" :key="product.id">

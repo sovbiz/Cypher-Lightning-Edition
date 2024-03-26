@@ -73,7 +73,7 @@ onMounted(() => {
 
           <span
             v-if="!data.logo"
-            class="m-2 ml-4 text-2xl font-bold dark:text-white"
+            class="m-2 ml-4 text-2xl font-black dark:text-white"
             >{{ data.textlogo }}</span
           >
         </NuxtLink>
