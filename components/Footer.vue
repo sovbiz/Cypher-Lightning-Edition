@@ -26,6 +26,12 @@ const currentDate = new Date();
 
           />
 
+          <span
+            v-if="!data.logo"
+            class="mt-1.5 ml-4 text-2xl font-bold dark:text-white"
+            >{{ data.textlogo }}</span
+          >
+
           <!-- <p class="text-sm leading-6 text-gray-600 dark:text-white my-3">Nostr & Bitcoin Builders</p> -->
 
           <SettingsSocials class="mx-auto pt-3" />

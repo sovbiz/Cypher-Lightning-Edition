@@ -1,5 +1,5 @@
 ---
-title: "Cypher - Sovereign Webstack Building Space"
+title: "Cypher - Build Bitcoin Only Businesses"
 layout: default
 description: "This is a simple paywall post that currently only accepts Alby, it also does not set any global payment variables, you refresh, you lose access. Pretty brutal implementation also easily circumvented if you are a wizard."
 featured: true

@@ -1,6 +1,6 @@
 ---
 _draft: true
-title: "Cypher - Sovereign Webstack Building Space"
+title: "Cypher - Build Bitcoin Only Businesses"
 layout: default
 description: "This is an example of a Draft Post that will not be shown in the feeds"
 featured: true

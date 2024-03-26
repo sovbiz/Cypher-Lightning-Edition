@@ -1,5 +1,5 @@
 ---
-title: "Cypher - Sovereign Webstack Building Space"
+title: "Cypher - Build Bitcoin Only Businesses"
 layout: default
 description: "This is a simple front matter markdown post example without to much SEO compromise."
 featured: true

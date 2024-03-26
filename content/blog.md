@@ -1,5 +1,5 @@
 ---
-title: 'Cypher - Sovereign Webstack Building Space'
+title: 'Cypher - Build Bitcoin Only Businesses'
 layout: default
 description: 'Building Bitcoin, Lightning & Nostr PWA frameworks to build faster & better.'
 
