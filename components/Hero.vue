@@ -14,7 +14,7 @@ import data from "~/config/setup";
 
 
 
-    <div class="rounded-md bg-yellow-50 p-4 max-w-3xl mx-auto" v-if="data.lnurl =='cypherspace@getalby.com' || data.btcadress =='bc1q5j9h5dfr6gctjc0tl9gaz02f0p0qs7ecdlcat8' || data.orderwebhook =='https://discord.com/api/webhooks/1210994387660705923/ndfQLtY2aEXIV7Cjui9Hna3_dXEN2m_IjRTLr8M-H0OQIAKZ9N8VqicoeAz-GB1kZaCG'">
+    <div class="rounded-md bg-yellow-50 p-4 max-w-3xl mx-auto border-2 border-black dark:border-white" v-if="data.lnurl =='cypherspace@getalby.com' || data.btcadress =='bc1q5j9h5dfr6gctjc0tl9gaz02f0p0qs7ecdlcat8' || data.orderwebhook =='https://discord.com/api/webhooks/1210994387660705923/ndfQLtY2aEXIV7Cjui9Hna3_dXEN2m_IjRTLr8M-H0OQIAKZ9N8VqicoeAz-GB1kZaCG'">
     <div class="flex">
       <div class="flex-shrink-0">
         <ExclamationTriangleIcon class="h-5 w-5 text-yellow-400" aria-hidden="true" />
