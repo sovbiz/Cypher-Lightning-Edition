@@ -124,13 +124,12 @@
                 <span class="sr-only">{{ data.name }}</span>
 
                 <img
-                :class="[data.logodark ? 'block dark:hidden h-12' : '', '']"
+                class="block dark:hidden h-12"
                 :src="'/project/' + data.logoimage"
                 :alt="data.name"
 
               />
               <img
-                v-if="data.logodark"
                 class="hidden dark:block h-12"
                 :src="'/project/' + data.logodarkimage"
                 :alt="data.name"
