@@ -454,7 +454,7 @@ const btcprice = await $fetch('https://app.yieldmonitor.io/api/v2/symbol/ym/3391
     "Allitems": "Tous les articles"
   },
   "nl": {
-    "Addtocart": "Toevoegen aan winkelwagen",
+    "Addtocart": "In de winkelwagen",
     "Nostock": "Uitverkocht",
     "Lastitems": "Laatste stuks",
     "Instock": "Op voorraad",
