@@ -1,7 +1,7 @@
 ---
 title: 'Cypher - Build Bitcoin Only Businesses'
 layout: default
-description: 'Building Bitcoin, Lightning & Nostr PWA frameworks to build faster & better.'
+description: 'Build your Bitcoin blog/webshop for free with donation and checkout tools.'
 
 image:
   src: 'https://dev.cypher.space/stock/nogood/Placeholder.gif'
