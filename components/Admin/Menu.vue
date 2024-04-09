@@ -32,21 +32,20 @@
               </svg>
             </button>
           </div>
-          <div class="flex-1 h-0 pt-5 pb-4 overflow-y-auto">
+          <div class="flex-1 h-0 pt-3 pb-4 overflow-y-auto">
             <div>
-              <NuxtLink :to="localePath('/')" class="flex ml-4">
+              <NuxtLink :to="localePath('/')" class="flex ml-6">
                 <span class="sr-only">{{ data.name }}</span>
 
                 <img
-                :class="[data.logodark ? 'block dark:hidden h-12' : '', '']"
-                :src="'/project/' + data.logoimage"
+                class="block dark:hidden h-12"
+                src="/project/NG_Logo_CypherSpace.gif"
                 :alt="data.name"
 
               />
               <img
-                v-if="data.logodark"
                 class="hidden dark:block h-12"
-                :src="'/project/' + data.logodarkimage"
+                src="/project/NG_Logo_CypherSpace_Dark.gif"
                 :alt="data.name"
 
               />
@@ -108,7 +107,7 @@
         <div
           class="flex flex-col h-0 flex-1 bg-colorBgLight dark:bg-colorBgDark"
         >
-          <div class="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
+          <div class="flex-1 flex flex-col pt-3 pb-4 overflow-y-auto">
             <div>
               <!-- <NuxtLink :to="localePath('/')" class="flex w-full text-center">
   
@@ -120,21 +119,23 @@
               >
             </NuxtLink> -->
 
-              <NuxtLink :to="localePath('/')" class="flex ml-4">
+              <NuxtLink :to="localePath('/')" class="flex ml-6">
                 <span class="sr-only">{{ data.name }}</span>
+
 
                 <img
                 class="block dark:hidden h-12"
-                :src="'/project/' + data.logoimage"
+                src="/project/NG_Logo_CypherSpace.gif"
                 :alt="data.name"
 
               />
               <img
                 class="hidden dark:block h-12"
-                :src="'/project/' + data.logodarkimage"
+                src="/project/NG_Logo_CypherSpace_Dark.gif"
                 :alt="data.name"
 
               />
+
               </NuxtLink>
             </div>
             <nav
@@ -185,42 +186,42 @@ Your browser does not support the video tag.
     </div>
 
     <div
-      class="fixed bg-colorHeaderBgLight dark:bg-colorHeaderBgDark w-full z-30 flex shadow-lg dark:shadow-gray-100/10"
+      class="fixed justify-between bg-colorHeaderBgLight dark:bg-colorHeaderBgDark w-full z-30 flex shadow-lg dark:shadow-gray-100/10"
     >
       <div
-        class="basis-1/2 flex items-center justify-between px-4 py-5 sm:px-6 sm:py-4 md:justify-start md:space-x-10"
+        class=" flex items-center  px-6   md:justify-start md:space-x-10"
       >
         <div>
           <NuxtLink :to="localePath('/')" class="flex">
             <span class="sr-only">{{ data.name }}</span>
 
+
+
+
             <img
-                :class="[data.logodark ? 'block dark:hidden h-12' : '', '']"
-                :src="'/project/' + data.logoimage"
+                class="block dark:hidden h-12"
+                src="/project/NG_Logo_CypherSpace.gif"
                 :alt="data.name"
 
               />
               <img
-                v-if="data.logodark"
                 class="hidden dark:block h-12"
-                :src="'/project/' + data.logodarkimage"
+                src="/project/NG_Logo_CypherSpace_Dark.gif"
                 :alt="data.name"
 
               />
 
-            <span
-              v-if="!data.logo"
-              class="mt-1.5 ml-4 text-xl font-bold dark:text-white"
-              >{{ data.textlogo }}</span
-            >
+
+
+
           </NuxtLink>
         </div>
       </div>
 
-      <div class="flex my-2 mr-2 lg:hidden basis-1/2 flex-row-reverse">
+      <div class=" my-2 mr-2">
         <button
           @click="togglemenu"
-          class="dark:bg-colorBgLight bg-colorBgDark rounded w-12 h-10 mt-3 mr-3"
+          class="dark:bg-colorBgLight bg-colorBgDark rounded w-12 h-10 my-2 mr-3"
         >
           <span class="sr-only">Open sidebar</span>
           <!-- Heroicon name: menu -->

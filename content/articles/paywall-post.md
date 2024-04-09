@@ -12,7 +12,7 @@ categorytitle: "Payment"
 authorname: "Cypher Space"
 authorrole: "Bitcoin Mass Adoption"
 authorhref: "https://coracle.social/npub1nkmta4dmsa7pj25762qxa6yqxvrhzn7ug0gz5frp9g7p3jdscnhsu049fn"
-authorimageUrl: "https://imgproxy.coracle.social/x/s:280:280/aHR0cHM6Ly9wZnAubm9zdHIuYnVpbGQvNmQ1NzA1MDNjMGI3NWJlNzU5NDYxYWQ0ODUwMzk4YTMzOGZkNTFkOGU2MzEzMTRjODczMWMwZDNlMWI0ZGViNy5wbmc="
+authorimageUrl: "https://cypher.space/avatar/NG_Cypher.gif"
 
 image:
   src: 'https://cypher.space/project/blog-img/paywall-post.jpg'

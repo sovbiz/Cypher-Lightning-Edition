@@ -22,5 +22,5 @@ head:
 ---
 
 
-:ShopProducts
+:ShopCategory
 

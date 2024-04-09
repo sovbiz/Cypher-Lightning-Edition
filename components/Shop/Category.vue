@@ -1,0 +1,470 @@
+<template>
+    <div class="bg-colorBgLight dark:bg-colorBgDark">
+
+      <div>
+        <!-- Mobile filter dialog -->
+        <TransitionRoot as="template" :show="mobileFiltersOpen">
+          <Dialog as="div" class="relative z-50 lg:hidden" @close="mobileFiltersOpen = false">
+            <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
+              <div class="fixed inset-0 bg-black bg-opacity-25" />
+            </TransitionChild>
+  
+            <div class="fixed inset-0 z-40 flex">
+              <TransitionChild as="template" enter="transition ease-in-out duration-300 transform" enter-from="translate-x-full" enter-to="translate-x-0" leave="transition ease-in-out duration-300 transform" leave-from="translate-x-0" leave-to="translate-x-full">
+                <DialogPanel class="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-colorBgLight dark:bg-colorBgDark py-4 pb-6 shadow-xl">
+                  <div class="flex items-center justify-between px-4">
+                    <h2 class="text-lg font-medium text-gray-900 dark:text-white">{{ t("Filters") }}</h2>
+                    <button type="button" class="relative -mr-2 flex h-10 w-10 items-center justify-center p-2 text-gray-400 dark:text-white hover:text-gray-500 dark:text-white" @click="mobileFiltersOpen = false">
+                      <span class="absolute -inset-0.5" />
+                      <span class="sr-only">Close menu</span>
+                      <XMarkIcon class="h-6 w-6" aria-hidden="true" />
+                    </button>
+                  </div>
+  
+                  <!-- Filters -->
+                  <form class="mt-4">
+
+                    <div class="border-t border-gray-200 pb-4 pt-4">
+              <fieldset>
+                <legend class="w-full px-2">
+                  <!-- Expand/collapse section button -->
+                  <button type="button" class="flex w-full items-center justify-between p-2 text-gray-400 hover:text-gray-500" aria-controls="filter-section-0" aria-expanded="false">
+                    <span class="text-sm font-medium text-gray-900 dark:text-white">{{ t("Inventory") }}</span>
+                    <span class="ml-6 flex h-7 items-center">
+                      <!--
+                        Expand/collapse icon, toggle classes based on section open state.
+
+                        Open: "-rotate-180", Closed: "rotate-0"
+                      -->
+
+                    </span>
+                  </button>
+                </legend>
+                <div class="px-4 pb-2 pt-4" id="filter-section-0">
+                  <div class="space-y-6">
+                    <div class="flex items-center">
+                      <input id="color-0-mobile" name="color[]" value="all" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" checked>
+                      <label for="color-0-mobile" class="ml-3 text-sm text-gray-500">{{ t("Allitems") }}</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input id="color-1-mobile" name="color[]" value="in" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                      <label for="color-1-mobile" class="ml-3 text-sm text-gray-500">{{ t("Instock") }}</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input id="color-2-mobile" name="color[]" value="last" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                      <label for="color-2-mobile" class="ml-3 text-sm text-gray-500">{{ t("Lastitems") }}</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input id="color-3-mobile" name="color[]" value="out" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                      <label for="color-3-mobile" class="ml-3 text-sm text-gray-500">{{ t("Nostock") }}</label>
+                    </div>
+
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+
+
+                    
+                    <Disclosure as="div" v-for="section in filters" :key="section.name" class="border-t border-gray-200 pb-4 pt-4" v-slot="{ open }">
+                      <fieldset>
+                        <legend class="w-full px-2">
+                          <DisclosureButton class="flex w-full items-center justify-between p-2 text-gray-400 dark:text-white hover:text-gray-500 dark:text-white">
+                            <span class="text-sm font-medium text-gray-900 dark:text-white">{{ section.name }}</span>
+                            <span class="ml-6 flex h-7 items-center">
+                              <ChevronDownIcon :class="[open ? '-rotate-180' : 'rotate-0', 'h-5 w-5 transform']" aria-hidden="true" />
+                            </span>
+                          </DisclosureButton>
+                        </legend>
+                        <DisclosurePanel class="px-4 pb-2 pt-4">
+
+
+
+                            
+                          <div class="space-y-6">
+                            <div v-for="(option, optionIdx) in section.options" :key="option.value" class="flex items-center">
+                              <input :id="`${section.id}-${optionIdx}-mobile`" :name="`${section.id}[]`" :value="option.value" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                              <label :for="`${section.id}-${optionIdx}-mobile`" class="ml-3 text-sm text-gray-500 dark:text-white">{{ option.label }}</label>
+                            </div>
+                          </div>
+                        </DisclosurePanel>
+                      </fieldset>
+                    </Disclosure>
+                  </form>
+                </DialogPanel>
+              </TransitionChild>
+            </div>
+          </Dialog>
+        </TransitionRoot>
+  
+
+        
+  
+        <main class="mx-auto max-w-2xl px-4 lg:max-w-7xl lg:px-8">
+          <div class="border-b border-gray-200 pb-10 pt-24">
+            <h1 class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">{{ t("title") }}</h1>
+            <p class="mt-4 text-base text-gray-500 dark:text-white">{{ t("subtitle") }}</p>
+          </div>
+  
+          <div class="pb-24 pt-12 lg:grid lg:grid-cols-3 lg:gap-x-8 xl:grid-cols-4">
+            <aside>
+              <h2 class="sr-only">Filters</h2>
+  
+              <button type="button" class="inline-flex items-center lg:hidden" @click="mobileFiltersOpen = true">
+                <span class="text-sm font-medium text-gray-700 dark:text-white">{{ t("Filters") }}</span>
+                <PlusIcon class="ml-1 h-5 w-5 flex-shrink-0 text-gray-400 dark:text-white" aria-hidden="true" />
+              </button>
+  
+              <div class="hidden lg:block">
+                <form class="space-y-10 divide-y divide-gray-200">
+
+
+                    <div>
+                <fieldset>
+                  <legend class="block text-sm font-medium text-gray-900 dark:text-white">{{ t("Inventory") }}</legend>
+                  <div class="space-y-3 pt-6">
+                    <div class="flex items-center">
+                      <input id="color-0" name="color[]" value="all" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                      <label for="color-0" class="ml-3 text-sm text-gray-600 dark:text-white">{{ t("Allitems") }}</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input id="color-1" name="color[]" value="in" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                      <label for="color-1" class="ml-3 text-sm text-gray-600 dark:text-white">{{ t("Instock") }}</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input id="color-2" name="color[]" value="last" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                      <label for="color-2" class="ml-3 text-sm text-gray-600 dark:text-white">{{ t("Lastitems") }}</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input id="color-3" name="color[]" value="out" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                      <label for="color-3" class="ml-3 text-sm text-gray-600 dark:text-white">{{ t("Nostock") }}</label>
+                    </div>
+
+                  </div>
+                </fieldset>
+              </div>
+
+
+                    
+                  <div v-for="(section, sectionIdx) in filters" :key="section.name" :class="sectionIdx === 0 ? null : 'pt-10'">
+                    <fieldset>
+                      <legend class="block text-sm font-medium text-gray-900 dark:text-white">{{ section.name }}</legend>
+                      <div class="space-y-3 pt-6">
+                        <div v-for="(option, optionIdx) in section.options" :key="option.value" class="flex items-center">
+                          <input :id="`${section.id}-${optionIdx}`" :name="`${section.id}[]`" :value="option.value" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                          <label :for="`${section.id}-${optionIdx}`" class="ml-3 text-sm text-gray-600 dark:text-white">{{ option.label }}</label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </form>
+              </div>
+            </aside>
+  
+            <section aria-labelledby="product-heading" class="mt-6 lg:col-span-2 lg:mt-0 xl:col-span-3">
+              <h2 id="product-heading" class="sr-only">Products</h2>
+  
+              <div class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:gap-x-8 xl:grid-cols-3">
+
+                <div v-for="product in products" :key="product.id">
+            <NuxtLink :to="localePath('/product/' + product.id )">
+
+            <div class="relative">
+              <div class="relative h-72 w-full overflow-hidden rounded-lg">
+                <img :src="product.images[0].src" :alt="product.images[0].src" class="h-full w-full object-cover object-center" />
+              </div>
+              <div class="relative mt-4">
+                <h3 class="text-sm font-medium text-gray-900 dark:text-white">{{ product.name }}</h3>
+                <p class="mt-1 text-sm text-gray-500">{{ product.color }}</p>
+              </div>
+              <!-- 
+              <div class="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
+                <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50" />
+
+                <p v-if="filtersList == 'Bitcoin'" class="relative text-lg font-semibold text-white">{{ (product.price.usd * btcprices).toFixed(8) }} <BitcoinIcon  class="h-6 w-6 inline" aria-hidden="true" /></p>
+
+                <p v-if="filtersList == 'Satoshi'" class="relative text-lg font-semibold text-white">{{ (product.price.usd * btcprices * 100000000).toFixed(0) }} <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" /></p>
+
+                <p v-if="filtersList == 'Dollar Fiat'" class="relative text-lg font-semibold text-white">{{ product.price.usd  }} $</p>
+
+
+              </div>
+              -->
+            </div>
+
+            <div class="mt-4 flex justify-between">
+              <div>
+                <h3 class="text-lg font-extrabold text-gray-700 line-clamp-1 dark:text-white">
+                  {{ product.title }}
+                </h3>
+                <p class="mt-1 text-sm text-gray-500 dark:text-white line-clamp-2  h-10">
+                  {{ product.description }}
+                </p>
+              </div>
+
+            </div>
+
+
+
+
+
+
+
+
+            <div class="basis-full flex flex-col ">
+              
+              <div class="text-lg font-medium text-gray-900 dark:text-white w-full basis-full">
+
+
+
+                <p v-if="filtersList == 'Bitcoin'" class="float-left dark:text-white font-semibold text-black">{{ (product.price.usd * btcprices).toFixed(8) }} <BitcoinIcon  class="h-6 w-6 inline" aria-hidden="true" /></p>
+
+                <p v-if="filtersList == 'Satoshi'" class="float-left dark:text-white font-semibold text-black">{{ (product.price.usd * btcprices * 100000000).toFixed(0) }} <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" /></p>
+
+                <p v-if="filtersList == 'Dollar Fiat'" class="float-left dark:text-white font-semibold text-black">{{ product.price.usd  }} $</p>
+
+
+
+
+
+
+
+
+                <!-- <span class="text-right float-right dark:text-white" v-if="$store.state.currency.currency == 'eur' " > {{ p.price.eur }} €</span>
+
+              <span class="text-right float-right dark:text-white" v-if="$store.state.currency.currency == 'usd' "> {{ p.price.usd }} $</span> -->
+              </div>
+
+
+
+
+          <div class="w-full dark:text-white basis-full"> 
+            
+            
+            <span v-if="product.stock == 'low'" class="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span class="flex w-2.5 h-2.5 bg-orange-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Lastitems") }}</span>
+
+            <span v-else-if="product.stock == 'out'"  class="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span class="flex w-2.5 h-2.5 bg-red-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Nostock") }}</span>
+
+            <span v-else class="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span class="flex w-2.5 h-2.5 bg-green-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Instock") }}</span>
+
+          </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          </NuxtLink>
+
+          <button
+            class="mt-2 w-full snipcart-add-item hover:shadow-lg font-semibold py-2 px-4 rounded shadow max-h-10 text-black dark:text-white dark:hover:text-black hover:text-white
+            
+                            bg-white hover:bg-black
+                dark:bg-gray-700 dark:hover:bg-white
+            "
+            @click="addToCart({ id: product.id, amount: 1, image: product.images[0].src, title: product.title, price: product.price.usd })"
+            :disabled="product.stock == 'out'"
+            >
+          
+          <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              class="w-6 h-6 fill-gray-400 inline mr-4 "
+            >
+              <path fill="none" d="M0 0h24v24H0z" />
+              <path
+                d="M4 16V4H2V2h3a1 1 0 0 1 1 1v12h12.438l2-8H8V5h13.72a1 1 0 0 1 .97 1.243l-2.5 10a1 1 0 0 1-.97.757H5a1 1 0 0 1-1-1zm2 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm12 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"
+              />
+            </svg>
+          
+          
+          {{ t("Addtocart") }}
+
+            
+          </button>
+
+
+          </div>
+                
+              </div>
+            </section>
+          </div>
+        </main>
+  
+
+      </div>
+    </div>
+  </template>
+  
+  <script setup>
+  import { ref } from 'vue'
+
+  import data from '~/config/shop'
+
+const products = data
+
+
+
+import { useFiltersStore } from '~/store/currency'
+import { storeToRefs } from 'pinia'
+
+
+import { useProjectStore } from '~/store/shopcart'
+
+
+const cartStore = useProjectStore()
+const { addToCart } = cartStore
+
+
+
+
+
+const inputVal = ref('')
+
+const filtersStore = useFiltersStore()
+const { addValueToFilterList } = filtersStore
+const { filtersList } = storeToRefs(filtersStore)
+
+
+
+
+const btcprice = await $fetch('https://app.yieldmonitor.io/api/v2/symbol/ym/33913')
+
+  const btcprices = 1 / (Number(btcprice.symbols[0].price)).toFixed(2) 
+
+  import { BitcoinIcon, SatoshiV2Icon, NoDollarsIcon } from '@bitcoin-design/bitcoin-icons-vue/filled'
+
+
+  const { t } = useI18n({ useScope: "local" });
+
+
+
+
+  import {
+    Dialog,
+    DialogPanel,
+    Disclosure,
+    DisclosureButton,
+    DisclosurePanel,
+    Popover,
+    PopoverButton,
+    PopoverGroup,
+    PopoverPanel,
+    Tab,
+    TabGroup,
+    TabList,
+    TabPanel,
+    TabPanels,
+    TransitionChild,
+    TransitionRoot,
+  } from '@headlessui/vue'
+  import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+  import { ChevronDownIcon, PlusIcon } from '@heroicons/vue/20/solid'
+  
+
+
+  const filters = [
+
+    {
+      id: 'color',
+      name: 'Color',
+      options: [
+        { value: 'metal', label: 'Metal' },
+        { value: 'rose', label: 'Rose Gold' },
+        { value: 'Silver', label: 'Silver' }
+      ],
+    },
+
+  ]
+
+
+  
+  const mobileMenuOpen = ref(false)
+  const mobileFiltersOpen = ref(false)
+  </script>
+    <i18n lang="json">
+{
+  "da": {
+    "Addtocart": "Tilføj til kurv",
+    "Nostock": "Udsolgt",
+    "Lastitems": "Få på lager",
+    "Instock": "På lager",
+    "Filters": "Filtre",
+    "Inventory": "Lager",
+    "title": "Se alle vores produkter",
+    "subtitle": "Opdag alle vores produkter, der er tilgængelige gennem bitcoin eller lightning-køb!",
+    "Allitems": "Alle varer"
+  },
+  "de": {
+    "Addtocart": "In den Warenkorb",
+    "Nostock": "Ausverkauft",
+    "Lastitems": "Letzte Stücke",
+    "Instock": "Auf Lager",
+    "Filters": "Filter",
+    "Inventory": "Inventar",
+    "title": "Durchsuchen Sie unsere Produkte",
+    "subtitle": "Entdecken Sie alle unsere Produkte, die über Bitcoin oder Lightning-Kauf verfügbar sind!",
+    "Allitems": "Alle Artikel"
+  },
+  "en": {
+    "Addtocart": "Add to cart",
+    "Nostock": "Out of stock",
+    "Lastitems": "Last items",
+    "Instock": "In stock",
+    "Filters": "Filters",
+    "Inventory": "Inventory",
+    "title": "Browse our products",
+    "subtitle": "Discover all our products that are available through bitcoin or lightning purchase!",
+    "Allitems": "All items"
+  },
+  "es": {
+    "Addtocart": "Añadir a la cesta",
+    "Nostock": "Agotado",
+    "Lastitems": "Ultimas piezas",
+    "Instock": "En stock",
+    "Filters": "Filtros",
+    "Inventory": "Inventario",
+    "title": "Explora nuestros productos",
+    "subtitle": "¡Descubre todos nuestros productos disponibles para compra con bitcoin o lightning!",
+    "Allitems": "Todos los artículos"
+  },
+  "fr": {
+    "Addtocart": "Ajouter au panier",
+    "Nostock": "Rupture de stock",
+    "Lastitems": "Dernières pièces",
+    "Instock": "Disponible",
+    "Filters": "Filtres",
+    "Inventory": "Inventaire",
+    "title": "Parcourir nos produits",
+    "subtitle": "Découvrez tous nos produits disponibles à l'achat via bitcoin ou lightning!",
+    "Allitems": "Tous les articles"
+  },
+  "nl": {
+    "Addtocart": "Toevoegen aan winkelwagen",
+    "Nostock": "Uitverkocht",
+    "Lastitems": "Laatste stuks",
+    "Instock": "Op voorraad",
+    "Filters": "Filters",
+    "Inventory": "Voorraad",
+    "title": "Blader door onze producten",
+    "subtitle": "Ontdek al onze producten die beschikbaar zijn voor aankoop via bitcoin of lightning!",
+    "Allitems": "Alle artikelen"
+  }
+}
+
+
+        </i18n>
