@@ -4,7 +4,7 @@ layout: default
 description: 'Building Bitcoin, Lightning & Nostr PWA frameworks to build faster & better.'
 
 image:
-  src: 'https://cypher.space/stock/nogood/Placeholder.gif'
+  src: 'https://dev.cypher.space/stock/nogood/Placeholder.gif'
   alt: 'An image showcasing My Page.'
   width: 1200
   height: 630
