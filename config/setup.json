@@ -1,5 +1,6 @@
 {
   "version": "1.0.1 Beta",
+  "initsetup": true,
   "name":"Cypher.Space",
   "tagline":"Setup a Bitcoin Only Business",
   "contactmail":"",
@@ -10,6 +11,7 @@
   "logodarkimage":"NG_Logo_CypherSpace_Dark.gif",
   "multilang":true,
   "defaultlanguage":"en",
+  "adminlanguage":"en",
   "blog":true,
   "shop":true,
   "openfinance":false,

@@ -2,7 +2,8 @@
     <div
       class="h-screen flex overflow-hidden bg-colorBgLight dark:bg-colorBgDark dark:text-white"
     >
-  
+    <AdminSetup v-if="!data.initsetup"/>
+
       <AdminMenu/>
   
       <div class="flex flex-col w-0 flex-1 overflow-hidden lg:mt-0">
@@ -22,5 +23,6 @@
   </template>
   
   <script setup>
+import data from "~/config/setup";
 
   </script>

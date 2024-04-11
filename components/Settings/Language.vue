@@ -39,7 +39,7 @@ const availableLocales = computed(() => {
     </button>
   </div>
   <TransitionRoot appear :show="isOpen" as="template">
-    <Dialog as="div" @close="closeModal" class="relative z-50">
+    <Dialog as="div" @close="closeModal" class="relative" style="z-index: 9999999;">
       <TransitionChild
         as="template"
         enter="duration-300 ease-out"
