@@ -810,7 +810,7 @@ const { t } = useI18n({ useScope: "local" });
     "Addition": "Lejlighed, suite, mv.",
     "City": "By",
     "Postcode": "Postnummer",
-    "StateProvice": "Stat / Provins",
+    "StateProvince": "Stat / Provins",
     "Country": "Land"
   },
   "de": {
@@ -830,7 +830,7 @@ const { t } = useI18n({ useScope: "local" });
     "Addition": "Wohnung, Suite, usw.",
     "City": "Stadt",
     "Postcode": "Postleitzahl",
-    "StateProvice": "Bundesland / Provinz",
+    "StateProvince": "Bundesland / Provinz",
     "Country": "Land"
   },
   "en": {
@@ -850,7 +850,7 @@ const { t } = useI18n({ useScope: "local" });
     "Addition": "Apartment, suite, etc.",
     "City": "City",
     "Postcode": "Postal code",
-    "StateProvice": "State / Province",
+    "StateProvince": "State / Province",
     "Country": "Country"
   },
   "es": {
@@ -870,7 +870,7 @@ const { t } = useI18n({ useScope: "local" });
     "Addition": "Apartamento, suite, etc.",
     "City": "Ciudad",
     "Postcode": "Código Postal",
-    "StateProvice": "Estado / Provincia",
+    "StateProvince": "Estado / Provincia",
     "Country": "País"
   },
   "fr": {
@@ -890,7 +890,7 @@ const { t } = useI18n({ useScope: "local" });
     "Addition": "Appartement, etc.",
     "City": "Ville",
     "Postcode": "Code Postal",
-    "StateProvice": "État / Province",
+    "StateProvince": "État / Province",
     "Country": "Pays"
   },
   "nl": {
@@ -910,7 +910,7 @@ const { t } = useI18n({ useScope: "local" });
     "Addition": "Appartement, Bus, etc.",
     "City": "Stad",
     "Postcode": "Postcode",
-    "StateProvice": "Staat / Provincie",
+    "StateProvince": "Staat / Provincie",
     "Country": "Land"
   }
 }
