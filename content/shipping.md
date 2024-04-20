@@ -47,14 +47,14 @@ head:
 
 ## Loss or Damage
 
-- Reporting Issues: If your order is lost or damaged during transit, please contact us immediately at :LegalMail .
+- Reporting Issues: If your order is lost or damaged during transit, please contact us immediately via our [Contact Form](/contact) .
 
 ## Special Instructions
 
-- If you have special shipping requests or instructions, please include them in your order notes or contact us directly at :LegalMail before the shipping date of your order.
+- If you have special shipping requests or instructions, please include them in your order notes or contact us directly via our [Contact Form](/contact) before the shipping date of your order.
 
 ## Contact Us
 
-For questions or concerns about your order or our Shipping Policy, please contact us at :LegalMail . We're here to assist you!
+For questions or concerns about your order or our Shipping Policy, please contact us via our [Contact Form](/contact) . We're here to assist you!
 
 ::

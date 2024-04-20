@@ -62,7 +62,7 @@
                 v-if="filtersList == 'Bitcoin'"
                 class="text-3xl text-gray-900 dark:text-white"
               >
-                {{ (product[0].price.usd * btcprices).toFixed(8) }}
+                {{ (product[0].fiat * btcprices).toFixed(8) }}
                 <BitcoinIcon
                   class="h-12 w-12 inline -mt-2"
                   aria-hidden="true"
@@ -73,7 +73,7 @@
                 v-if="filtersList == 'Satoshi'"
                 class="text-3xl text-gray-900 dark:text-white"
               >
-                {{ (product[0].price.usd * btcprices * 100000000).toFixed(0) }}
+                {{ (product[0].fiat * btcprices * 100000000).toFixed(0) }}
                 <SatoshiV2Icon
                   class="h-12 w-12 inline -mt-2"
                   aria-hidden="true"
@@ -84,7 +84,7 @@
                 v-if="filtersList == 'Dollar Fiat'"
                 class="text-3xl text-gray-900 dark:text-white"
               >
-                {{ product[0].price.usd }} $
+                {{ product[0].fiat }} $
               </p>
             </div>
 
@@ -138,6 +138,10 @@
               </div>
             </div>
 
+
+
+
+
             <div class="mt-6">
               <h3 class="sr-only">Description</h3>
 
@@ -146,6 +150,23 @@
                 v-html="product[0].description"
               />
             </div>
+
+
+            <!-- <div class="mt-6" v-if="product[0].variations">
+              <h3 class="sr-only">Variations</h3>
+
+              <p
+                class="space-y-6 text-base text-gray-700 dark:text-white"
+
+              >Variations: </p>
+
+
+              <div v-for="item in product[0].variations" :key="item">
+                <p class="mt-2 dark:text-white">{{ item }} </p>
+              </div>
+              
+            </div> -->
+
 
             <div class="mt-6">
               <div class="mt-10 flex sm:flex-col1">
@@ -157,7 +178,7 @@
                       amount: 1,
                       image: product[0].images[0].src,
                       title: product[0].title,
-                      price: product[0].price.usd,
+                      price: product[0].fiat,
                     })
                   "
                   :disabled="product[0].stock == 'out'"

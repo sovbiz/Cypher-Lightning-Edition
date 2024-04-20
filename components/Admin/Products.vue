@@ -99,11 +99,11 @@ const { t } = useI18n({ useScope: "local" });
               <div class="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
                 <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50" />
 
-                <p v-if="filtersList == 'Bitcoin'" class="relative text-lg font-semibold text-white">{{ (product.price.usd * btcprices).toFixed(8) }} <BitcoinIcon  class="h-6 w-6 inline" aria-hidden="true" /></p>
+                <p v-if="filtersList == 'Bitcoin'" class="relative text-lg font-semibold text-white">{{ (product.fiat * btcprices).toFixed(8) }} <BitcoinIcon  class="h-6 w-6 inline" aria-hidden="true" /></p>
 
-                <p v-if="filtersList == 'Satoshi'" class="relative text-lg font-semibold text-white">{{ (product.price.usd * btcprices * 100000000).toFixed(0) }} <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" /></p>
+                <p v-if="filtersList == 'Satoshi'" class="relative text-lg font-semibold text-white">{{ (product.fiat * btcprices * 100000000).toFixed(0) }} <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" /></p>
 
-                <p v-if="filtersList == 'Dollar Fiat'" class="relative text-lg font-semibold text-white">{{ product.price.usd  }} $</p>
+                <p v-if="filtersList == 'Dollar Fiat'" class="relative text-lg font-semibold text-white">{{ product.fiat  }} $</p>
 
 
               </div>
@@ -131,7 +131,7 @@ const { t } = useI18n({ useScope: "local" });
                   v-if="filtersList == 'Bitcoin'"
                   class="float-left dark:text-white font-semibold text-black"
                 >
-                  {{ (product.price.usd * btcprices).toFixed(8) }}
+                  {{ (product.fiat * btcprices).toFixed(8) }}
                   <BitcoinIcon class="h-6 w-6 inline" aria-hidden="true" />
                 </p>
 
@@ -139,7 +139,7 @@ const { t } = useI18n({ useScope: "local" });
                   v-if="filtersList == 'Satoshi'"
                   class="float-left dark:text-white font-semibold text-black"
                 >
-                  {{ (product.price.usd * btcprices * 100000000).toFixed(0) }}
+                  {{ (product.fiat * btcprices * 100000000).toFixed(0) }}
                   <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" />
                 </p>
 
@@ -147,12 +147,12 @@ const { t } = useI18n({ useScope: "local" });
                   v-if="filtersList == 'Dollar Fiat'"
                   class="float-left dark:text-white font-semibold text-black"
                 >
-                  {{ product.price.usd }} $
+                  {{ product.fiat }} $
                 </p>
 
                 <!-- <span class="text-right float-right dark:text-white" v-if="$store.state.currency.currency == 'eur' " > {{ p.price.eur }} €</span>
 
-              <span class="text-right float-right dark:text-white" v-if="$store.state.currency.currency == 'usd' "> {{ p.price.usd }} $</span> -->
+              <span class="text-right float-right dark:text-white" v-if="$store.state.currency.currency == 'usd' "> {{ p.fiat }} $</span> -->
               </div>
 
               <div class="w-full dark:text-white basis-full">
@@ -206,7 +206,7 @@ const { t } = useI18n({ useScope: "local" });
                 amount: 1,
                 image: product.images[0].src,
                 title: product.title,
-                price: product.price.usd,
+                price: product.fiat,
               })
             "
             :disabled="product.stock == 'out'"

@@ -1,4 +1,8 @@
 {
+   "adminlanguage":"en",
+   "nostr":"false",
+   "local":"false",
+
     "Headernavigation":{
        "basicmenu":[
         {

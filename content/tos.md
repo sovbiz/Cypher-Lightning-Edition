@@ -82,7 +82,7 @@ head:
 
 ## 12. Contact Information
 
-- For inquiries regarding these Terms, please contact us at :LegalMail.
+- For inquiries regarding these Terms, please contact us via our [Contact Form](/contact).
 
 
 

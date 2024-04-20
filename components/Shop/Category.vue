@@ -182,11 +182,11 @@
               <div class="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
                 <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50" />
 
-                <p v-if="filtersList == 'Bitcoin'" class="relative text-lg font-semibold text-white">{{ (product.price.usd * btcprices).toFixed(8) }} <BitcoinIcon  class="h-6 w-6 inline" aria-hidden="true" /></p>
+                <p v-if="filtersList == 'Bitcoin'" class="relative text-lg font-semibold text-white">{{ (product.fiat * btcprices).toFixed(8) }} <BitcoinIcon  class="h-6 w-6 inline" aria-hidden="true" /></p>
 
-                <p v-if="filtersList == 'Satoshi'" class="relative text-lg font-semibold text-white">{{ (product.price.usd * btcprices * 100000000).toFixed(0) }} <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" /></p>
+                <p v-if="filtersList == 'Satoshi'" class="relative text-lg font-semibold text-white">{{ (product.fiat * btcprices * 100000000).toFixed(0) }} <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" /></p>
 
-                <p v-if="filtersList == 'Dollar Fiat'" class="relative text-lg font-semibold text-white">{{ product.price.usd  }} $</p>
+                <p v-if="filtersList == 'Dollar Fiat'" class="relative text-lg font-semibold text-white">{{ product.fiat  }} $</p>
 
 
               </div>
@@ -218,11 +218,11 @@
 
 
 
-                <p v-if="filtersList == 'Bitcoin'" class="float-left dark:text-white font-semibold text-black">{{ (product.price.usd * btcprices).toFixed(8) }} <BitcoinIcon  class="h-6 w-6 inline" aria-hidden="true" /></p>
+                <p v-if="filtersList == 'Bitcoin'" class="float-left dark:text-white font-semibold text-black">{{ (product.fiat * btcprices).toFixed(8) }} <BitcoinIcon  class="h-6 w-6 inline" aria-hidden="true" /></p>
 
-                <p v-if="filtersList == 'Satoshi'" class="float-left dark:text-white font-semibold text-black">{{ (product.price.usd * btcprices * 100000000).toFixed(0) }} <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" /></p>
+                <p v-if="filtersList == 'Satoshi'" class="float-left dark:text-white font-semibold text-black">{{ (product.fiat * btcprices * 100000000).toFixed(0) }} <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" /></p>
 
-                <p v-if="filtersList == 'Dollar Fiat'" class="float-left dark:text-white font-semibold text-black">{{ product.price.usd  }} $</p>
+                <p v-if="filtersList == 'Dollar Fiat'" class="float-left dark:text-white font-semibold text-black">{{ product.fiat  }} $</p>
 
 
 
@@ -233,7 +233,7 @@
 
                 <!-- <span class="text-right float-right dark:text-white" v-if="$store.state.currency.currency == 'eur' " > {{ p.price.eur }} €</span>
 
-              <span class="text-right float-right dark:text-white" v-if="$store.state.currency.currency == 'usd' "> {{ p.price.usd }} $</span> -->
+              <span class="text-right float-right dark:text-white" v-if="$store.state.currency.currency == 'usd' "> {{ p.fiat }} $</span> -->
               </div>
 
 
@@ -276,7 +276,7 @@
                             bg-white hover:bg-black
                 dark:bg-gray-700 dark:hover:bg-white
             "
-            @click="addToCart({ id: product.id, amount: 1, image: product.images[0].src, title: product.title, price: product.price.usd })"
+            @click="addToCart({ id: product.id, amount: 1, image: product.images[0].src, title: product.title, price: product.fiat })"
             :disabled="product.stock == 'out'"
             >
           

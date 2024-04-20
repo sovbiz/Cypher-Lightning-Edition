@@ -26,6 +26,9 @@ import {
 const mobileMenuOpen = ref(false);
 import data from "~/config/setup";
 
+import menu from "~/config/menu";
+
+
 const links = data.socialnavigation;
 import { useProjectStore } from "~/store/shopcart";
 
@@ -122,7 +125,7 @@ onMounted(() => {
       <PopoverGroup class="hidden lg:flex lg:gap-x-12">
         <NuxtLink
           :to="localePath(item.href)"
-          v-for="item in data.Headernavigation.basicmenu"
+          v-for="item in menu.Headernavigation.basicmenu"
           :key="item.name"
           class="text-sm font-semibold leading-6 text-black dark:text-white"
         >
@@ -147,24 +150,23 @@ onMounted(() => {
         </NuxtLink>
 
         <NuxtLink
-        v-if="data.openfinance"
-          :to="localePath('/funds')"
-
+          v-if="data.contact"
           class="text-sm font-semibold leading-6 text-black dark:text-white"
+          :to="localePath('/contact')"
         >
-          Open Finance</NuxtLink
-        >
+          Contact
+        </NuxtLink>
 
 
 
 
 
 
-        <Popover class="relative"  v-if="data.Headernavigation.MenuPopupName">
+        <Popover class="relative"  v-if="menu.Headernavigation.MenuPopupName">
           <PopoverButton
             class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-black dark:text-white"
           >
-            {{ data.Headernavigation.MenuPopupName }}
+            {{ menu.Headernavigation.MenuPopupName }}
             <ChevronDownIcon
               class="h-5 w-5 flex-none text-black dark:text-white"
               aria-hidden="true"
@@ -184,7 +186,7 @@ onMounted(() => {
             >
               <div class="p-4">
                 <div
-                  v-for="item in data.Headernavigation.MenuPopup"
+                  v-for="item in menu.Headernavigation.MenuPopup"
                   :key="item.name"
                   class="group relative flex gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
                 >
@@ -337,18 +339,18 @@ onMounted(() => {
             <div class="space-y-2 py-6">
               <NuxtLink
                 :to="localePath(item.href)"
-                v-for="item in data.Headernavigation.basicmenu"
+                v-for="item in menu.Headernavigation.basicmenu"
                 :key="item.name"
                 @click="mobileMenuOpen = false"
                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-black dark:text-white"
               >
                 {{ item.name }}</NuxtLink
               >
-              <div v-if="data.Headernavigation.MenuPopupName">
+              <div v-if="menu.Headernavigation.MenuPopupName">
               <NuxtLink
                 :to="localePath(item.href)"
                 
-                v-for="item in data.Headernavigation.MenuPopup"
+                v-for="item in menu.Headernavigation.MenuPopup"
                 @click="mobileMenuOpen = false"
                 :key="item.name"
                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-black dark:text-white"
@@ -375,12 +377,12 @@ onMounted(() => {
               </NuxtLink>
 
               <NuxtLink
-                v-if="data.openfinance"
+                v-if="data.contact"
                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-black dark:text-white"
-                :to="localePath('/funds')"
+                :to="localePath('/contact')"
                 @click="mobileMenuOpen = false"
               >
-                Open Finance
+                Contact
               </NuxtLink>
 
 

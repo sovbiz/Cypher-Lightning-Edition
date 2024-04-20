@@ -28,7 +28,7 @@
               v-if="filtersList == 'Bitcoin'"
               class="text-3xl text-gray-900 dark:text-white"
             >
-              {{ (product.price.usd * btcprices).toFixed(8) }}
+              {{ (product.fiat * btcprices).toFixed(8) }}
               <BitcoinIcon class="h-12 w-12 inline -mt-2" aria-hidden="true" />
             </p>
 
@@ -36,7 +36,7 @@
               v-if="filtersList == 'Satoshi'"
               class="text-3xl text-gray-900 dark:text-white"
             >
-              {{ (product.price.usd * btcprices * 100000000).toFixed(0) }}
+              {{ (product.fiat * btcprices * 100000000).toFixed(0) }}
               <SatoshiV2Icon
                 class="h-12 w-12 inline -mt-2"
                 aria-hidden="true"
@@ -47,7 +47,7 @@
               v-if="filtersList == 'Dollar Fiat'"
               class="text-3xl text-gray-900 dark:text-white"
             >
-              {{ product.price.usd }} $
+              {{ product.fiat }} $
             </p>
           </div>
 
@@ -70,7 +70,7 @@
                     amount: 1,
                     image: product.images[0].src,
                     title: product.title,
-                    price: product.price.usd,
+                    price: product.fiat,
                   })
                 "
                 :disabled="product.stock == 'out'"

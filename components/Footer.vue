@@ -1,5 +1,9 @@
 <script setup>
 import data from "~/config/setup";
+
+import menu from "~/config/menu";
+
+
 const currentDate = new Date();
 </script>
 <template>
@@ -47,11 +51,11 @@ const currentDate = new Date();
               <h3
                 class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
               >
-                {{ data.Footernavigation.columntitels[0].column1 }}
+                {{ menu.Footernavigation.columntitels[0].column1 }}
               </h3>
               <ul role="list" class="mt-6 space-y-4">
                 <li
-                  v-for="itemlink in data.Footernavigation.FooterColums.col1"
+                  v-for="itemlink in menu.Footernavigation.FooterColums.col1"
                   :key="itemlink.name"
                 >
                   <NuxtLink
@@ -66,12 +70,12 @@ const currentDate = new Date();
               <h3
                 class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
               >
-                {{ data.Footernavigation.columntitels[0].column4 }}
+                {{ menu.Footernavigation.columntitels[0].column4 }}
               </h3>
 
               <ul role="list" class="mt-6 space-y-4">
                 <li
-                  v-for="itemlink in data.Footernavigation.FooterColums.col4"
+                  v-for="itemlink in menu.Footernavigation.FooterColums.col4"
                   :key="itemlink.name"
                 >
                   <NuxtLink
@@ -88,11 +92,11 @@ const currentDate = new Date();
               <h3
                 class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
               >
-                {{ data.Footernavigation.columntitels[0].column3 }}
+                {{ menu.Footernavigation.columntitels[0].column3 }}
               </h3>
               <ul role="list" class="mt-6 space-y-4">
                 <li
-                  v-for="itemlink in data.Footernavigation.FooterColums.col3"
+                  v-for="itemlink in menu.Footernavigation.FooterColums.col3"
                   :key="itemlink.name"
                 >
                   <NuxtLink
@@ -109,11 +113,11 @@ const currentDate = new Date();
               <h3
                 class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
               >
-                {{ data.Footernavigation.columntitels[0].column2 }}
+                {{ menu.Footernavigation.columntitels[0].column2 }}
               </h3>
               <ul role="list" class="mt-6 space-y-4">
                 <li
-                  v-for="itemlink in data.Footernavigation.FooterColums.col2"
+                  v-for="itemlink in menu.Footernavigation.FooterColums.col2"
                   :key="itemlink.name"
                 >
                   <NuxtLink

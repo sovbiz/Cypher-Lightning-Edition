@@ -1,0 +1,89 @@
+{
+    "Headernavigation":{
+        "basicmenu":[
+         {
+            "name":"Home",
+            "href":"/"
+         },
+           {
+              "name":"Product",
+              "href":"/product"
+           }
+        ],
+        "MenuPopupName":"",
+        "MenuPopup":[
+           {
+              "name":"Example Item",
+              "description":"Enable by entering a name in MenuPopupName",
+              "href":"/"
+           }
+        ]
+     },
+     "Footernavigation":{
+        "columntitels":[
+           {
+              "column1":"Support",
+              "column2":"Products",
+              "column3":"Articles",
+              "column4":"Legal"
+           }
+        ],
+        "FooterColums":{
+           "col1":[
+              {
+                 "name":"Home",
+                 "href":"/"
+              },
+   
+              {
+                 "name":"Product",
+                 "href":"/product"
+              },
+              {
+               "name":"Contact",
+               "href":"/contact"
+            }
+           ],
+           "col2":[
+              {
+                 "name":"Shop",
+                 "href":"/shop"
+              },
+              {
+                 "name":"Cart",
+                 "href":"/cart"
+              },
+              {
+                 "name":"Shipping",
+                 "href":"/shipping"
+              }
+           ],
+           "col3":[
+   
+              {
+                 "name":"Blog",
+                 "href":"/blog"
+              },
+            {
+               "name":"Checklist",
+               "href":"/checklist"
+            }
+           ],
+           "col4":[
+              {
+                 "name":"Disclaimer",
+                 "href":"/disclaimer"
+              },
+              {
+                 "name":"Credit",
+                 "href":"/credit"
+              },
+              {
+                 "name":"Terms of service",
+                 "href":"/tos"
+              }
+           ]
+        }
+     }
+
+}
