@@ -29,9 +29,9 @@ const { filtersList } = storeToRefs(filtersStore)
 
 
 
-const btcprice = await $fetch('https://app.yieldmonitor.io/api/v2/symbol/ym/33913')
+const btcprice = await $fetch('https://api.coinbase.com/v2/exchange-rates?currency=BTC')
 
-    const btcprices = 1 / (Number(btcprice.symbols[0].price)).toFixed(2) 
+    const btcprices = 1 / (Number(btcprice.data.rates.USD)).toFixed(2) 
 
     import { BitcoinIcon, SatoshiV2Icon, NoDollarsIcon } from '@bitcoin-design/bitcoin-icons-vue/filled'
 

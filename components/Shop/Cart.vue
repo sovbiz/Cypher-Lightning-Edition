@@ -497,7 +497,7 @@
 
           <div class="flex justify-between">
             <dt class="font-medium text-gray-900 dark:text-white">Current BTC Price</dt>
-            <dd class="text-gray-700 dark:text-white">$ {{ (Number(btcprice.symbols[0].price)).toFixed(2) }}</dd>
+            <dd class="text-gray-700 dark:text-white">$ {{ (Number(btcprice.data.rates.USD)).toFixed(2) }}</dd>
           </div>
           <div class="flex justify-between">
             <dt class="font-medium text-gray-900 dark:text-white">Total Bitcoin Price</dt>
@@ -655,10 +655,10 @@ const filtersStore = useFiltersStore();
 const { filtersList } = storeToRefs(filtersStore);
 
 const btcprice = await $fetch(
-  "https://app.yieldmonitor.io/api/v2/symbol/ym/33913"
+  "https://api.coinbase.com/v2/exchange-rates?currency=BTC"
 );
 
-const btcprices = 1 / Number(btcprice.symbols[0].price).toFixed(2);
+const btcprices = 1 / Number(btcprice.data.rates.USD).toFixed(2);
 
 const store = useProjectStore();
 const totalPrice = ref(store.getTotalPrice());

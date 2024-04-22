@@ -9,7 +9,7 @@ export const useBtcticker = defineStore('btc', () => {
   // Define an async function as an action to fetch the BTC price
   const fetchBtcPrice = async () => {
     try {
-      const response = await $fetch("https://app.yieldmonitor.io/api/v2/symbol/ym/33913");
+      const response = await $fetch("https://api.coinbase.com/v2/exchange-rates?currency=BTC");
       btcprice.value = (Number(response.symbols[0].price)).toFixed(2); // update the state with the fetched data
       onedollarsatprice.value = 1 / (Number(response.symbols[0].price)).toFixed(2) ; // update the state with the fetched data
     } catch (error) {
