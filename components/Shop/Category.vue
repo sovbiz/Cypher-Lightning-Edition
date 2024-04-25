@@ -21,21 +21,15 @@
                     </button>
                   </div>
   
-                  <!-- Filters -->
                   <form class="mt-4">
 
                     <div class="border-t border-gray-200 pb-4 pt-4">
               <fieldset>
                 <legend class="w-full px-2">
-                  <!-- Expand/collapse section button -->
                   <button type="button" class="flex w-full items-center justify-between p-2 text-gray-400 hover:text-gray-500" aria-controls="filter-section-0" aria-expanded="false">
                     <span class="text-sm font-medium text-gray-900 dark:text-white">{{ t("Inventory") }}</span>
                     <span class="ml-6 flex h-7 items-center">
-                      <!--
-                        Expand/collapse icon, toggle classes based on section open state.
 
-                        Open: "-rotate-180", Closed: "rotate-0"
-                      -->
 
                     </span>
                   </button>
