@@ -17,8 +17,8 @@
       <div class="ml-3">
         <h3 class="text-sm font-medium text-yellow-800">{{ t('line1') }}</h3>
         <div class="mt-2 text-sm text-yellow-700">
-          <p>{{ t('line2') }} </p>
-            
+          <p v-if="message.value == ''" >{{ t('line2') }} </p>
+            <p v-else >{{ t('line5') }}</p>
 
 
           
@@ -208,7 +208,8 @@ const { t } = useI18n({ useScope: "local" });
     "line1": "Noget gik galt 🤯",
     "line2": "Det ser ud til, at din besked er tom...",
     "line3": "Tak for din henvendelse!",
-    "line4": "Din besked blev succesfuldt sendt til ejeren"
+    "line4": "Din besked blev succesfuldt sendt til ejeren",
+    "line5": "Du skal acceptere servicevilkårene"
   },
   "de": {
     "title": "Kontaktformular",
@@ -225,7 +226,8 @@ const { t } = useI18n({ useScope: "local" });
     "line1": "Etwas ist schief gelaufen 🤯",
     "line2": "Es scheint, als wäre Ihre Nachricht leer...",
     "line3": "Danke, dass Sie uns erreicht haben!",
-    "line4": "Ihre Nachricht wurde erfolgreich an den Eigentümer übermittelt"
+    "line4": "Ihre Nachricht wurde erfolgreich an den Eigentümer übermittelt",
+    "line5": "Sie müssen den Nutzungsbedingungen zustimmen"
   },
   "en": {
     "title": "Contact Form",
@@ -242,7 +244,8 @@ const { t } = useI18n({ useScope: "local" });
     "line1": "Something Went Wrong 🤯",
     "line2": "Looks like your Message is empty...",
     "line3": "Thanks for reaching out!",
-    "line4": "Your message was successfully delivered to the owner"
+    "line4": "Your message was successfully delivered to the owner",
+    "line5": "You have to agree with the terms of service"
   },
   "es": {
     "title": "Formulario de Contacto",
@@ -259,7 +262,8 @@ const { t } = useI18n({ useScope: "local" });
     "line1": "Algo salió mal 🤯",
     "line2": "Parece que tu mensaje está vacío...",
     "line3": "¡Gracias por contactarnos!",
-    "line4": "Tu mensaje fue entregado exitosamente al dueño"
+    "line4": "Tu mensaje fue entregado exitosamente al dueño",
+    "line5": "Debes aceptar los términos del servicio"
   },
   "fr": {
     "title": "Formulaire de Contact",
@@ -276,7 +280,8 @@ const { t } = useI18n({ useScope: "local" });
     "line1": "Quelque chose a mal tourné 🤯",
     "line2": "Il semble que votre message soit vide...",
     "line3": "Merci de nous avoir contactés !",
-    "line4": "Votre message a été transmis avec succès au propriétaire"
+    "line4": "Votre message a été transmis avec succès au propriétaire",
+    "line5": "Vous devez accepter les conditions d'utilisation"
   },
   "nl": {
     "title": "Contactformulier",
@@ -293,7 +298,8 @@ const { t } = useI18n({ useScope: "local" });
     "line1": "Er is iets misgegaan 🤯",
     "line2": "Het lijkt erop dat uw bericht leeg is...",
     "line3": "Bedankt voor uw bericht!",
-    "line4": "Uw bericht is succesvol afgeleverd aan de eigenaar"
+    "line4": "Uw bericht is succesvol afgeleverd aan de eigenaar",
+    "line5": "U moet akkoord gaan met de servicevoorwaarden"
   }
 }
 
