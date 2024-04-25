@@ -33,7 +33,7 @@ src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=5_-Pk2Rb4_k&loop=1&autop
    >
     <!-- ...other elements... -->
 
-<!-- 
+
     <div class=" rounded-md bg-yellow-50 p-4 max-w-3xl mx-auto border-2 border-black dark:border-white" v-if="data.lnurl =='cypherspace@getalby.com' || data.btcadress =='bc1q5j9h5dfr6gctjc0tl9gaz02f0p0qs7ecdlcat8' || data.orderwebhook =='https://discord.com/api/webhooks/1210994387660705923/ndfQLtY2aEXIV7Cjui9Hna3_dXEN2m_IjRTLr8M-H0OQIAKZ9N8VqicoeAz-GB1kZaCG'">
     <div class="flex">
       <div class="flex-shrink-0">
@@ -50,7 +50,7 @@ src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=5_-Pk2Rb4_k&loop=1&autop
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
 
 
 
