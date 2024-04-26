@@ -37,7 +37,7 @@
                 <div class="px-4 pb-2 pt-4" id="filter-section-0">
                   <div class="space-y-6">
                     <div class="flex items-center">
-                      <input id="color-0-mobile" name="color[]" value="all" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" checked>
+                      <input id="color-0-mobile" name="color[]" value="all" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" checked="true">
                       <label for="color-0-mobile" class="ml-3 text-sm text-gray-500">{{ t("Allitems") }}</label>
                     </div>
                     <div class="flex items-center">
@@ -119,7 +119,7 @@
                   <legend class="block text-sm font-medium text-gray-900 dark:text-white">{{ t("Inventory") }}</legend>
                   <div class="space-y-3 pt-6">
                     <div class="flex items-center">
-                      <input id="color-0" name="color[]" value="all" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                      <input id="color-0" name="color[]" value="all" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" checked>
                       <label for="color-0" class="ml-3 text-sm text-gray-600 dark:text-white">{{ t("Allitems") }}</label>
                     </div>
                     <div class="flex items-center">
@@ -371,19 +371,37 @@ const btcprice = await $fetch('https://api.coinbase.com/v2/exchange-rates?curren
   
 
 
-  const filters = [
 
-    {
-      id: 'color',
-      name: 'Color',
-      options: [
-        { value: 'metal', label: 'Metal' },
-        { value: 'rose', label: 'Rose Gold' },
-        { value: 'Silver', label: 'Silver' }
-      ],
-    },
 
-  ]
+// Function to extract unique categories and set filters
+function extractCategoriesAndSetFilters() {
+    const categorySet = new Set(); // Use a Set to store unique categories
+    products.forEach(product => {
+        product.category.forEach(category => categorySet.add(category)); // Add each category to the Set
+    });
+
+    // Convert the Set to an array and map to the filter structure
+    filters.value = Array.from(categorySet).map(category => ({
+        id: category.toLowerCase().replace(/\s+/g, '-'), // Normalize the category string
+        name: category,
+        options: [
+            { value: category.toLowerCase().replace(/\s+/g, '-'), label: category } // Each category has a checkbox with its own value and label
+        ]
+    }));
+}
+
+onMounted(() => {
+    extractCategoriesAndSetFilters(); // Call the function on component mount
+});
+
+
+
+
+
+
+
+const filters = ref([]);
+
 
 
   

@@ -9,31 +9,36 @@ import data from "~/config/setup";
 
 <template>
   <div class="inline-block relative w-full">
-    <div class="min-h-screen isolate px-6 pt-14 lg:px-8 bg-[url('/stock/nogood/NG_Cypher_Header_Light.png')] dark:bg-[url('/stock/nogood/NG_Cypher_Header_Dark.png')] bg-hero bg-no-repeat md:bg-cover bg-center bg-fixed"></div>
+
+<!-- IMAGE BACKGROUND -->
+
+    <!-- <div class="min-h-screen isolate px-6 pt-14 lg:px-8 bg-[url('/stock/nogood/NG_Cypher_Header_Light.png')] dark:bg-[url('/stock/nogood/NG_Cypher_Header_Dark.png')] bg-hero bg-no-repeat md:bg-cover bg-center bg-fixed"></div> -->
  
 
-<!-- VIDEO BACKGROUND -->
+<!-- YOUTUBE BACKGROUND -->
 
-    <!-- <div class="min-h-screen">
-      
-      <iframe class="w-full h-screen"
-src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=5_-Pk2Rb4_k&loop=1&autoplay=1&mute=1&controls=0">
-</iframe>  
-    
-    
-    
-    
-    
-    
+    <!-- <div class="min-h-screen">  
+      <iframe class="w-full h-screen" src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=5_-Pk2Rb4_k&loop=1&autoplay=1&mute=1&controls=0"></iframe>  
     </div>-->
 
  
+
+
+
+    <div class=" md:min-h-screen h-lvh ">  
+    <video class="w-full h-screen object-cover hidden md:block"  autoplay muted loop>
+  <source src="/project/Background-Video.mp4" type="video/mp4">
+
+Your browser does not support the video tag.
+</video> 
+</div>
+
+
+
+
  
-    <div class="absolute top-0 left-0 w-full mt-12"
+    <div class="absolute top-0 left-0 w-full mt-12 px-6"
    >
-    <!-- ...other elements... -->
-
-
     <div class=" rounded-md bg-yellow-50 p-4 max-w-3xl mx-auto border-2 border-black dark:border-white" v-if="data.lnurl =='cypherspace@getalby.com' || data.btcadress =='bc1q5j9h5dfr6gctjc0tl9gaz02f0p0qs7ecdlcat8' || data.orderwebhook =='https://discord.com/api/webhooks/1210994387660705923/ndfQLtY2aEXIV7Cjui9Hna3_dXEN2m_IjRTLr8M-H0OQIAKZ9N8VqicoeAz-GB1kZaCG'">
     <div class="flex">
       <div class="flex-shrink-0">
@@ -54,7 +59,7 @@ src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=5_-Pk2Rb4_k&loop=1&autop
 
 
 
-    <div class="mx-auto max-w-4xl py-12 sm:py-12 lg:py-12">
+    <div class="mx-auto max-w-4xl py-0 sm:py-12 lg:py-12">
       <div class="text-center">
 
 
@@ -62,14 +67,14 @@ src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=5_-Pk2Rb4_k&loop=1&autop
 
         <img
             
-            class="block dark:hidden mx-auto h-48 md:h-96"
+            class="block mt-6 dark:hidden mx-auto h-48 md:h-72"
             src="/stock/nogood/NG_Cypher_Block_LowRes.gif"
             :alt="data.name"
 
           />
           <img
             
-            class="hidden dark:block mx-auto h-48 md:h-96"
+            class="hidden mt-6 dark:block mx-auto h-48 md:h-72"
             src="/stock/nogood/NG_Cypher_Block_LowRes.gif"
             :alt="data.name"
           />
