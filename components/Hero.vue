@@ -12,7 +12,7 @@ import data from "~/config/setup";
 
 <!-- IMAGE BACKGROUND -->
 
-    <!-- <div class="min-h-screen isolate px-6 pt-14 lg:px-8 bg-[url('/stock/nogood/NG_Cypher_Header_Light.png')] dark:bg-[url('/stock/nogood/NG_Cypher_Header_Dark.png')] bg-hero bg-no-repeat md:bg-cover bg-center bg-fixed"></div> -->
+    <div class="min-h-screen isolate px-6 pt-14 lg:px-8 bg-[url('/stock/nogood/NG_Cypher_Header_Light.png')] dark:bg-[url('/stock/nogood/NG_Cypher_Header_Dark.png')] bg-hero bg-no-repeat md:bg-cover bg-center bg-fixed"></div>
  
 
 <!-- YOUTUBE BACKGROUND -->
@@ -22,16 +22,16 @@ import data from "~/config/setup";
     </div>-->
 
  
+<!-- LOCAL BACKGROUND -->
 
 
-
-    <div class=" md:min-h-screen h-lvh ">  
+    <!-- <div class=" md:min-h-screen h-lvh ">  
     <video class="w-full h-screen object-cover hidden md:block"  autoplay muted loop>
   <source src="/project/Background-Video.mp4" type="video/mp4">
 
 Your browser does not support the video tag.
 </video> 
-</div>
+</div> -->
 
 
 
