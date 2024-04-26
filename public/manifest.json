@@ -1,0 +1,9 @@
+{
+    "name": "Cypher",
+    "short_name": "Cypher",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#000",
+    "description": "A Lightning/Bitcoin Shop"
+  }
+  

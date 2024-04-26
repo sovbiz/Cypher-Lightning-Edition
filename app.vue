@@ -1,7 +1,6 @@
 <template>
   <div>
     <!-- <NuxtWelcome /> -->
-    <VitePwaManifest />
     <NuxtLayout>
       <NuxtLoadingIndicator color="#ffcc00" :height="5" />
     <NuxtPage />
@@ -11,8 +10,12 @@
 <script setup>
 
 useHead({
+  link: [
+    { rel: 'manifest', href: '/manifest.json' }
+  ],
   bodyAttrs: {
     class: "bg-colorBgLight dark:bg-colorBgDark",
   },
 });
+
 </script>
