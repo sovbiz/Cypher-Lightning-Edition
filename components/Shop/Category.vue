@@ -21,7 +21,7 @@
                     </button>
                   </div>
   
-                  <form class="mt-4">
+                  <div class="mt-4">
 
                     <div class="border-t border-gray-200 pb-4 pt-4">
               <fieldset>
@@ -85,7 +85,7 @@
                         </DisclosurePanel>
                       </fieldset>
                     </Disclosure>
-                  </form>
+                  </div>
                 </DialogPanel>
               </TransitionChild>
             </div>
@@ -111,7 +111,7 @@
               </button>
   
               <div class="hidden lg:block">
-                <form class="space-y-10 divide-y divide-gray-200">
+                <div class="space-y-2.5">
 
 
                     <div>
@@ -139,20 +139,31 @@
                 </fieldset>
               </div>
 
+              <div>
+              <legend class="block text-sm font-medium text-gray-900 dark:text-white mt-12">Categories</legend>
 
-                    
-                  <div v-for="(section, sectionIdx) in filters" :key="section.name" :class="sectionIdx === 0 ? null : 'pt-10'">
-                    <fieldset>
-                      <legend class="block text-sm font-medium text-gray-900 dark:text-white">{{ section.name }}</legend>
-                      <div class="space-y-3 pt-6">
-                        <div v-for="(option, optionIdx) in section.options" :key="option.value" class="flex items-center">
+                  <div v-for="(section, sectionIdx) in categories" :key="section.name" :class="sectionIdx === 0 ? null : ''">
+                      <!-- <legend class="block text-sm font-medium text-gray-900 dark:text-white">{{ section.name }}</legend> -->
+                        <div v-for="(option, optionIdx) in section.options" :key="option.value" class="flex items-center mt-2.5">
                           <input :id="`${section.id}-${optionIdx}`" :name="`${section.id}[]`" :value="option.value" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
                           <label :for="`${section.id}-${optionIdx}`" class="ml-3 text-sm text-gray-600 dark:text-white">{{ option.label }}</label>
                         </div>
-                      </div>
-                    </fieldset>
                   </div>
-                </form>
+                </div>
+
+
+              <div>
+              <legend class="block text-sm font-medium text-gray-900 dark:text-white mt-12">Variations</legend>
+
+                  <div v-for="(section, sectionIdx) in filters" :key="section.name" :class="sectionIdx === 0 ? null : ''">
+                      <!-- <legend class="block text-sm font-medium text-gray-900 dark:text-white">{{ section.name }}</legend> -->
+                        <div v-for="(option, optionIdx) in section.options" :key="option.value" class="flex items-center mt-2.5">
+                          <input :id="`${section.id}-${optionIdx}`" :name="`${section.id}[]`" :value="option.value" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                          <label :for="`${section.id}-${optionIdx}`" class="ml-3 text-sm text-gray-600 dark:text-white">{{ option.label }}</label>
+                        </div>
+                  </div>
+                </div>
+                </div>
               </div>
             </aside>
   
@@ -374,7 +385,26 @@ const btcprice = await $fetch('https://api.coinbase.com/v2/exchange-rates?curren
 
 
 
-// Function to extract unique categories and set filters
+// Function to extract unique variation and set filters
+function extractVariationsAndSetFilters() {
+    const variationSet = new Set(); // Use a Set to store unique categories
+    products.forEach(product => {
+        product.variations.forEach(variation => variationSet.add(variation)); // Add each variation to the Set
+    });
+
+    // Convert the Set to an array and map to the filter structure
+    filters.value = Array.from(variationSet).map(variation => ({
+        id: variation.toLowerCase().replace(/\s+/g, '-'), // Normalize the variation string
+        name: variation,
+        options: [
+            { value: variation.toLowerCase().replace(/\s+/g, '-'), label: variation } // Each variation has a checkbox with its own value and label
+        ]
+    }));
+}
+
+
+// Function to extract unique variation and set filters
+
 function extractCategoriesAndSetFilters() {
     const categorySet = new Set(); // Use a Set to store unique categories
     products.forEach(product => {
@@ -382,7 +412,7 @@ function extractCategoriesAndSetFilters() {
     });
 
     // Convert the Set to an array and map to the filter structure
-    filters.value = Array.from(categorySet).map(category => ({
+    categories.value = Array.from(categorySet).map(category => ({
         id: category.toLowerCase().replace(/\s+/g, '-'), // Normalize the category string
         name: category,
         options: [
@@ -391,8 +421,15 @@ function extractCategoriesAndSetFilters() {
     }));
 }
 
+
+
+
+
+
+
 onMounted(() => {
-    extractCategoriesAndSetFilters(); // Call the function on component mount
+  extractVariationsAndSetFilters(); // Call the function on component mount
+  extractCategoriesAndSetFilters();
 });
 
 
@@ -403,6 +440,7 @@ onMounted(() => {
 
 const filters = ref([]);
 
+const categories = ref([]);
 
 
   

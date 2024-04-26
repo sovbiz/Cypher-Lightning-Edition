@@ -4,7 +4,14 @@
       "identity": "1",
       "type": "Product",
       "category": [
-         "New",
+         "T-shirt",
+         "Apparel"
+      ],
+      "variations": [
+         "XS",
+         "SM",
+         "MD",
+         "LG",
          "XL"
       ],
       "title": "Cypher Product 1",
@@ -56,7 +63,12 @@
       "identity": "2",
       "type": "Product",
       "category": [
-         "New"
+         "Swaggah",
+         "Sticker"
+      ],
+      "variations": [
+         "New",
+         "MD"
       ],      
       "title": "Cypher Product 2: Rose Gold",
       "description": "The most elegant cold storage you can buy",
@@ -86,6 +98,10 @@
       "identity": "4",
       "type": "Product",
       "category": [
+         "T-shirt",
+         "Apparel"
+      ],
+      "variations": [
          "Metal"
       ],
       "title": "Example Product: Silver",
