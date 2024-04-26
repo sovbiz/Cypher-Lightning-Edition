@@ -157,7 +157,7 @@ const { t } = useI18n({ useScope: "local" });
 
               <div class="w-full dark:text-white basis-full">
                 <span
-                  v-if="product.stock == 'low'"
+                v-if="product.stock < 5 && product.stock > 0"
                   class="flex items-center text-sm font-medium text-gray-900 dark:text-white"
                   ><span
                     class="flex w-2.5 h-2.5 bg-orange-400 rounded-full mr-1.5 flex-shrink-0"
@@ -166,7 +166,7 @@ const { t } = useI18n({ useScope: "local" });
                 >
 
                 <span
-                  v-else-if="product.stock == 'out'"
+                v-if="product.stock == 0"
                   class="flex items-center text-sm font-medium text-gray-900 dark:text-white"
                   ><span
                     class="flex w-2.5 h-2.5 bg-red-400 rounded-full mr-1.5 flex-shrink-0"
@@ -175,7 +175,7 @@ const { t } = useI18n({ useScope: "local" });
                 >
 
                 <span
-                  v-else
+                v-if="product.stock > 5 && product.stock != 0"
                   class="flex items-center text-sm font-medium text-gray-900 dark:text-white"
                   ><span
                     class="flex w-2.5 h-2.5 bg-green-400 rounded-full mr-1.5 flex-shrink-0"
@@ -209,7 +209,7 @@ const { t } = useI18n({ useScope: "local" });
                 price: product.fiat,
               })
             "
-            :disabled="product.stock == 'out'"
+            :disabled="product.stock == 0"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

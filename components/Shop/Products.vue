@@ -159,11 +159,11 @@ const btcprice = await $fetch('https://api.coinbase.com/v2/exchange-rates?curren
           <div class="w-full dark:text-white basis-full"> 
             
             
-            <span v-if="product.stock == 'low'" class="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span class="flex w-2.5 h-2.5 bg-orange-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Lastitems") }}</span>
+            <span v-if="product.stock < 5 && product.stock > 0" class="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span class="flex w-2.5 h-2.5 bg-orange-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Lastitems") }}</span>
 
-            <span v-else-if="product.stock == 'out'"  class="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span class="flex w-2.5 h-2.5 bg-red-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Nostock") }}</span>
+            <span v-if="product.stock == 0" class="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span class="flex w-2.5 h-2.5 bg-red-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Nostock") }}</span>
 
-            <span v-else class="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span class="flex w-2.5 h-2.5 bg-green-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Instock") }}</span>
+            <span v-if="product.stock > 5 && product.stock != 0" class="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span class="flex w-2.5 h-2.5 bg-green-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Instock") }}</span>
 
           </div>
 
@@ -194,7 +194,7 @@ const btcprice = await $fetch('https://api.coinbase.com/v2/exchange-rates?curren
                 dark:bg-gray-700 dark:hover:bg-white
             "
             @click="addToCart({ id: product.id, amount: 1, image: product.images[0].src, title: product.title, price: product.fiat })"
-            :disabled="product.stock == 'out'"
+            :disabled="product.stock == 0"
             >
           
           <svg
