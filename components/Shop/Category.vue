@@ -34,8 +34,8 @@
                     </span>
                   </button>
                 </legend>
-                <div class="px-4 pb-2 pt-4" id="filter-section-0">
-                  <div class="space-y-6">
+                <div class="px-4 pb-2 pt-2" id="filter-section-0">
+                  <div class="space-y-2">
                     <div class="flex items-center">
                       <input id="color-0-mobile" name="color[]" value="all" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" checked="true">
                       <label for="color-0-mobile" class="ml-3 text-sm text-gray-500">{{ t("Allitems") }}</label>
@@ -61,23 +61,23 @@
 
 
                     
-                    <Disclosure as="div" v-for="section in filters" :key="section.name" class="border-t border-gray-200 pb-4 pt-4" v-slot="{ open }">
+                    <Disclosure as="div"  class="border-t border-gray-200 pb-4 pt-2" v-slot="{ open }">
                       <fieldset>
                         <legend class="w-full px-2">
                           <DisclosureButton class="flex w-full items-center justify-between p-2 text-gray-400 dark:text-white hover:text-gray-500 dark:text-white">
-                            <span class="text-sm font-medium text-gray-900 dark:text-white">{{ section.name }}</span>
+                            <span class="text-sm font-medium text-gray-900 dark:text-white">Categories</span>
                             <span class="ml-6 flex h-7 items-center">
                               <ChevronDownIcon :class="[open ? '-rotate-180' : 'rotate-0', 'h-5 w-5 transform']" aria-hidden="true" />
                             </span>
                           </DisclosureButton>
                         </legend>
-                        <DisclosurePanel class="px-4 pb-2 pt-4">
+                        <DisclosurePanel class="px-4 pb-2 ">
 
 
 
                             
-                          <div class="space-y-6">
-                            <div v-for="(option, optionIdx) in section.options" :key="option.value" class="flex items-center">
+                          <div v-for="section in categories" :key="section.name" class="space-y-6">
+                            <div v-for="(option, optionIdx) in section.options" :key="option.value" class="flex items-center mt-2.5">
                               <input :id="`${section.id}-${optionIdx}-mobile`" :name="`${section.id}[]`" :value="option.value" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
                               <label :for="`${section.id}-${optionIdx}-mobile`" class="ml-3 text-sm text-gray-500 dark:text-white">{{ option.label }}</label>
                             </div>
@@ -85,6 +85,42 @@
                         </DisclosurePanel>
                       </fieldset>
                     </Disclosure>
+
+
+
+
+
+                    <Disclosure as="div"  class="border-t border-gray-200 pb-4 pt-4" v-slot="{ open }">
+                      <fieldset>
+                        <legend class="w-full px-2">
+                          <DisclosureButton class="flex w-full items-center justify-between p-2 text-gray-400 dark:text-white hover:text-gray-500 dark:text-white">
+                            <span class="text-sm font-medium text-gray-900 dark:text-white">Variations</span>
+                            <span class="ml-6 flex h-7 items-center">
+                              <ChevronDownIcon :class="[open ? '-rotate-180' : 'rotate-0', 'h-5 w-5 transform']" aria-hidden="true" />
+                            </span>
+                          </DisclosureButton>
+                        </legend>
+                        <DisclosurePanel class="px-4 pb-2">
+
+
+
+                            
+                          <div v-for="section in filters" :key="section.name" class="space-y-6">
+                            <div v-for="(option, optionIdx) in section.options" :key="option.value" class="flex items-center mt-2.5">
+                              <input :id="`${section.id}-${optionIdx}-mobile`" :name="`${section.id}[]`" :value="option.value" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                              <label :for="`${section.id}-${optionIdx}-mobile`" class="ml-3 text-sm text-gray-500 dark:text-white">{{ option.label }}</label>
+                            </div>
+                          </div>
+                        </DisclosurePanel>
+                      </fieldset>
+                    </Disclosure>
+
+
+
+
+
+
+
                   </div>
                 </DialogPanel>
               </TransitionChild>
