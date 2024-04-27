@@ -37,21 +37,14 @@
                 <div class="px-4 pb-2 pt-2" id="filter-section-0">
                   <div class="space-y-2">
                     <div class="flex items-center">
-                      <input id="color-0-mobile" name="color[]" value="all" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" checked="true">
-                      <label for="color-0-mobile" class="ml-3 text-sm text-gray-500">{{ t("Allitems") }}</label>
+                      <input id="color-0-mobile" name="inventory" value="0" type="radio" v-model="minimumStock" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500" checked="true">
+                      <label for="color-0-mobile" class="ml-3 text-sm text-gray-600 dark:text-white">{{ t("Allitems") }}</label>
                     </div>
                     <div class="flex items-center">
-                      <input id="color-1-mobile" name="color[]" value="in" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                      <label for="color-1-mobile" class="ml-3 text-sm text-gray-500">{{ t("Instock") }}</label>
+                      <input id="color-1-mobile" name="inventory" value="1" type="radio" v-model="minimumStock" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                      <label for="color-1-mobile" class="ml-3 text-sm text-gray-600 dark:text-white">{{ t("Instock") }}</label>
                     </div>
-                    <div class="flex items-center">
-                      <input id="color-2-mobile" name="color[]" value="last" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                      <label for="color-2-mobile" class="ml-3 text-sm text-gray-500">{{ t("Lastitems") }}</label>
-                    </div>
-                    <div class="flex items-center">
-                      <input id="color-3-mobile" name="color[]" value="out" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                      <label for="color-3-mobile" class="ml-3 text-sm text-gray-500">{{ t("Nostock") }}</label>
-                    </div>
+
 
                   </div>
                 </div>
@@ -78,7 +71,7 @@
                             
                           <div v-for="section in categories" :key="section.name" class="space-y-6">
                             <div v-for="(option, optionIdx) in section.options" :key="option.value" class="flex items-center mt-2.5">
-                              <input :id="`${section.id}-${optionIdx}-mobile`" :name="`${section.id}[]`" :value="option.value" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                              <input :id="`${section.id}-${optionIdx}-mobile`" name="category" :value="option.value" v-model="selectedCategory" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500" />
                               <label :for="`${section.id}-${optionIdx}-mobile`" class="ml-3 text-sm text-gray-500 dark:text-white">{{ option.label }}</label>
                             </div>
                           </div>
@@ -107,7 +100,7 @@
                             
                           <div v-for="section in filters" :key="section.name" class="space-y-6">
                             <div v-for="(option, optionIdx) in section.options" :key="option.value" class="flex items-center mt-2.5">
-                              <input :id="`${section.id}-${optionIdx}-mobile`" :name="`${section.id}[]`" :value="option.value" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                              <input :id="`${section.id}-${optionIdx}-mobile`" name="variation" :value="option.value" v-model="selectedVariation" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500" />
                               <label :for="`${section.id}-${optionIdx}-mobile`" class="ml-3 text-sm text-gray-500 dark:text-white">{{ option.label }}</label>
                             </div>
                           </div>
@@ -155,20 +148,12 @@
                   <legend class="block text-sm font-medium text-gray-900 dark:text-white">{{ t("Inventory") }}</legend>
                   <div class="space-y-3 pt-6">
                     <div class="flex items-center">
-                      <input id="color-0" name="color[]" value="all" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" checked>
+                      <input id="color-0" name="inventory" value="" type="radio" v-model="minimumStock" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500" checked>
                       <label for="color-0" class="ml-3 text-sm text-gray-600 dark:text-white">{{ t("Allitems") }}</label>
                     </div>
                     <div class="flex items-center">
-                      <input id="color-1" name="color[]" value="in" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                      <input id="color-1" name="inventory" value="1" type="radio" v-model="minimumStock" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500">
                       <label for="color-1" class="ml-3 text-sm text-gray-600 dark:text-white">{{ t("Instock") }}</label>
-                    </div>
-                    <div class="flex items-center">
-                      <input id="color-2" name="color[]" value="last" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                      <label for="color-2" class="ml-3 text-sm text-gray-600 dark:text-white">{{ t("Lastitems") }}</label>
-                    </div>
-                    <div class="flex items-center">
-                      <input id="color-3" name="color[]" value="out" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                      <label for="color-3" class="ml-3 text-sm text-gray-600 dark:text-white">{{ t("Nostock") }}</label>
                     </div>
 
                   </div>
@@ -181,7 +166,7 @@
                   <div v-for="(section, sectionIdx) in categories" :key="section.name" :class="sectionIdx === 0 ? null : ''">
                       <!-- <legend class="block text-sm font-medium text-gray-900 dark:text-white">{{ section.name }}</legend> -->
                         <div v-for="(option, optionIdx) in section.options" :key="option.value" class="flex items-center mt-2.5">
-                          <input :id="`${section.id}-${optionIdx}`" :name="`${section.id}[]`" :value="option.value" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                          <input :id="`${section.id}-${optionIdx}`" name="category" :value="option.value" type="radio" v-model="selectedCategory" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500" />
                           <label :for="`${section.id}-${optionIdx}`" class="ml-3 text-sm text-gray-600 dark:text-white">{{ option.label }}</label>
                         </div>
                   </div>
@@ -194,7 +179,7 @@
                   <div v-for="(section, sectionIdx) in filters" :key="section.name" :class="sectionIdx === 0 ? null : ''">
                       <!-- <legend class="block text-sm font-medium text-gray-900 dark:text-white">{{ section.name }}</legend> -->
                         <div v-for="(option, optionIdx) in section.options" :key="option.value" class="flex items-center mt-2.5">
-                          <input :id="`${section.id}-${optionIdx}`" :name="`${section.id}[]`" :value="option.value" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                          <input :id="`${section.id}-${optionIdx}`" name="variation" :value="option.value" type="radio" v-model="selectedVariation" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500" />
                           <label :for="`${section.id}-${optionIdx}`" class="ml-3 text-sm text-gray-600 dark:text-white">{{ option.label }}</label>
                         </div>
                   </div>
@@ -208,7 +193,7 @@
   
               <div class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:gap-x-8 xl:grid-cols-3">
 
-                <div v-for="product in products" :key="product.id">
+                <div v-for="product in filteredProducts" :key="product.id">
             <NuxtLink :to="localePath('/product/' + product.id )">
 
             <div class="relative">
@@ -357,7 +342,7 @@
 
   import data from '~/config/shop'
 
-const products = data
+const products = ref(data)
 
 
 
@@ -420,64 +405,57 @@ const btcprice = await $fetch('https://api.coinbase.com/v2/exchange-rates?curren
 
 
 
+// Computed property for variations filters
+const filters = computed(() => {
+  const variationSet = new Set();
+  products.value.forEach(product => {
+    product.variations.forEach(variation => variationSet.add(variation));
+  });
 
-// Function to extract unique variation and set filters
-function extractVariationsAndSetFilters() {
-    const variationSet = new Set(); // Use a Set to store unique categories
-    products.forEach(product => {
-        product.variations.forEach(variation => variationSet.add(variation)); // Add each variation to the Set
-    });
-
-    // Convert the Set to an array and map to the filter structure
-    filters.value = Array.from(variationSet).map(variation => ({
-        id: variation.toLowerCase().replace(/\s+/g, '-'), // Normalize the variation string
-        name: variation,
-        options: [
-            { value: variation.toLowerCase().replace(/\s+/g, '-'), label: variation } // Each variation has a checkbox with its own value and label
-        ]
-    }));
-}
-
-
-// Function to extract unique variation and set filters
-
-function extractCategoriesAndSetFilters() {
-    const categorySet = new Set(); // Use a Set to store unique categories
-    products.forEach(product => {
-        product.category.forEach(category => categorySet.add(category)); // Add each category to the Set
-    });
-
-    // Convert the Set to an array and map to the filter structure
-    categories.value = Array.from(categorySet).map(category => ({
-        id: category.toLowerCase().replace(/\s+/g, '-'), // Normalize the category string
-        name: category,
-        options: [
-            { value: category.toLowerCase().replace(/\s+/g, '-'), label: category } // Each category has a checkbox with its own value and label
-        ]
-    }));
-}
-
-
-
-
-
-
-
-onMounted(() => {
-  extractVariationsAndSetFilters(); // Call the function on component mount
-  extractCategoriesAndSetFilters();
+  return Array.from(variationSet).map(variation => ({
+    id: variation.toLowerCase().replace(/\s+/g, '-'),
+    name: variation,
+    options: [
+      { value: variation.toLowerCase().replace(/\s+/g, '-'), label: variation }
+    ]
+  }));
 });
 
+// Computed property for categories filters
+const categories = computed(() => {
+  const categorySet = new Set();
+  products.value.forEach(product => {
+    product.category.forEach(category => categorySet.add(category));
+  });
 
+  return Array.from(categorySet).map(category => ({
+    id: category.toLowerCase().replace(/\s+/g, '-'),
+    name: category,
+    options: [
+      { value: category.toLowerCase().replace(/\s+/g, '-'), label: category }
+    ]
+  }));
+});
 
+// FILTERING FUNCTION
 
+const selectedCategory = ref('')
+const selectedVariation = ref('')
+const minimumStock = ref(0)
 
+// Computed property to filter products
+const filteredProducts = computed(() => {
+  return products.value.filter(product => {
+    // Filter by category if selectedCategory is not empty
+    const categoryMatch = selectedCategory.value ? product.category.includes(selectedCategory.value) : true
+    // Filter by variation if selectedVariation is not empty
+    const variationMatch = selectedVariation.value ? product.variations.includes(selectedVariation.value) : true
+    // Filter by stock availability
+    const stockMatch = product.stock >= minimumStock.value
 
-
-const filters = ref([]);
-
-const categories = ref([]);
-
+    return categoryMatch && variationMatch && stockMatch
+  })
+})
 
   
   const mobileMenuOpen = ref(false)

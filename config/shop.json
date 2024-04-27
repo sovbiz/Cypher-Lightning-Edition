@@ -4,15 +4,15 @@
       "identity": "1",
       "type": "Product",
       "category": [
-         "T-shirt",
-         "Apparel"
+         "t-shirt",
+         "apparel"
       ],
       "variations": [
-         "XS",
-         "SM",
-         "MD",
-         "LG",
-         "XL"
+         "xs",
+         "sm",
+         "md",
+         "lg",
+         "xl"
       ],
       "title": "Cypher Product 1",
       "description": "Order an Example Product",
@@ -63,12 +63,12 @@
       "identity": "2",
       "type": "Product",
       "category": [
-         "Swaggah",
-         "Sticker"
+         "swaggah",
+         "sticker"
       ],
       "variations": [
-         "New",
-         "MD"
+         "new",
+         "md"
       ],      
       "title": "Cypher Product 2: Rose Gold",
       "description": "The most elegant cold storage you can buy",
@@ -98,11 +98,11 @@
       "identity": "4",
       "type": "Product",
       "category": [
-         "T-shirt",
-         "Apparel"
+         "t-shirt",
+         "apparel"
       ],
       "variations": [
-         "Metal"
+         "metal"
       ],
       "title": "Example Product: Silver",
       "description": "The Standard for Cold Bitcoin Storage",
