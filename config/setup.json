@@ -13,6 +13,7 @@
   "blog":true,
   "shop":true,
   "contact":true,
+  "cart":"simple",
   "basecurrency":"btc",
   "testnet":"false",
   "btcadress":"bc1q5j9h5dfr6gctjc0tl9gaz02f0p0qs7ecdlcat8",
