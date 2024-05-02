@@ -10,8 +10,12 @@
 <script setup>
 
 useHead({
+  link: [
+    { rel: 'manifest', href: '/manifest.json' }
+  ],
   bodyAttrs: {
     class: "bg-colorBgLight dark:bg-colorBgDark",
   },
 });
+
 </script>

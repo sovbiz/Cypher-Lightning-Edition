@@ -21,43 +21,30 @@
                     </button>
                   </div>
   
-                  <!-- Filters -->
-                  <form class="mt-4">
+                  <div class="mt-4">
 
                     <div class="border-t border-gray-200 pb-4 pt-4">
               <fieldset>
                 <legend class="w-full px-2">
-                  <!-- Expand/collapse section button -->
                   <button type="button" class="flex w-full items-center justify-between p-2 text-gray-400 hover:text-gray-500" aria-controls="filter-section-0" aria-expanded="false">
                     <span class="text-sm font-medium text-gray-900 dark:text-white">{{ t("Inventory") }}</span>
                     <span class="ml-6 flex h-7 items-center">
-                      <!--
-                        Expand/collapse icon, toggle classes based on section open state.
 
-                        Open: "-rotate-180", Closed: "rotate-0"
-                      -->
 
                     </span>
                   </button>
                 </legend>
-                <div class="px-4 pb-2 pt-4" id="filter-section-0">
-                  <div class="space-y-6">
+                <div class="px-4 pb-2 pt-2" id="filter-section-0">
+                  <div class="space-y-2">
                     <div class="flex items-center">
-                      <input id="color-0-mobile" name="color[]" value="all" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" checked>
-                      <label for="color-0-mobile" class="ml-3 text-sm text-gray-500">{{ t("Allitems") }}</label>
+                      <input id="color-0-mobile" name="inventory" value="0" type="radio" v-model="minimumStock" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500" checked="true">
+                      <label for="color-0-mobile" class="ml-3 text-sm text-gray-600 dark:text-white">{{ t("Allitems") }}</label>
                     </div>
                     <div class="flex items-center">
-                      <input id="color-1-mobile" name="color[]" value="in" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                      <label for="color-1-mobile" class="ml-3 text-sm text-gray-500">{{ t("Instock") }}</label>
+                      <input id="color-1-mobile" name="inventory" value="1" type="radio" v-model="minimumStock" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                      <label for="color-1-mobile" class="ml-3 text-sm text-gray-600 dark:text-white">{{ t("Instock") }}</label>
                     </div>
-                    <div class="flex items-center">
-                      <input id="color-2-mobile" name="color[]" value="last" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                      <label for="color-2-mobile" class="ml-3 text-sm text-gray-500">{{ t("Lastitems") }}</label>
-                    </div>
-                    <div class="flex items-center">
-                      <input id="color-3-mobile" name="color[]" value="out" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                      <label for="color-3-mobile" class="ml-3 text-sm text-gray-500">{{ t("Nostock") }}</label>
-                    </div>
+
 
                   </div>
                 </div>
@@ -67,31 +54,67 @@
 
 
                     
-                    <Disclosure as="div" v-for="section in filters" :key="section.name" class="border-t border-gray-200 pb-4 pt-4" v-slot="{ open }">
+                    <Disclosure as="div"  class="border-t border-gray-200 pb-4 pt-2" v-slot="{ open }">
                       <fieldset>
                         <legend class="w-full px-2">
                           <DisclosureButton class="flex w-full items-center justify-between p-2 text-gray-400 dark:text-white hover:text-gray-500 dark:text-white">
-                            <span class="text-sm font-medium text-gray-900 dark:text-white">{{ section.name }}</span>
+                            <span class="text-sm font-medium text-gray-900 dark:text-white">Categories</span>
                             <span class="ml-6 flex h-7 items-center">
                               <ChevronDownIcon :class="[open ? '-rotate-180' : 'rotate-0', 'h-5 w-5 transform']" aria-hidden="true" />
                             </span>
                           </DisclosureButton>
                         </legend>
-                        <DisclosurePanel class="px-4 pb-2 pt-4">
+                        <DisclosurePanel class="px-4 pb-2 ">
 
 
 
                             
-                          <div class="space-y-6">
-                            <div v-for="(option, optionIdx) in section.options" :key="option.value" class="flex items-center">
-                              <input :id="`${section.id}-${optionIdx}-mobile`" :name="`${section.id}[]`" :value="option.value" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                          <div v-for="section in categories" :key="section.name" class="space-y-6">
+                            <div v-for="(option, optionIdx) in section.options" :key="option.value" class="flex items-center mt-2.5">
+                              <input :id="`${section.id}-${optionIdx}-mobile`" name="category" :value="option.value" v-model="selectedCategory" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500" />
                               <label :for="`${section.id}-${optionIdx}-mobile`" class="ml-3 text-sm text-gray-500 dark:text-white">{{ option.label }}</label>
                             </div>
                           </div>
                         </DisclosurePanel>
                       </fieldset>
                     </Disclosure>
-                  </form>
+
+
+
+
+
+                    <Disclosure as="div"  class="border-t border-gray-200 pb-4 pt-4" v-slot="{ open }">
+                      <fieldset>
+                        <legend class="w-full px-2">
+                          <DisclosureButton class="flex w-full items-center justify-between p-2 text-gray-400 dark:text-white hover:text-gray-500 dark:text-white">
+                            <span class="text-sm font-medium text-gray-900 dark:text-white">Variations</span>
+                            <span class="ml-6 flex h-7 items-center">
+                              <ChevronDownIcon :class="[open ? '-rotate-180' : 'rotate-0', 'h-5 w-5 transform']" aria-hidden="true" />
+                            </span>
+                          </DisclosureButton>
+                        </legend>
+                        <DisclosurePanel class="px-4 pb-2">
+
+
+
+                            
+                          <div v-for="section in filters" :key="section.name" class="space-y-6">
+                            <div v-for="(option, optionIdx) in section.options" :key="option.value" class="flex items-center mt-2.5">
+                              <input :id="`${section.id}-${optionIdx}-mobile`" name="variation" :value="option.value" v-model="selectedVariation" type="radio" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                              <label :for="`${section.id}-${optionIdx}-mobile`" class="ml-3 text-sm text-gray-500 dark:text-white">{{ option.label }}</label>
+                            </div>
+                          </div>
+                        </DisclosurePanel>
+                      </fieldset>
+                    </Disclosure>
+
+
+
+
+
+
+
+                  </div>
                 </DialogPanel>
               </TransitionChild>
             </div>
@@ -117,7 +140,7 @@
               </button>
   
               <div class="hidden lg:block">
-                <form class="space-y-10 divide-y divide-gray-200">
+                <div class="space-y-2.5">
 
 
                     <div>
@@ -125,40 +148,43 @@
                   <legend class="block text-sm font-medium text-gray-900 dark:text-white">{{ t("Inventory") }}</legend>
                   <div class="space-y-3 pt-6">
                     <div class="flex items-center">
-                      <input id="color-0" name="color[]" value="all" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                      <input id="color-0" name="inventory" value="" type="radio" v-model="minimumStock" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500" checked>
                       <label for="color-0" class="ml-3 text-sm text-gray-600 dark:text-white">{{ t("Allitems") }}</label>
                     </div>
                     <div class="flex items-center">
-                      <input id="color-1" name="color[]" value="in" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
+                      <input id="color-1" name="inventory" value="1" type="radio" v-model="minimumStock" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500">
                       <label for="color-1" class="ml-3 text-sm text-gray-600 dark:text-white">{{ t("Instock") }}</label>
-                    </div>
-                    <div class="flex items-center">
-                      <input id="color-2" name="color[]" value="last" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                      <label for="color-2" class="ml-3 text-sm text-gray-600 dark:text-white">{{ t("Lastitems") }}</label>
-                    </div>
-                    <div class="flex items-center">
-                      <input id="color-3" name="color[]" value="out" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">
-                      <label for="color-3" class="ml-3 text-sm text-gray-600 dark:text-white">{{ t("Nostock") }}</label>
                     </div>
 
                   </div>
                 </fieldset>
               </div>
 
+              <div>
+              <legend class="block text-sm font-medium text-gray-900 dark:text-white mt-12">Categories</legend>
 
-                    
-                  <div v-for="(section, sectionIdx) in filters" :key="section.name" :class="sectionIdx === 0 ? null : 'pt-10'">
-                    <fieldset>
-                      <legend class="block text-sm font-medium text-gray-900 dark:text-white">{{ section.name }}</legend>
-                      <div class="space-y-3 pt-6">
-                        <div v-for="(option, optionIdx) in section.options" :key="option.value" class="flex items-center">
-                          <input :id="`${section.id}-${optionIdx}`" :name="`${section.id}[]`" :value="option.value" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                  <div v-for="(section, sectionIdx) in categories" :key="section.name" :class="sectionIdx === 0 ? null : ''">
+                      <!-- <legend class="block text-sm font-medium text-gray-900 dark:text-white">{{ section.name }}</legend> -->
+                        <div v-for="(option, optionIdx) in section.options" :key="option.value" class="flex items-center mt-2.5">
+                          <input :id="`${section.id}-${optionIdx}`" name="category" :value="option.value" type="radio" v-model="selectedCategory" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500" />
                           <label :for="`${section.id}-${optionIdx}`" class="ml-3 text-sm text-gray-600 dark:text-white">{{ option.label }}</label>
                         </div>
-                      </div>
-                    </fieldset>
                   </div>
-                </form>
+                </div>
+
+
+              <div>
+              <legend class="block text-sm font-medium text-gray-900 dark:text-white mt-12">Variations</legend>
+
+                  <div v-for="(section, sectionIdx) in filters" :key="section.name" :class="sectionIdx === 0 ? null : ''">
+                      <!-- <legend class="block text-sm font-medium text-gray-900 dark:text-white">{{ section.name }}</legend> -->
+                        <div v-for="(option, optionIdx) in section.options" :key="option.value" class="flex items-center mt-2.5">
+                          <input :id="`${section.id}-${optionIdx}`" name="variation" :value="option.value" type="radio" v-model="selectedVariation" class="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-500" />
+                          <label :for="`${section.id}-${optionIdx}`" class="ml-3 text-sm text-gray-600 dark:text-white">{{ option.label }}</label>
+                        </div>
+                  </div>
+                </div>
+                </div>
               </div>
             </aside>
   
@@ -167,7 +193,7 @@
   
               <div class="grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-10 lg:gap-x-8 xl:grid-cols-3">
 
-                <div v-for="product in products" :key="product.id">
+                <div v-for="product in filteredProducts" :key="product.id">
             <NuxtLink :to="localePath('/product/' + product.id )">
 
             <div class="relative">
@@ -182,11 +208,11 @@
               <div class="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
                 <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50" />
 
-                <p v-if="filtersList == 'Bitcoin'" class="relative text-lg font-semibold text-white">{{ (product.price.usd * btcprices).toFixed(8) }} <BitcoinIcon  class="h-6 w-6 inline" aria-hidden="true" /></p>
+                <p v-if="filtersList == 'Bitcoin'" class="relative text-lg font-semibold text-white">{{ (product.fiat * btcprices).toFixed(8) }} <BitcoinIcon  class="h-6 w-6 inline" aria-hidden="true" /></p>
 
-                <p v-if="filtersList == 'Satoshi'" class="relative text-lg font-semibold text-white">{{ (product.price.usd * btcprices * 100000000).toFixed(0) }} <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" /></p>
+                <p v-if="filtersList == 'Satoshi'" class="relative text-lg font-semibold text-white">{{ (product.fiat * btcprices * 100000000).toFixed(0) }} <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" /></p>
 
-                <p v-if="filtersList == 'Dollar Fiat'" class="relative text-lg font-semibold text-white">{{ product.price.usd  }} $</p>
+                <p v-if="filtersList == 'Dollar Fiat'" class="relative text-lg font-semibold text-white">{{ product.fiat  }} $</p>
 
 
               </div>
@@ -218,11 +244,11 @@
 
 
 
-                <p v-if="filtersList == 'Bitcoin'" class="float-left dark:text-white font-semibold text-black">{{ (product.price.usd * btcprices).toFixed(8) }} <BitcoinIcon  class="h-6 w-6 inline" aria-hidden="true" /></p>
+                <p v-if="filtersList == 'Bitcoin'" class="float-left dark:text-white font-semibold text-black">{{ (product.fiat * btcprices).toFixed(8) }} <BitcoinIcon  class="h-6 w-6 inline" aria-hidden="true" /></p>
 
-                <p v-if="filtersList == 'Satoshi'" class="float-left dark:text-white font-semibold text-black">{{ (product.price.usd * btcprices * 100000000).toFixed(0) }} <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" /></p>
+                <p v-if="filtersList == 'Satoshi'" class="float-left dark:text-white font-semibold text-black">{{ (product.fiat * btcprices * 100000000).toFixed(0) }} <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" /></p>
 
-                <p v-if="filtersList == 'Dollar Fiat'" class="float-left dark:text-white font-semibold text-black">{{ product.price.usd  }} $</p>
+                <p v-if="filtersList == 'Dollar Fiat'" class="float-left dark:text-white font-semibold text-black">{{ product.fiat  }} $</p>
 
 
 
@@ -233,7 +259,7 @@
 
                 <!-- <span class="text-right float-right dark:text-white" v-if="$store.state.currency.currency == 'eur' " > {{ p.price.eur }} €</span>
 
-              <span class="text-right float-right dark:text-white" v-if="$store.state.currency.currency == 'usd' "> {{ p.price.usd }} $</span> -->
+              <span class="text-right float-right dark:text-white" v-if="$store.state.currency.currency == 'usd' "> {{ p.fiat }} $</span> -->
               </div>
 
 
@@ -241,12 +267,13 @@
 
           <div class="w-full dark:text-white basis-full"> 
             
-            
-            <span v-if="product.stock == 'low'" class="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span class="flex w-2.5 h-2.5 bg-orange-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Lastitems") }}</span>
+            <span v-if="product.stock > 5 && product.stock != 0" class="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span class="flex w-2.5 h-2.5 bg-green-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Instock") }}</span>
 
-            <span v-else-if="product.stock == 'out'"  class="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span class="flex w-2.5 h-2.5 bg-red-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Nostock") }}</span>
 
-            <span v-else class="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span class="flex w-2.5 h-2.5 bg-green-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Instock") }}</span>
+            <span v-if="product.stock < 5 && product.stock > 0" class="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span class="flex w-2.5 h-2.5 bg-orange-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Lastitems") }}</span>
+
+            <span  v-if="product.stock == 0" class="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span class="flex w-2.5 h-2.5 bg-red-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Nostock") }}</span>
+
 
           </div>
 
@@ -276,8 +303,8 @@
                             bg-white hover:bg-black
                 dark:bg-gray-700 dark:hover:bg-white
             "
-            @click="addToCart({ id: product.id, amount: 1, image: product.images[0].src, title: product.title, price: product.price.usd })"
-            :disabled="product.stock == 'out'"
+            @click="addToCart({ id: product.id, amount: 1, image: product.images[0].src, title: product.title, price: product.fiat })"
+            :disabled="product.stock == 0"
             >
           
           <svg
@@ -315,7 +342,7 @@
 
   import data from '~/config/shop'
 
-const products = data
+const products = ref(data)
 
 
 
@@ -342,9 +369,9 @@ const { filtersList } = storeToRefs(filtersStore)
 
 
 
-const btcprice = await $fetch('https://app.yieldmonitor.io/api/v2/symbol/ym/33913')
+const btcprice = await $fetch('https://api.coinbase.com/v2/exchange-rates?currency=BTC')
 
-  const btcprices = 1 / (Number(btcprice.symbols[0].price)).toFixed(2) 
+  const btcprices = 1 / (Number(btcprice.data.rates.USD)).toFixed(2) 
 
   import { BitcoinIcon, SatoshiV2Icon, NoDollarsIcon } from '@bitcoin-design/bitcoin-icons-vue/filled'
 
@@ -377,20 +404,58 @@ const btcprice = await $fetch('https://app.yieldmonitor.io/api/v2/symbol/ym/3391
   
 
 
-  const filters = [
 
-    {
-      id: 'color',
-      name: 'Color',
-      options: [
-        { value: 'metal', label: 'Metal' },
-        { value: 'rose', label: 'Rose Gold' },
-        { value: 'Silver', label: 'Silver' }
-      ],
-    },
+// Computed property for variations filters
+const filters = computed(() => {
+  const variationSet = new Set();
+  products.value.forEach(product => {
+    product.variations.forEach(variation => variationSet.add(variation));
+  });
 
-  ]
+  return Array.from(variationSet).map(variation => ({
+    id: variation.toLowerCase().replace(/\s+/g, '-'),
+    name: variation,
+    options: [
+      { value: variation.toLowerCase().replace(/\s+/g, '-'), label: variation }
+    ]
+  }));
+});
 
+// Computed property for categories filters
+const categories = computed(() => {
+  const categorySet = new Set();
+  products.value.forEach(product => {
+    product.category.forEach(category => categorySet.add(category));
+  });
+
+  return Array.from(categorySet).map(category => ({
+    id: category.toLowerCase().replace(/\s+/g, '-'),
+    name: category,
+    options: [
+      { value: category.toLowerCase().replace(/\s+/g, '-'), label: category }
+    ]
+  }));
+});
+
+// FILTERING FUNCTION
+
+const selectedCategory = ref('')
+const selectedVariation = ref('')
+const minimumStock = ref(0)
+
+// Computed property to filter products
+const filteredProducts = computed(() => {
+  return products.value.filter(product => {
+    // Filter by category if selectedCategory is not empty
+    const categoryMatch = selectedCategory.value ? product.category.includes(selectedCategory.value) : true
+    // Filter by variation if selectedVariation is not empty
+    const variationMatch = selectedVariation.value ? product.variations.includes(selectedVariation.value) : true
+    // Filter by stock availability
+    const stockMatch = product.stock >= minimumStock.value
+
+    return categoryMatch && variationMatch && stockMatch
+  })
+})
 
   
   const mobileMenuOpen = ref(false)

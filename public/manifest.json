@@ -1,0 +1,36 @@
+{
+    "name": "Cypher",
+    "short_name": "Cypher",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#121826",
+    "description": "A Lightning/Bitcoin Shop",
+    "icons": [
+      {
+        "src": "project/icons/icon-16.png",
+        "sizes": "16x16",
+        "type": "image/png"
+      },
+      {
+        "src": "project/icons/icon-32.png",
+        "sizes": "32x32",
+        "type": "image/png"
+      },
+      {
+        "src": "project/icons/icon-180.png",
+        "sizes": "180x180",
+        "type": "image/png"
+      },
+      {
+        "src": "project/icons/icon-192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "project/icons/icon-512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }
+  

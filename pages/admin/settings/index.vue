@@ -217,27 +217,6 @@
                     </p>
                   </div>
                 </div>
-                <div class="relative flex gap-x-3">
-                  <div class="flex h-6 items-center">
-                    <input
-                      id="candidates"
-                      name="candidates"
-                      type="checkbox"
-                      class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                      :checked="data.openfinance"
-                    />
-                  </div>
-                  <div class="text-sm leading-6">
-                    <label
-                      for="candidates"
-                      class="font-medium text-gray-900 dark:text-white"
-                      >Enable Open Finance</label
-                    >
-                    <p class="text-gray-500">
-                      Experimental alby api transaction list.
-                    </p>
-                  </div>
-                </div>
               </div>
             </fieldset>
           </div>

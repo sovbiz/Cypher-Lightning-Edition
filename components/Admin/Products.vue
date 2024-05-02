@@ -20,10 +20,10 @@ const { addValueToFilterList } = filtersStore;
 const { filtersList } = storeToRefs(filtersStore);
 
 const btcprice = await $fetch(
-  "https://app.yieldmonitor.io/api/v2/symbol/ym/33913"
+  "https://api.coinbase.com/v2/exchange-rates?currency=BTC"
 );
 
-const btcprices = 1 / Number(btcprice.symbols[0].price).toFixed(2);
+const btcprices = 1 / Number(btcprice.data.rates.USD).toFixed(2);
 
 import {
   BitcoinIcon,
@@ -99,11 +99,11 @@ const { t } = useI18n({ useScope: "local" });
               <div class="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
                 <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50" />
 
-                <p v-if="filtersList == 'Bitcoin'" class="relative text-lg font-semibold text-white">{{ (product.price.usd * btcprices).toFixed(8) }} <BitcoinIcon  class="h-6 w-6 inline" aria-hidden="true" /></p>
+                <p v-if="filtersList == 'Bitcoin'" class="relative text-lg font-semibold text-white">{{ (product.fiat * btcprices).toFixed(8) }} <BitcoinIcon  class="h-6 w-6 inline" aria-hidden="true" /></p>
 
-                <p v-if="filtersList == 'Satoshi'" class="relative text-lg font-semibold text-white">{{ (product.price.usd * btcprices * 100000000).toFixed(0) }} <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" /></p>
+                <p v-if="filtersList == 'Satoshi'" class="relative text-lg font-semibold text-white">{{ (product.fiat * btcprices * 100000000).toFixed(0) }} <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" /></p>
 
-                <p v-if="filtersList == 'Dollar Fiat'" class="relative text-lg font-semibold text-white">{{ product.price.usd  }} $</p>
+                <p v-if="filtersList == 'Dollar Fiat'" class="relative text-lg font-semibold text-white">{{ product.fiat  }} $</p>
 
 
               </div>
@@ -131,7 +131,7 @@ const { t } = useI18n({ useScope: "local" });
                   v-if="filtersList == 'Bitcoin'"
                   class="float-left dark:text-white font-semibold text-black"
                 >
-                  {{ (product.price.usd * btcprices).toFixed(8) }}
+                  {{ (product.fiat * btcprices).toFixed(8) }}
                   <BitcoinIcon class="h-6 w-6 inline" aria-hidden="true" />
                 </p>
 
@@ -139,7 +139,7 @@ const { t } = useI18n({ useScope: "local" });
                   v-if="filtersList == 'Satoshi'"
                   class="float-left dark:text-white font-semibold text-black"
                 >
-                  {{ (product.price.usd * btcprices * 100000000).toFixed(0) }}
+                  {{ (product.fiat * btcprices * 100000000).toFixed(0) }}
                   <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" />
                 </p>
 
@@ -147,17 +147,17 @@ const { t } = useI18n({ useScope: "local" });
                   v-if="filtersList == 'Dollar Fiat'"
                   class="float-left dark:text-white font-semibold text-black"
                 >
-                  {{ product.price.usd }} $
+                  {{ product.fiat }} $
                 </p>
 
                 <!-- <span class="text-right float-right dark:text-white" v-if="$store.state.currency.currency == 'eur' " > {{ p.price.eur }} €</span>
 
-              <span class="text-right float-right dark:text-white" v-if="$store.state.currency.currency == 'usd' "> {{ p.price.usd }} $</span> -->
+              <span class="text-right float-right dark:text-white" v-if="$store.state.currency.currency == 'usd' "> {{ p.fiat }} $</span> -->
               </div>
 
               <div class="w-full dark:text-white basis-full">
                 <span
-                  v-if="product.stock == 'low'"
+                v-if="product.stock < 5 && product.stock > 0"
                   class="flex items-center text-sm font-medium text-gray-900 dark:text-white"
                   ><span
                     class="flex w-2.5 h-2.5 bg-orange-400 rounded-full mr-1.5 flex-shrink-0"
@@ -166,7 +166,7 @@ const { t } = useI18n({ useScope: "local" });
                 >
 
                 <span
-                  v-else-if="product.stock == 'out'"
+                v-if="product.stock == 0"
                   class="flex items-center text-sm font-medium text-gray-900 dark:text-white"
                   ><span
                     class="flex w-2.5 h-2.5 bg-red-400 rounded-full mr-1.5 flex-shrink-0"
@@ -175,7 +175,7 @@ const { t } = useI18n({ useScope: "local" });
                 >
 
                 <span
-                  v-else
+                v-if="product.stock > 5 && product.stock != 0"
                   class="flex items-center text-sm font-medium text-gray-900 dark:text-white"
                   ><span
                     class="flex w-2.5 h-2.5 bg-green-400 rounded-full mr-1.5 flex-shrink-0"
@@ -206,10 +206,10 @@ const { t } = useI18n({ useScope: "local" });
                 amount: 1,
                 image: product.images[0].src,
                 title: product.title,
-                price: product.price.usd,
+                price: product.fiat,
               })
             "
-            :disabled="product.stock == 'out'"
+            :disabled="product.stock == 0"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

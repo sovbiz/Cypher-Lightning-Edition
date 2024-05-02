@@ -28,7 +28,7 @@
               v-if="filtersList == 'Bitcoin'"
               class="text-3xl text-gray-900 dark:text-white"
             >
-              {{ (product.price.usd * btcprices).toFixed(8) }}
+              {{ (product.fiat * btcprices).toFixed(8) }}
               <BitcoinIcon class="h-12 w-12 inline -mt-2" aria-hidden="true" />
             </p>
 
@@ -36,7 +36,7 @@
               v-if="filtersList == 'Satoshi'"
               class="text-3xl text-gray-900 dark:text-white"
             >
-              {{ (product.price.usd * btcprices * 100000000).toFixed(0) }}
+              {{ (product.fiat * btcprices * 100000000).toFixed(0) }}
               <SatoshiV2Icon
                 class="h-12 w-12 inline -mt-2"
                 aria-hidden="true"
@@ -47,7 +47,7 @@
               v-if="filtersList == 'Dollar Fiat'"
               class="text-3xl text-gray-900 dark:text-white"
             >
-              {{ product.price.usd }} $
+              {{ product.fiat }} $
             </p>
           </div>
 
@@ -70,10 +70,10 @@
                     amount: 1,
                     image: product.images[0].src,
                     title: product.title,
-                    price: product.price.usd,
+                    price: product.fiat,
                   })
                 "
-                :disabled="product.stock == 'out'"
+                :disabled="product.stock == 0"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -124,10 +124,10 @@ const cartStore = useProjectStore();
 const { addToCart } = cartStore;
 
 const btcprice = await $fetch(
-  "https://app.yieldmonitor.io/api/v2/symbol/ym/33913"
+  "https://api.coinbase.com/v2/exchange-rates?currency=BTC"
 );
 
-const btcprices = 1 / Number(btcprice.symbols[0].price).toFixed(2);
+const btcprices = 1 / Number(btcprice.data.rates.USD).toFixed(2);
 
 import {
   BitcoinIcon,
