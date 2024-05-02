@@ -159,6 +159,7 @@ Your browser does not support the video tag.
                 v-for="item in menu.Headernavigation.basicmenu"
                 :key="item.name"
                 class="text-gray-400 hover:text-white hover:bg-gray-800 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold w-full"
+                active-class="text-white bg-gray-800"
               >
                 <component
                   :is="item.heroicon"
