@@ -4,8 +4,8 @@ import { defineStore } from 'pinia'
 export const useProjectStore = defineStore('setupStore', () => {
   const cartItems = ref([])
 
-  const addToCart = (item: { id: number; amount: number, image: string, title: string, price:number }) => {
-    const { id, amount, image, title, price } = item;
+  const addToCart = (item: { id: number; amount: number, image: string, variation: string, title: string, price:number }) => {
+    const { id, amount, image, variation, title, price } = item;
     const existingItem = cartItems.value.find((cartItem) => cartItem.id === id);
 
     if (existingItem) {
@@ -13,7 +13,7 @@ export const useProjectStore = defineStore('setupStore', () => {
       existingItem.amount += amount;
     } else {
       // If the item doesn't exist, add it to the cart
-      cartItems.value.push({ id, amount, image, title, price });
+      cartItems.value.push({ id, amount, image, title, variation, price });
     }
   };
 

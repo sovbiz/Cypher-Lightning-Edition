@@ -86,7 +86,7 @@
                     <Disclosure as="div"  class="border-t border-gray-200 pb-4 pt-4" v-slot="{ open }">
                       <fieldset>
                         <legend class="w-full px-2">
-                          <DisclosureButton class="flex w-full items-center justify-between p-2 text-gray-400 dark:text-white hover:text-gray-500 dark:text-white">
+                          <DisclosureButton class="flex w-full items-center justify-between p-2 text-gray-400 dark:text-white hover:text-gray-500 ">
                             <span class="text-sm font-medium text-gray-900 dark:text-white">Variations</span>
                             <span class="ml-6 flex h-7 items-center">
                               <ChevronDownIcon :class="[open ? '-rotate-180' : 'rotate-0', 'h-5 w-5 transform']" aria-hidden="true" />
@@ -297,7 +297,7 @@
 
           </NuxtLink>
 
-          <button
+          <!-- <button
             class="mt-2 w-full snipcart-add-item hover:shadow-lg font-semibold py-2 px-4 rounded shadow max-h-10 text-black dark:text-white dark:hover:text-black hover:text-white
             
                             bg-white hover:bg-black
@@ -322,7 +322,7 @@
           {{ t("Addtocart") }}
 
             
-          </button>
+          </button> -->
 
 
           </div>

@@ -47,6 +47,15 @@
                           >{{ product.title }}</a
                         >
                       </h3>
+
+                      <h3 class="text-sm">
+                        <a
+                          class="font-medium text-3xl text-gray-700 hover:text-gray-800 dark:text-white"
+                          >{{ product.variation }}</a
+                        >
+                      </h3>
+
+
                     </div>
 
                     <p

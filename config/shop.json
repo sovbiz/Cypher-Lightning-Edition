@@ -1,7 +1,6 @@
 [
    {
       "id": 1,
-      "identity": "1",
       "type": "Product",
       "category": [
          "t-shirt",
@@ -14,117 +13,164 @@
          "lg",
          "xl"
       ],
-      "title": "Cypher Product 1",
-      "description": "Order an Example Product",
-      "fulldescription": "<h1>Eco-Friendly Sticker </h1><p>Stay hydrated and eco-conscious with our Eco-Friendly Water Bottle. Made from 100% recycled materials, this bottle is perfect for your daily adventures. Its sleek design and durable construction make it your ideal companion for work, workouts, and everything in between. Plus, its insulation keeps your drink cold for up to 24 hours!</p><img style='height:500px' src='/stock/product-1/image1.png' alt='Eco-Friendly Water Bottle'><p>Stay hydrated and eco-conscious with our Eco-Friendly Water Bottle. Made from 100% recycled materials, this bottle is perfect for your daily adventures. Its sleek design and durable construction make it your ideal companion for work, workouts, and everything in between. Plus, its insulation keeps your drink cold for up to 24 hours!</p>",
+      "title": "T-Shirt #1",
+      "description": "This is a demo product.",
+      "fulldescription": "<h1>The First Shirt </h1>    <p>This classic cotton T-shirt is a staple for any wardrobe. Made from 100% organic cotton, it offers both comfort and durability. Available in multiple colors, this tee is perfect for any casual occasion.</p>      ",
       "stock": 10,
       "inStock": true,
-      "fiat": 0.10,
+      "fiat": 25,
       "sats": 150,
       "shipfiat": 0,
       "shipsats": 0,
-      "image": "/stock/CypherSticker.jpg",
-      "imagelocal": "/stock/CypherSticker.jpg",
       "images": [
          {
             "id": 1,
-            "name": "Angled view",
-            "src": "/stock/product-1/image2.png",
-            "alt": "Sticker on laptop"
+            "src": "/stock/product1/1.jpg",
+            "alt": "Lady wearing T-shirt"
          },
          {
             "id": 2,
-            "name": "Angled view",
-            "src": "/stock/product-1/image1.png",
-            "alt": "Another sticker picture"
-         },
-         {
-            "id": 2,
-            "name": "Angled view",
-            "src": "/stock/product-1/image3.png",
-            "alt": "Sticker on book"
+            "src": "/stock/product1/2.jpg",
+            "alt": "Guy wearing T-shirt"
          },
          {
             "id": 3,
-            "name": "Angled view",
-            "src": "/stock/product-1/image4.png",
-            "alt": "Can you believe this sticker ?"
+            "src": "/stock/product1/3.jpg",
+            "alt": "Guy standing wearing T-shirt"
+         },
+         {
+            "id": 4,
+            "src": "/stock/product1/4.jpg",
+            "alt": "Coathanger T-shirt"
          }
       ],
       "features": [
-         "All Sticker money goes to the fund",
-         "Stick around and show some support",
-         "Free world wide shipping",
-         "Maybe some other things "
+         "Breathable fabric",
+         "Crew neck",
+         "Short sleeves",
+         "Maybe some other thing "
       ]
-   },
+   }, 
    {
       "id": 2,
-      "identity": "2",
       "type": "Product",
       "category": [
-         "swaggah",
-         "sticker"
+         "stickers",
+         "new"
       ],
       "variations": [
-         "new",
-         "md"
-      ],      
-      "title": "Cypher Product 2: Rose Gold",
-      "description": "The most elegant cold storage you can buy",
-      "fulldescription": "<h1>Eco-Friendly Sticker </h1><p>Stay hydrated and eco-conscious with our Eco-Friendly Water Bottle. Made from 100% recycled materials, this bottle is perfect for your daily adventures. Its sleek design and durable construction make it your ideal companion for work, workouts, and everything in between. Plus, its insulation keeps your drink cold for up to 24 hours!</p><img style='height:500px' src='/stock/product-2/image1.png' alt='Eco-Friendly Water Bottle'><p>Stay hydrated and eco-conscious with our Eco-Friendly Water Bottle. Made from 100% recycled materials, this bottle is perfect for your daily adventures. Its sleek design and durable construction make it your ideal companion for work, workouts, and everything in between. Plus, its insulation keeps your drink cold for up to 24 hours!</p>",
+
+      ],
+      "title": "Blazing Block Sticker",
+      "description": "This is a new demo product.",
+      "fulldescription": "<h1>Block Sticker </h1>    <p>Add a touch of fun to your belongings with this vibrant emoji sticker! Perfect for decorating laptops, notebooks, and more, this sticker is made from durable, high-quality vinyl that resists scratches, water, and sunlight.</p>     ",
       "stock": 2,
       "inStock": true,
-      "fiat": 0.1,
-      "sats": 150,
+      "fiat": 1,
+      "sats": 45000,
       "shipfiat": 0,
       "shipsats": 0,
-      "image": "/stock/product-2/image1.png",
-      "imagelocal": "/stock/product-2/image1.png",
       "images": [
          {
             "id": 1,
-            "name": "Angled view",
-            "src": "/stock/product-2/image1.png",
-            "alt": "Rose Gold Cold Card"
+            "src": "/stock/product2/1.jpg",
+            "alt": "Sticker next to trackpad"
+         },
+         {
+            "id": 2,
+            "src": "/stock/product2/2.jpg",
+            "alt": "Sticker on laptop"
+         },
+         {
+            "id": 3,
+            "src": "/stock/product2/3.jpg",
+            "alt": "Just the sticker Sticker "
          }
       ],
       "features": [
-         "0.8 mm Rose Gold Steel"
+         "Scratch-resistant", 
+         "water-resistant", 
+         "UV-protected"
       ]
    },
    {
       "id": 3,
-      "identity": "4",
       "type": "Product",
       "category": [
          "t-shirt",
          "apparel"
       ],
       "variations": [
-         "metal"
+         "sm",
+         "md"
       ],
-      "title": "Example Product: Silver",
-      "description": "The Standard for Cold Bitcoin Storage",
-      "fulldescription": "<h1>Eco-Friendly Sticker </h1><p>Stay hydrated and eco-conscious with our Eco-Friendly Water Bottle. Made from 100% recycled materials, this bottle is perfect for your daily adventures. Its sleek design and durable construction make it your ideal companion for work, workouts, and everything in between. Plus, its insulation keeps your drink cold for up to 24 hours!</p><img style='height:500px' src='/stock/product-4/image1.png' alt='Eco-Friendly Water Bottle'><p>Stay hydrated and eco-conscious with our Eco-Friendly Water Bottle. Made from 100% recycled materials, this bottle is perfect for your daily adventures. Its sleek design and durable construction make it your ideal companion for work, workouts, and everything in between. Plus, its insulation keeps your drink cold for up to 24 hours!</p>",
+      "title": "T-Shirt #2",
+      "description": "T-shirt only in small & medium.",
+      "fulldescription": "<h1>The Second Shirt </h1>    <p>This classic cotton T-shirt is a staple for any wardrobe. Made from 100% organic cotton, it offers both comfort and durability. Available in multiple colors, this tee is perfect for any casual occasion.</p>      ",
       "stock": 0,
       "inStock": true,
       "fiat": 35,
       "sats": 45000,
       "shipfiat": 0,
       "shipsats": 0,
-      "image": "/stock/product-4/image1.png",
-      "imagelocal": "/stock/product-4/image1.png",
       "images": [
          {
             "id": 1,
-            "name": "Angled view",
-            "src": "/stock/product-4/image1.png",
-            "alt": "Side Angle Cold Card"
+            "src": "/stock/product3/1.jpg",
+            "alt": "Guy wearing T-shirt"
+         },
+         {
+            "id": 2,
+            "src": "/stock/product3/2.jpg",
+            "alt": "Just the T-shirt"
+         },
+         {
+            "id": 3,
+            "src": "/stock/product3/3.jpg",
+            "alt": "Guy wearing T-shirt urban "
          }
       ],
       "features": [
-         "0.8 mm Silver Steel"
+         "Breathable fabric",
+         "Crew neck",
+         "Short sleeves",
+         "Maybe some other thing else"
+      ]
+   },
+   {
+      "id": 4,
+      "type": "Product",
+      "category": [
+         "new",
+         "apparel"
+      ],
+      "variations": [
+      ],      
+      "title": "Cypher Snapback Hat",
+      "description": "New Demo Hat",
+      "fulldescription": "<h1>Cypher Cap </h1> <p>Shield yourself from the sun in style with our durable baseball cap! Made from high-quality materials, this cap ensures comfort and protection while maintaining a stylish edge. Ideal for outdoor activities or everyday wear.</p> ",
+      "stock": 0,
+      "inStock": true,
+      "fiat": 0.1,
+      "sats": 150,
+      "shipfiat": 0,
+      "shipsats": 0,
+      "images": [
+         {
+            "id": 1,
+            "src": "/stock/product4/1.jpg",
+            "alt": "Snapback Hat"
+         },
+         {
+            "id": 2,
+            "src": "/stock/product4/2.jpg",
+            "alt": "Guy wearing Snapback"
+         }
+      ],
+      "features": [
+         "Adjustable strap", 
+         "Breathable fabric", 
+         "Curved visor"
       ]
    }
 ]

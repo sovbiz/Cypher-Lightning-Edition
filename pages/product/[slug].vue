@@ -89,56 +89,25 @@
             </div>
 
             <div class="w-full dark:text-white basis-full">
-              <span
-                v-if="product[0].stock == 'low'"
-                class="flex items-center text-sm font-medium text-gray-900 dark:text-white"
-                ><span
-                  class="flex w-2.5 h-2.5 bg-orange-400 rounded-full mr-1.5 flex-shrink-0"
-                ></span
-                >{{ t("Lastitems") }}</span
-              >
 
-              <span
-                v-else-if="product[0].stock == 'out'"
-                class="flex items-center text-sm font-medium text-gray-900 dark:text-white"
-                ><span
-                  class="flex w-2.5 h-2.5 bg-red-400 rounded-full mr-1.5 flex-shrink-0"
-                ></span
-                >{{ t("Nostock") }}</span
-              >
 
-              <span
-                v-else
-                class="flex items-center text-sm font-medium text-gray-900 dark:text-white"
-                ><span
-                  class="flex w-2.5 h-2.5 bg-green-400 rounded-full mr-1.5 flex-shrink-0"
-                ></span
-                >{{ t("Instock") }}</span
-              >
+
+
+
+            
+              <span v-if="product[0].stock > 5 && product[0].stock != 0" class="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span class="flex w-2.5 h-2.5 bg-green-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Instock") }}</span>
+
+
+<span v-if="product[0].stock < 5 && product[0].stock > 0" class="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span class="flex w-2.5 h-2.5 bg-orange-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Lastitems") }}</span>
+
+<span  v-if="product[0].stock == 0" class="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span class="flex w-2.5 h-2.5 bg-red-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Nostock") }}</span>
+
+
+
+
+
+
             </div>
-
-            <!-- Reviews -->
-            <div class="mt-3">
-              <h3 class="sr-only">Reviews</h3>
-              <div class="flex items-center">
-                <div class="flex items-center">
-                  <StarIcon
-                    v-for="rating in [0, 1, 2, 3, 4]"
-                    :key="rating"
-                    :class="[
-                      product.rating > rating
-                        ? 'text-indigo-500'
-                        : 'text-gray-300',
-                      'h-5 w-5 flex-shrink-0',
-                    ]"
-                    aria-hidden="true"
-                  />
-                </div>
-                <p class="sr-only">{{ product.rating }} out of 5 stars</p>
-              </div>
-            </div>
-
-
 
 
 
@@ -168,6 +137,29 @@
             </div> -->
 
 
+
+
+            <div class="mt-8" v-if="product[0].variations != ''">
+                <div class="flex items-center justify-between">
+                  <h2 class="text-sm font-medium text-gray-900 dark:text-white">Variations</h2>
+                </div>
+
+                <RadioGroup v-model="selectedVariation" class="mt-2">
+                  <RadioGroupLabel class="sr-only">Choose a size</RadioGroupLabel>
+                  <div class="grid grid-cols-3 gap-3 sm:grid-cols-6">
+                    <RadioGroupOption as="template" v-for="size in product[0].variations" :key="size" :value="size" v-slot="{ active, checked }">
+                      <div :class="[active ? 'ring-2 ring-indigo-500 ring-offset-2' : '', checked ? 'border-transparent bg-indigo-600 text-white hover:bg-indigo-700' : 'border-gray-200 bg-white text-gray-900 hover:bg-gray-50', 'flex items-center justify-center rounded-md border py-3 px-3 text-sm font-medium uppercase sm:flex-1']">
+                        <RadioGroupLabel as="span">{{ size }}</RadioGroupLabel>
+                      </div>
+                    </RadioGroupOption>
+                  </div>
+                </RadioGroup>
+              </div>
+
+
+
+
+
             <div class="mt-6">
               <div class="mt-10 flex sm:flex-col1">
                 <button
@@ -178,6 +170,7 @@
                       amount: 1,
                       image: product[0].images[0].src,
                       title: product[0].title,
+                      variation: selectedVariation,
                       price: product[0].fiat,
                     })
                   "
@@ -330,6 +323,8 @@ const slugroute = route.params.slug;
 // console.log(route);
 
 const product = products.filter((item) => item.id == slugroute);
+
+const selectedVariation = ref()
 
 const { t } = useI18n({ useScope: "local" });
 </script>
