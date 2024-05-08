@@ -123,9 +123,9 @@ const btcprice = await $fetch('https://api.coinbase.com/v2/exchange-rates?curren
 
                 <p v-if="filtersList == 'Bitcoin'" class="relative text-lg font-semibold text-white">{{ (product.fiat * btcprices).toFixed(8) }} <BitcoinIcon  class="h-6 w-6 inline" aria-hidden="true" /></p>
 
-                <p v-if="filtersList == 'Satoshi'" class="relative text-lg font-semibold text-white">{{ (product.fiat * btcprices * 100000000).toFixed(0) }} <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" /></p>
+                <p v-if="filtersList == 'Sats'" class="relative text-lg font-semibold text-white">{{ (product.fiat * btcprices * 100000000).toFixed(0) }} <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" /></p>
 
-                <p v-if="filtersList == 'Dollar Fiat'" class="relative text-lg font-semibold text-white">{{ product.fiat  }} $</p>
+                <p v-if="filtersList == 'Fiat'" class="relative text-lg font-semibold text-white">{{ product.fiat  }} $</p>
 
 
               </div>
@@ -159,9 +159,9 @@ const btcprice = await $fetch('https://api.coinbase.com/v2/exchange-rates?curren
 
                 <p v-if="filtersList == 'Bitcoin'" class="float-left dark:text-white font-semibold text-black">{{ (product.fiat * btcprices).toFixed(8) }} <BitcoinIcon  class="h-6 w-6 inline" aria-hidden="true" /></p>
 
-                <p v-if="filtersList == 'Satoshi'" class="float-left dark:text-white font-semibold text-black">{{ (product.fiat * btcprices * 100000000).toFixed(0) }} <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" /></p>
+                <p v-if="filtersList == 'Sats'" class="float-left dark:text-white font-semibold text-black">{{ (product.fiat * btcprices * 100000000).toFixed(0) }} <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" /></p>
 
-                <p v-if="filtersList == 'Dollar Fiat'" class="float-left dark:text-white font-semibold text-black">{{ product.fiat  }} $</p>
+                <p v-if="filtersList == 'Fiat'" class="float-left dark:text-white font-semibold text-black">{{ product.fiat  }} $</p>
 
 
 

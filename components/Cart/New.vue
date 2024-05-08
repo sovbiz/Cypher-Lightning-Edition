@@ -70,7 +70,7 @@
                     </p>
 
                     <p
-                      v-if="filtersList == 'Satoshi'"
+                      v-if="filtersList == 'Sats'"
                       class="text-right text-lg font-medium text-gray-900 dark:text-white"
                     >
                       {{ (product.price * btcprices * 100000000).toFixed(0) }}
@@ -81,7 +81,7 @@
                     </p>
 
                     <p
-                      v-if="filtersList == 'Dollar Fiat'"
+                      v-if="filtersList == 'Fiat'"
                       class="text-right text-xl font-medium text-gray-900 dark:text-white"
                     >
                       {{ product.price }} $
@@ -141,7 +141,7 @@
                   </dd>
 
                   <dd
-                    v-if="filtersList == 'Satoshi'"
+                    v-if="filtersList == 'Sats'"
                     class="text-right text-xl font-medium text-gray-900"
                   >
                     {{ (totalPrice * btcprices * 100000000).toFixed(0) }}
@@ -152,7 +152,7 @@
                   </dd>
 
                   <dd
-                    v-if="filtersList == 'Dollar Fiat'"
+                    v-if="filtersList == 'Fiat'"
                     class="text-right text-xl font-medium text-gray-900"
                   >
                     {{ totalPrice }} $
@@ -417,7 +417,7 @@
                     </p>
 
                     <p
-                      v-if="filtersList == 'Satoshi'"
+                      v-if="filtersList == 'Sats'"
                       class="text-right text-lg font-medium text-gray-900 dark:text-white"
                     >
                       {{ (product.price * btcprices * 100000000).toFixed(0) }}
@@ -428,7 +428,7 @@
                     </p>
 
                     <p
-                      v-if="filtersList == 'Dollar Fiat'"
+                      v-if="filtersList == 'Fiat'"
                       class="text-right text-xl font-medium text-gray-900 dark:text-white"
                     >
                       {{ product.price }} $

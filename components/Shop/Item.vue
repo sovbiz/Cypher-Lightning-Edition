@@ -33,7 +33,7 @@
             </p>
 
             <p
-              v-if="filtersList == 'Satoshi'"
+              v-if="filtersList == 'Sats'"
               class="text-3xl text-gray-900 dark:text-white"
             >
               {{ (product.fiat * btcprices * 100000000).toFixed(0) }}
@@ -44,7 +44,7 @@
             </p>
 
             <p
-              v-if="filtersList == 'Dollar Fiat'"
+              v-if="filtersList == 'Fiat'"
               class="text-3xl text-gray-900 dark:text-white"
             >
               {{ product.fiat }} $

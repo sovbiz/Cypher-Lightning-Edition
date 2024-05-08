@@ -27,8 +27,8 @@ const { filtersList } = storeToRefs(filtersStore);
 
 const setCurrency = [
   { name: "Bitcoin" },
-  { name: "Satoshi" },
-  { name: "Dollar Fiat" },
+  { name: "Sats" },
+  { name: "Fiat" },
 ];
 </script>
 <template>
@@ -45,12 +45,12 @@ const setCurrency = [
             aria-hidden="true"
           />
           <SatoshiV2Icon
-            v-if="filtersList == 'Satoshi'"
+            v-if="filtersList == 'Sats'"
             class="h-6 w-6"
             aria-hidden="true"
           />
           <NoDollarsIcon
-            v-if="filtersList == 'Dollar Fiat'"
+            v-if="filtersList == 'Fiat'"
             class="h-6 w-6"
             aria-hidden="true"
           />
