@@ -2,23 +2,15 @@
 
 import data from '~/config/shop'
 
-  const products = data
+const products = data.slice(0, 3)
 
-
-
-  import { useFiltersStore } from '~/store/currency'
+import { useFiltersStore } from '~/store/currency'
 import { storeToRefs } from 'pinia'
-
 
 import { useProjectStore } from '~/store/shopcart'
 
-
 const cartStore = useProjectStore()
 const { addToCart } = cartStore
-
-
-
-
 
 const inputVal = ref('')
 
@@ -26,12 +18,9 @@ const filtersStore = useFiltersStore()
 const { addValueToFilterList } = filtersStore
 const { filtersList } = storeToRefs(filtersStore)
 
-
-
-
 const btcprice = await $fetch('https://api.coinbase.com/v2/exchange-rates?currency=BTC')
 
-    const btcprices = 1 / (Number(btcprice.data.rates.USD)).toFixed(2) 
+const btcprices = 1 / (Number(btcprice.data.rates.USD)).toFixed(2) 
 
     import { BitcoinIcon, SatoshiV2Icon, NoDollarsIcon } from '@bitcoin-design/bitcoin-icons-vue/filled'
 
@@ -117,19 +106,7 @@ const btcprice = await $fetch('https://api.coinbase.com/v2/exchange-rates?curren
                 <h3 class="text-sm font-medium text-gray-900 dark:text-white">{{ product.name }}</h3>
                 <p class="mt-1 text-sm text-gray-500">{{ product.color }}</p>
               </div>
-              <!-- 
-              <div class="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
-                <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50" />
 
-                <p v-if="filtersList == 'Bitcoin'" class="relative text-lg font-semibold text-white">{{ (product.fiat * btcprices).toFixed(8) }} <BitcoinIcon  class="h-6 w-6 inline" aria-hidden="true" /></p>
-
-                <p v-if="filtersList == 'Sats'" class="relative text-lg font-semibold text-white">{{ (product.fiat * btcprices * 100000000).toFixed(0) }} <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" /></p>
-
-                <p v-if="filtersList == 'Fiat'" class="relative text-lg font-semibold text-white">{{ product.fiat  }} $</p>
-
-
-              </div>
-              -->
             </div>
 
             <div class="mt-4 flex justify-between">
@@ -144,18 +121,9 @@ const btcprice = await $fetch('https://api.coinbase.com/v2/exchange-rates?curren
 
             </div>
 
-
-
-
-
-
-
-
             <div class="basis-full flex flex-col ">
               
               <div class="text-lg font-medium text-gray-900 dark:text-white w-full basis-full">
-
-
 
                 <p v-if="filtersList == 'Bitcoin'" class="float-left dark:text-white font-semibold text-black">{{ (product.fiat * btcprices).toFixed(8) }} <BitcoinIcon  class="h-6 w-6 inline" aria-hidden="true" /></p>
 
@@ -163,23 +131,9 @@ const btcprice = await $fetch('https://api.coinbase.com/v2/exchange-rates?curren
 
                 <p v-if="filtersList == 'Fiat'" class="float-left dark:text-white font-semibold text-black">{{ product.fiat  }} $</p>
 
-
-
-
-
-
-
-
-                <!-- <span class="text-right float-right dark:text-white" v-if="$store.state.currency.currency == 'eur' " > {{ p.price.eur }} €</span>
-
-              <span class="text-right float-right dark:text-white" v-if="$store.state.currency.currency == 'usd' "> {{ p.fiat }} $</span> -->
               </div>
 
-
-
-
           <div class="w-full dark:text-white basis-full"> 
-            
             
             <span v-if="product.stock < 5 && product.stock > 0" class="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span class="flex w-2.5 h-2.5 bg-orange-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Lastitems") }}</span>
 
@@ -189,23 +143,7 @@ const btcprice = await $fetch('https://api.coinbase.com/v2/exchange-rates?curren
 
           </div>
 
-
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
           </NuxtLink>
 
