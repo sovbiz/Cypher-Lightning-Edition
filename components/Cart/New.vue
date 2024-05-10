@@ -591,7 +591,7 @@
 
         <lightning-widget
 
-          accent=""
+          accent="#000"
           :to="data.lnurl"
           :addressbtc="data.btcadress"
           shippingpay="0.0000"

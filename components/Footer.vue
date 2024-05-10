@@ -3,8 +3,11 @@ import data from "~/config/setup";
 
 import menu from "~/config/menu";
 
-
 const currentDate = new Date();
+
+
+
+
 </script>
 <template>
   <footer
@@ -134,11 +137,20 @@ const currentDate = new Date();
           </div>
         </div>
       </div>
+
+      <FundsTicker />
+
       <div
-        class="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8"
+        class="mx-auto max-w-7xl px-6 py-2 md:flex md:items-center md:justify-between lg:px-8"
       >
+
+      
+
         <div class="flex w-full justify-center space-x-6 md:order-2">
           
+          
+          
+
           <p
             class="text-xs leading-5 text-black dark:text-black dark:text-white mt-1"
           >
