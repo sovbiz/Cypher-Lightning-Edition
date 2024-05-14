@@ -617,6 +617,10 @@ import { useProjectStore } from "~/store/shopcart";
 import { storeToRefs } from "pinia";
 import data from "~/config/setup";
 
+
+import ticker from '~/config/setup'
+
+
 const displaymode = ref(false)
 
 const launchStep = ref('');
