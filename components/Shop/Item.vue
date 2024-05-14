@@ -128,10 +128,11 @@ const cartStore = useProjectStore();
 const { addToCart } = cartStore;
 
 const btcprice = await $fetch(
-  "https://api.coinbase.com/v2/exchange-rates?currency=BTC"
+  "https://api.coinbase.com/v2/exchange-rates?currency=" + ticker.fiat.denomination
 );
 
-const btcprices = 1 / Number(btcprice.data.rates.USD).toFixed(2);
+const btcprices = Number(btcprice.data.rates.BTC).toFixed(8);
+
 
 import {
   BitcoinIcon,
