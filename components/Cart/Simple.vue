@@ -75,7 +75,7 @@
                       v-if="filtersList == 'Fiat'"
                       class="text-right text-xl font-medium text-gray-900 dark:text-white"
                     >
-                      {{ product.price }} $
+                      {{ product.price }} {{ ticker.fiat.symbol }}
                     </p>
                   </div>
 
@@ -146,7 +146,7 @@
                     v-if="filtersList == 'Fiat'"
                     class="text-right text-xl font-medium text-gray-900"
                   >
-                    {{ totalPrice }} $
+                    {{ totalPrice }} {{ ticker.fiat.symbol }}
                   </dd>
                 </div>
               </dl>
@@ -422,7 +422,7 @@
                       v-if="filtersList == 'Fiat'"
                       class="text-right text-xl font-medium text-gray-900 dark:text-white"
                     >
-                      {{ product.price }} $
+                      {{ product.price }} {{ ticker.fiat.symbol }}
                     </p>
                   </div>
 
@@ -497,7 +497,7 @@
 
           <div class="flex justify-between">
             <dt class="font-medium text-gray-900 dark:text-white">Current BTC Price</dt>
-            <dd class="text-gray-700 dark:text-white">$ {{ (Number(btcprice.data.rates.USD)).toFixed(2) }}</dd>
+            <dd class="text-gray-700 dark:text-white">{{ (Number(btcprice.data.rates.USD)).toFixed(2) }} {{ ticker.fiat.symbol }}</dd>
           </div>
           <div class="flex justify-between">
             <dt class="font-medium text-gray-900 dark:text-white">Total Bitcoin Price</dt>
@@ -509,7 +509,7 @@
           </div>
           <div class="flex justify-between">
             <dt class="font-medium text-gray-900 dark:text-white">Total Aproximate in Fiat</dt>
-            <dd class="text-gray-900 dark:text-white">$ {{ (totalPrice).toFixed(2) }}</dd>
+            <dd class="text-gray-900 dark:text-white">{{ (totalPrice).toFixed(2) }} {{ ticker.fiat.symbol }}</dd>
           </div>
         </dl>
 
