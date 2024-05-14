@@ -84,7 +84,7 @@
                 v-if="filtersList == 'Fiat'"
                 class="text-3xl text-gray-900 dark:text-white"
               >
-                {{ product[0].fiat }} $
+                {{ product[0].fiat }} {{ tickersymbol }}
               </p>
             </div>
 
@@ -313,6 +313,10 @@ import {
 } from "@bitcoin-design/bitcoin-icons-vue/filled";
 
 import data from "~/config/shop";
+
+import ticker from '~/config/setup'
+
+const tickersymbol = ticker.fiat.symbol 
 
 const products = data;
 

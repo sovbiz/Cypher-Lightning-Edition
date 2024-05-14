@@ -47,7 +47,7 @@
               v-if="filtersList == 'Fiat'"
               class="text-3xl text-gray-900 dark:text-white"
             >
-              {{ product.fiat }} $
+              {{ product.fiat }} {{ tickersymbol }}
             </p>
           </div>
 
@@ -119,6 +119,10 @@ const { addValueToFilterList } = filtersStore;
 const { filtersList } = storeToRefs(filtersStore);
 
 import { useProjectStore } from "~/store/shopcart";
+
+import ticker from '~/config/setup'
+
+const tickersymbol = ticker.fiat.symbol 
 
 const cartStore = useProjectStore();
 const { addToCart } = cartStore;

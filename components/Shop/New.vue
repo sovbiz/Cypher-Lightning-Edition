@@ -2,6 +2,10 @@
 
 import data from '~/config/shop'
 
+import ticker from '~/config/setup'
+
+const tickersymbol = ticker.fiat.symbol 
+
 const products = data.slice(0, 3)
 
 import { useFiltersStore } from '~/store/currency'
@@ -129,7 +133,7 @@ const btcprices = 1 / (Number(btcprice.data.rates.USD)).toFixed(2)
 
                 <p v-if="filtersList == 'Sats'" class="float-left dark:text-white font-semibold text-black">{{ (product.fiat * btcprices * 100000000).toFixed(0) }} <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" /></p>
 
-                <p v-if="filtersList == 'Fiat'" class="float-left dark:text-white font-semibold text-black">{{ product.fiat  }} $</p>
+                <p v-if="filtersList == 'Fiat'" class="float-left dark:text-white font-semibold text-black">{{ product.fiat  }} {{ tickersymbol }}</p>
 
               </div>
 

@@ -407,7 +407,7 @@
 </template>
 
 <script setup>
-import data from "~/config/setup";
+import data from "~/config/menu";
 
 definePageMeta({
   layout: "admin",

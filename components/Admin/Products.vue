@@ -3,6 +3,11 @@ import data from "~/config/shop";
 
 const products = data;
 
+import ticker from '~/config/setup'
+
+const tickersymbol = ticker.fiat.symbol 
+
+
 import { useFiltersStore } from "~/store/currency";
 import { storeToRefs } from "pinia";
 
@@ -95,19 +100,7 @@ const { t } = useI18n({ useScope: "local" });
                 </h3>
                 <p class="mt-1 text-sm text-gray-500">{{ product.color }}</p>
               </div>
-              <!-- 
-              <div class="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
-                <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50" />
 
-                <p v-if="filtersList == 'Bitcoin'" class="relative text-lg font-semibold text-white">{{ (product.fiat * btcprices).toFixed(8) }} <BitcoinIcon  class="h-6 w-6 inline" aria-hidden="true" /></p>
-
-                <p v-if="filtersList == 'Sats'" class="relative text-lg font-semibold text-white">{{ (product.fiat * btcprices * 100000000).toFixed(0) }} <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" /></p>
-
-                <p v-if="filtersList == 'Fiat'" class="relative text-lg font-semibold text-white">{{ product.fiat  }} $</p>
-
-
-              </div>
-              -->
             </div>
 
             <div class="mt-4 flex justify-between">
@@ -147,7 +140,7 @@ const { t } = useI18n({ useScope: "local" });
                   v-if="filtersList == 'Fiat'"
                   class="float-left dark:text-white font-semibold text-black"
                 >
-                  {{ product.fiat }} $
+                  {{ product.fiat }} {{ tickersymbol }}
                 </p>
 
                 <!-- <span class="text-right float-right dark:text-white" v-if="$store.state.currency.currency == 'eur' " > {{ p.price.eur }} €</span>

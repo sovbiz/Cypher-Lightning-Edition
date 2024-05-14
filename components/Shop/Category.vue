@@ -204,19 +204,7 @@
                 <h3 class="text-sm font-medium text-gray-900 dark:text-white">{{ product.name }}</h3>
                 <p class="mt-1 text-sm text-gray-500">{{ product.color }}</p>
               </div>
-              <!-- 
-              <div class="absolute inset-x-0 top-0 flex h-72 items-end justify-end overflow-hidden rounded-lg p-4">
-                <div aria-hidden="true" class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50" />
 
-                <p v-if="filtersList == 'Bitcoin'" class="relative text-lg font-semibold text-white">{{ (product.fiat * btcprices).toFixed(8) }} <BitcoinIcon  class="h-6 w-6 inline" aria-hidden="true" /></p>
-
-                <p v-if="filtersList == 'Sats'" class="relative text-lg font-semibold text-white">{{ (product.fiat * btcprices * 100000000).toFixed(0) }} <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" /></p>
-
-                <p v-if="filtersList == 'Fiat'" class="relative text-lg font-semibold text-white">{{ product.fiat  }} $</p>
-
-
-              </div>
-              -->
             </div>
 
             <div class="mt-4 flex justify-between">
@@ -248,7 +236,7 @@
 
                 <p v-if="filtersList == 'Sats'" class="float-left dark:text-white font-semibold text-black">{{ (product.fiat * btcprices * 100000000).toFixed(0) }} <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" /></p>
 
-                <p v-if="filtersList == 'Fiat'" class="float-left dark:text-white font-semibold text-black">{{ product.fiat  }} $</p>
+                <p v-if="filtersList == 'Fiat'" class="float-left dark:text-white font-semibold text-black">{{ product.fiat  }} {{ tickersymbol }}</p>
 
 
 
@@ -341,6 +329,12 @@
   import { ref } from 'vue'
 
   import data from '~/config/shop'
+
+  import ticker from '~/config/setup'
+
+const tickersymbol = ticker.fiat.symbol 
+
+
 
 const products = ref(data)
 
