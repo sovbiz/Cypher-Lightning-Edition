@@ -15,7 +15,7 @@ const btcprices = Number(btcprice.data.rates.BTC).toFixed(8);
 </script>
 <template>
   <div>
-    <p class="text-xs leading-5 text-black dark:text-black dark:text-white mt-12 block text-center">Bitcoin Ticker: {{ tickerprice }} $</p>
+    <p class="text-xs leading-5 text-black dark:text-black dark:text-white mt-12 block text-center">Bitcoin Ticker: {{ btcprices }} {{ ticker.fiat.symbol }}</p>
   </div>
 
 </template>
