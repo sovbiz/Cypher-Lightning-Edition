@@ -50,7 +50,7 @@
 
                       <h3 class="text-sm">
                         <a
-                          class="font-medium text-3xl text-gray-700 hover:text-gray-800 dark:text-white"
+                          class="font-medium text-2xl text-gray-700 hover:text-gray-800 dark:text-white"
                           >{{ product.variation }}</a
                         >
                       </h3>
@@ -192,11 +192,11 @@
                 </svg>
               </div>
               <div class="ml-3">
-                <h3 class="text-sm font-medium text-red-800">The shipping information is missing some input! 👀</h3>
+                <h3 class="text-sm font-medium text-red-800">{{ t('message') }}</h3>
                 <div class="mt-2 text-sm text-red-700">
                   <ul role="list" class="list-disc space-y-1 pl-5">
-                    <li>Please make sure the following fields are correctly filled in.</li>
-                    <li>First & Last name, Emailaddress and Geographic Address 🌎</li>
+                    <li>{{ t('instructions') }}</li>
+                    <li>{{ t('required_fields') }}</li>
                   </ul>
                 </div>
               </div>
@@ -230,7 +230,7 @@
             </div>
 
             <div class="sm:col-span-2">
-              <label for="email" class="block text-sm font-medium text-gray-700 dark:text-white">Email</label>
+              <label for="email" class="block text-sm font-medium text-gray-700 dark:text-white">{{ t('Email') }}</label>
               <div class="mt-1">
                 <input type="text" v-model="email" id="email" name="email" autocomplete="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm dark:text-black">
               </div>
@@ -331,9 +331,9 @@
           <div class=" px-4 pb-24 pt-16 sm:px-6 sm:pt-24 lg:px-8 lg:py-16 rounded-3xl border-4 border-gray-600 mt-4">
   <div class="mx-auto max-w-3xl">
     <div class="max-w-3xl">
-      <h1 class="text-base font-medium text-indigo-600 dark:text-white">Thank you for concidering ordering stuff!</h1>
-      <p class="mt-2 text-4xl font-bold tracking-tight">Order Overview!</p>
-      <p class="mt-2 text-base text-gray-500 dark:text-white">Your order #{{ randomid }} please confirm all details updating won't be possible.<br> Take a screenshot of the order information and make sure your payment mentions the order id! </p>
+      <h1 class="text-base font-medium text-indigo-600 dark:text-white">{{ t('thank_you_note') }}</h1>
+      <p class="mt-2 text-4xl font-bold tracking-tight">{{ t('order_overview') }}</p>
+      <p class="mt-2 text-base text-gray-500 dark:text-white">{{ t('order_number_instruction') }}{{ randomid }} {{ t('confirmation_note') }} </p>
 
 
 
@@ -349,7 +349,7 @@
     </div>
     <div class="ml-3">
       <p class="text-sm text-yellow-700">
-        You have to agree with our shipping and terms of service by clicking the checkbox at the bottom.
+        {{ t('agreement_instruction') }}
       </p>
     </div>
   </div>
@@ -403,6 +403,15 @@
                           >{{ product.title }}</a
                         >
                       </h3>
+
+
+                      <h3 class="text-sm">
+                        <a
+                          class="font-medium text-2xl text-gray-700 hover:text-gray-800 dark:text-white"
+                          >{{ product.variation }}</a
+                        >
+                      </h3>
+
                     </div>
 
                     <p
@@ -465,7 +474,7 @@
         <h4 class="sr-only">Addresses</h4>
         <dl class="grid grid-cols-2 gap-x-6 py-10 text-sm">
           <div>
-            <dt class="font-medium text-gray-900 dark:text-white">Shipping address</dt>
+            <dt class="font-medium text-gray-900 dark:text-white">{{ t('shipping_address') }}</dt>
             <dd class="mt-2 text-gray-700 dark:text-white">
               <address class="not-italic">
                 
@@ -477,12 +486,12 @@
             </dd>
           </div>
           <div>
-            <dt class="font-medium text-gray-900 dark:text-white">Shipping method</dt>
+            <dt class="font-medium text-gray-900 dark:text-white">{{ t('shipping_method') }}</dt>
             <dd class="mt-2 text-gray-700 dark:text-white">
               <address class="not-italic">
-                <span class="block">Free Global Shipping</span>
-                <span class="block">Order ships out up to 7 days </span>
-                <span class="block">Delivery time: 5 working days</span>
+                <span class="block">{{ t('free_global_shipping') }}</span>
+                <span class="block">{{ t('order_shipping_time') }} </span>
+                <span class="block">{{ t('delivery_time') }}</span>
               </address>
             </dd>
           </div>
@@ -490,26 +499,26 @@
 
 
 
-        <h3 class="dark:text-white">Order information</h3>
+        <h3 class="dark:text-white">{{ t('order_information') }}</h3>
 
         <dl class="space-y-6 border-t border-gray-200 dark:text-white pt-10 text-sm">
 
           <div class="flex justify-between">
-            <dt class="font-medium text-gray-900 dark:text-white">Timestamp</dt>
+            <dt class="font-medium text-gray-900 dark:text-white">{{ t('timestamp') }}</dt>
             <dd class="text-gray-700 dark:text-white">{{ Date.now() }}</dd>
           </div>
 
           <div class="flex justify-between">
-            <dt class="font-medium text-gray-900 dark:text-white">Order ID</dt>
+            <dt class="font-medium text-gray-900 dark:text-white">{{ t('order_id') }}</dt>
             <dd class="text-gray-700 dark:text-white">#{{ randomid }}</dd>
           </div>
 
           <div class="flex justify-between">
-            <dt class="font-medium text-gray-900 dark:text-white">Current BTC Price</dt>
+            <dt class="font-medium text-gray-900 dark:text-white">{{ t('current_btc_price') }}</dt>
             <dd class="text-gray-700 dark:text-white"> {{ (Number(btcprice.data.rates.USD)).toFixed(2) }} {{ ticker.fiat.symbol }}</dd>
           </div>
           <div class="flex justify-between">
-            <dt class="font-medium text-gray-900 dark:text-white">Total Bitcoin Price</dt>
+            <dt class="font-medium text-gray-900 dark:text-white">{{ t('total_bitcoin_price') }}</dt>
             <dd class="text-gray-700 dark:text-white">{{ (totalPrice * btcprices).toFixed(8) }}
               <BitcoinIcon
                         class="h-6 w-6 inline -mt-1"
@@ -517,13 +526,13 @@
                       /></dd>
           </div>
           <div class="flex justify-between">
-            <dt class="font-medium text-gray-900 dark:text-white">Total Aproximate in Fiat</dt>
+            <dt class="font-medium text-gray-900 dark:text-white">{{ t('total_approximate_in_fiat') }}</dt>
             <dd class="text-gray-900 dark:text-white"> {{ (totalPrice).toFixed(2) }} {{ ticker.fiat.symbol }}</dd>
           </div>
         </dl>
 
 <div class="mt-6">
-<input type="checkbox" v-model="ordercheck" class="inline-block "/> <p class="inline-block text-black dark:text-white"> I confirm the above information is correct and agree with the <NuxtLink :to="localePath('/shipping')" class="underline">shipping</NuxtLink> & <NuxtLink :to="localePath('/tos')" class="underline">TOS </NuxtLink></p> 
+<input type="checkbox" v-model="ordercheck" class="inline-block "/> <p class="inline-block text-black dark:text-white"> {{ t('confirmation_agreement') }} <NuxtLink :to="localePath('/shipping')" class="underline">{{ t('shipping') }}</NuxtLink> & <NuxtLink :to="localePath('/tos')" class="underline">{{ t('TOS') }} </NuxtLink></p> 
 </div>
       </div>
     </section>
@@ -563,8 +572,8 @@
 
 
 <div class="max-w-3xl mb-12">
-    <h1 class="text-base font-medium text-indigo-600 dark:text-white">Choose your payment method to finish your order.</h1>
-    <p class="mt-2 text-4xl font-bold tracking-tight">Thank you for ordering stuff 🎉!</p>
+    <h1 class="text-base font-medium text-indigo-600 dark:text-white">{{ t('payment_instructions') }}.</h1>
+    <p class="mt-2 text-4xl font-bold tracking-tight">{{ t('final_thank_you_note') }}</p>
 
 
     <div class="border-l-4 border-yellow-400 bg-yellow-50 p-4 mt-6">
@@ -576,7 +585,7 @@
     </div>
     <div class="ml-3">
       <p class="text-sm text-yellow-700">
-        Your order with id #{{ randomid }} has been registered, to finish your order please continue by choosing onchain or lightning payment. Once payment has been verified we will ship your order as soon as possible.
+        {{ t('Your_id') }}{{ randomid }} {{ t('finalregister') }}
       </p>
     </div>
   </div>
@@ -815,7 +824,7 @@ const { t } = useI18n({ useScope: "local" });
     "Ordertotal": "Ordre Total",
     "ContinueOrder": "Fortsæt til ordreoversigt",
     "ContinuePay": "Fortsæt til betaling",
-    "ContinueShop": "Fortsæt med at handle ",
+    "ContinueShop": "Fortsæt med at handle",
     "ShippingAddress": "Forsendelsesadresse",
     "FirstName": "Fornavn",
     "LastName": "Efternavn",
@@ -825,7 +834,36 @@ const { t } = useI18n({ useScope: "local" });
     "City": "By",
     "Postcode": "Postnummer",
     "StateProvince": "Stat / Provins",
-    "Country": "Land"
+    "Country": "Land",
+    "message": "Forsendelsesinformationen mangler nogle input! 👀",
+    "instructions": "Sørg for, at følgende felter er korrekt udfyldt.",
+    "required_fields": "Fornavn & Efternavn, Emailadresse og Geografisk adresse 🌎",
+    "thank_you_note": "Tak fordi du overvejer at bestille ting!",
+    "order_overview": "Ordreoversigt!",
+    "order_number_instruction": "Din ordre #",
+    "confirmation_note": "Bekræft venligst alle detaljer, opdatering vil ikke være mulig. Tag et skærmbillede af ordreinformationen og sørg for, at din betaling nævner ordrenummeret!",
+    "agreement_instruction": "Du skal acceptere vores forsendelses- og servicevilkår ved at klikke på afkrydsningsfeltet nederst.",
+    "shipping_address": "Forsendelsesadresse",
+    "shipping_method": "Forsendelsesmetode",
+    "free_global_shipping": "Gratis global forsendelse",
+    "order_shipping_time": "Ordre afsendes op til 7 dage",
+    "delivery_time": "Leveringstid: 5 arbejdsdage",
+    "order_information": "Ordreinformation",
+    "timestamp": "Tidsstempel",
+    "order_id": "Ordre ID",
+    "current_btc_price": "Aktuel BTC-pris",
+    "total_bitcoin_price": "Total Bitcoin-pris",
+    "total_approximate_in_fiat": "Samlet omtrentlig værdi i fiat",
+    "confirmation_agreement": "Jeg bekræfter, at ovenstående oplysninger er korrekte og accepterer forsendelses- og servicevilkårene",
+    "payment_instructions": "Vælg din betalingsmetode for at afslutte din ordre.",
+    "final_thank_you_note": "Tak fordi du bestilte ting 🎉!",
+    "order_registered_note": "Din ordre med id er registreret, for at afslutte din ordre bedes du fortsætte med at vælge onchain eller lightning betaling. Når betalingen er verificeret, vil vi sende din ordre hurtigst muligt.",
+    "Email": "Email",
+    "confirmation_note": "Jeg bekræfter, at ovenstående oplysninger er korrekte og accepterer",
+    "shipping": "forsendelse",
+    "TOS": "TOS",
+    "Your_id": "Din ordre med id",
+    "finalregister": "er blevet registreret, for at afslutte din ordre bedes du fortsætte med at vælge onchain eller lightning betaling. Når betalingen er verificeret, vil vi sende din ordre hurtigst muligt."
   },
   "de": {
     "Shopcart": "Einkaufswagen",
@@ -835,7 +873,7 @@ const { t } = useI18n({ useScope: "local" });
     "Ordertotal": "Bestellsumme",
     "ContinueOrder": "Weiter zur Bestellübersicht",
     "ContinuePay": "Weiter zur Zahlung",
-    "ContinueShop": "Weiter einkaufen ",
+    "ContinueShop": "Weiter einkaufen",
     "ShippingAddress": "Lieferadresse",
     "FirstName": "Vorname",
     "LastName": "Nachname",
@@ -845,7 +883,36 @@ const { t } = useI18n({ useScope: "local" });
     "City": "Stadt",
     "Postcode": "Postleitzahl",
     "StateProvince": "Bundesland / Provinz",
-    "Country": "Land"
+    "Country": "Land",
+    "message": "Die Versandinformationen fehlen einige Eingaben! 👀",
+    "instructions": "Bitte stellen Sie sicher, dass die folgenden Felder korrekt ausgefüllt sind.",
+    "required_fields": "Vor- und Nachname, E-Mail-Adresse und geografische Adresse 🌎",
+    "thank_you_note": "Danke, dass Sie erwägen, Dinge zu bestellen!",
+    "order_overview": "Bestellübersicht!",
+    "order_number_instruction": "Ihre Bestellung #",
+    "confirmation_note": "Bitte bestätigen Sie alle Details, eine Aktualisierung wird nicht möglich sein. Machen Sie einen Screenshot der Bestellinformationen und stellen Sie sicher, dass Ihre Zahlung die Bestellnummer enthält!",
+    "agreement_instruction": "Sie müssen unseren Versand- und Nutzungsbedingungen zustimmen, indem Sie das Kontrollkästchen unten anklicken.",
+    "shipping_address": "Lieferadresse",
+    "shipping_method": "Versandart",
+    "free_global_shipping": "Kostenloser weltweiter Versand",
+    "order_shipping_time": "Bestellung wird bis zu 7 Tagen versendet",
+    "delivery_time": "Lieferzeit: 5 Werktage",
+    "order_information": "Bestellinformationen",
+    "timestamp": "Zeitstempel",
+    "order_id": "Bestell-ID",
+    "current_btc_price": "Aktueller BTC-Preis",
+    "total_bitcoin_price": "Gesamt-Bitcoin-Preis",
+    "total_approximate_in_fiat": "Gesamtsumme ungefähr in Fiat",
+    "confirmation_agreement": "Ich bestätige, dass die obigen Informationen korrekt sind und stimme den Versandbedingungen zu",
+    "payment_instructions": "Wählen Sie Ihre Zahlungsmethode, um Ihre Bestellung abzuschließen.",
+    "final_thank_you_note": "Vielen Dank für Ihre Bestellung 🎉!",
+    "order_registered_note": "Ihre Bestellung mit der ID wurde registriert, um Ihre Bestellung abzuschließen, wählen Sie bitte Onchain- oder Lightning-Zahlung. Sobald die Zahlung bestätigt ist, versenden wir Ihre Bestellung so schnell wie möglich.",
+    "Email": "E-Mail",
+    "I confirm the above information is correct and agree with the": "Ich bestätige, dass die obigen Informationen korrekt sind und stimme",
+    "shipping": "dem Versand",
+    "TOS": "TOS zu",
+    "Your_id": "Ihre Bestellung mit der ID",
+    "finalregister": "wurde registriert, um Ihre Bestellung abzuschließen, wählen Sie bitte Onchain- oder Lightning-Zahlung. Sobald die Zahlung bestätigt ist, versenden wir Ihre Bestellung so schnell wie möglich."
   },
   "en": {
     "Shopcart": "Shopping Cart",
@@ -855,7 +922,7 @@ const { t } = useI18n({ useScope: "local" });
     "Ordertotal": "Order Total",
     "ContinueOrder": "Continue to order overview",
     "ContinuePay": "Continue to payment",
-    "ContinueShop": "Continue Shopping ",
+    "ContinueShop": "Continue Shopping",
     "ShippingAddress": "Shipping address",
     "FirstName": "First Name",
     "LastName": "Last Name",
@@ -865,7 +932,36 @@ const { t } = useI18n({ useScope: "local" });
     "City": "City",
     "Postcode": "Postal code",
     "StateProvince": "State / Province",
-    "Country": "Country"
+    "Country": "Country",
+    "message": "The shipping information is missing some input! 👀",
+    "instructions": "Please make sure the following fields are correctly filled in.",
+    "required_fields": "First & Last name, Email address and Geographic Address 🌎",
+    "thank_you_note": "Thank you for considering ordering stuff!",
+    "order_overview": "Order Overview!",
+    "order_number_instruction": "Your order #",
+    "confirmation_note": "Please confirm all details, updating won't be possible. Take a screenshot of the order information and make sure your payment mentions the order id!",
+    "agreement_instruction": "You have to agree with our shipping and terms of service by clicking the checkbox at the bottom.",
+    "shipping_address": "Shipping address",
+    "shipping_method": "Shipping method",
+    "free_global_shipping": "Free Global Shipping",
+    "order_shipping_time": "Order ships out up to 7 days",
+    "delivery_time": "Delivery time: 5 working days",
+    "order_information": "Order information",
+    "timestamp": "Timestamp",
+    "order_id": "Order ID",
+    "current_btc_price": "Current BTC Price",
+    "total_bitcoin_price": "Total Bitcoin Price",
+    "total_approximate_in_fiat": "Total Approximate in Fiat",
+    "confirmation_agreement": "I confirm the above information is correct and agree with the shipping TOS",
+    "payment_instructions": "Choose your payment method to finish your order.",
+    "final_thank_you_note": "Thank you for ordering stuff 🎉!",
+    "order_registered_note": "Your order with id has been registered, to finish your order please continue by choosing onchain or lightning payment. Once payment has been verified we will ship your order as soon as possible.",
+    "Email": "Email",
+    "I confirm the above information is correct and agree with the": "I confirm the above information is correct and agree with the",
+    "shipping": "shipping",
+    "TOS": "TOS",
+    "Your_id": "Your order with id",
+    "finalregister": "has been registered, to finish your order please continue by choosing onchain or lightning payment. Once payment has been verified we will ship your order as soon as possible."
   },
   "es": {
     "Shopcart": "Carrito de Compras",
@@ -875,7 +971,7 @@ const { t } = useI18n({ useScope: "local" });
     "Ordertotal": "Total del Pedido",
     "ContinueOrder": "Continuar al resumen del pedido",
     "ContinuePay": "Continuar al pago",
-    "ContinueShop": "Continuar comprando ",
+    "ContinueShop": "Continuar comprando",
     "ShippingAddress": "Dirección de Envío",
     "FirstName": "Nombre",
     "LastName": "Apellido",
@@ -885,7 +981,36 @@ const { t } = useI18n({ useScope: "local" });
     "City": "Ciudad",
     "Postcode": "Código Postal",
     "StateProvince": "Estado / Provincia",
-    "Country": "País"
+    "Country": "País",
+    "message": "¡Faltan algunos datos en la información de envío! 👀",
+    "instructions": "Por favor, asegúrese de que los siguientes campos están correctamente llenados.",
+    "required_fields": "Nombre y Apellido, Dirección de correo electrónico y Dirección geográfica 🌎",
+    "thank_you_note": "¡Gracias por considerar ordenar cosas!",
+    "order_overview": "Resumen del Pedido!",
+    "order_number_instruction": "Tu pedido #",
+    "confirmation_note": "Por favor confirme todos los detalles, no será posible actualizar. Tome una captura de pantalla de la información del pedido y asegúrese de que su pago mencione el número de pedido.",
+    "agreement_instruction": "Debe aceptar nuestros términos y condiciones de envío marcando la casilla al final.",
+    "shipping_address": "Dirección de Envío",
+    "shipping_method": "Método de Envío",
+    "free_global_shipping": "Envío Global Gratis",
+    "order_shipping_time": "El pedido se envía en hasta 7 días",
+    "delivery_time": "Tiempo de entrega: 5 días laborables",
+    "order_information": "Información del pedido",
+    "timestamp": "Marca temporal",
+    "order_id": "ID de Pedido",
+    "current_btc_price": "Precio actual de BTC",
+    "total_bitcoin_price": "Precio total en Bitcoin",
+    "total_approximate_in_fiat": "Total aproximado en Fiat",
+    "confirmation_agreement": "Confirmo que la información anterior es correcta y estoy de acuerdo con los términos de envío",
+    "payment_instructions": "Elija su método de pago para finalizar su pedido.",
+    "final_thank_you_note": "¡Gracias por ordenar cosas 🎉!",
+    "order_registered_note": "Su pedido con id ha sido registrado, para finalizar su pedido, por favor continúe eligiendo el pago onchain o lightning. Una vez verificado el pago, enviaremos su pedido lo antes posible.",
+    "Email": "Correo electrónico",
+    "I confirm the above information is correct and agree with the": "Confirmo que la información anterior es correcta y estoy de acuerdo con",
+    "shipping": "el envío",
+    "TOS": "TOS",
+    "Your_id": "Su pedido con id",
+    "finalregister": "ha sido registrado, para finalizar su pedido, por favor continúe eligiendo el pago onchain o lightning. Una vez verificado el pago, enviaremos su pedido lo antes posible."
   },
   "fr": {
     "Shopcart": "Chariot",
@@ -895,7 +1020,7 @@ const { t } = useI18n({ useScope: "local" });
     "Ordertotal": "Total de la Commande",
     "ContinueOrder": "Continuer vers le résumé de la commande",
     "ContinuePay": "Continuer vers le paiement",
-    "ContinueShop": "Continuer les achats ",
+    "ContinueShop": "Continuer les achats",
     "ShippingAddress": "Adresse de livraison",
     "FirstName": "Prénom",
     "LastName": "Nom de famille",
@@ -905,7 +1030,36 @@ const { t } = useI18n({ useScope: "local" });
     "City": "Ville",
     "Postcode": "Code Postal",
     "StateProvince": "État / Province",
-    "Country": "Pays"
+    "Country": "Pays",
+    "message": "Il manque des informations de livraison ! 👀",
+    "instructions": "Veuillez vous assurer que les champs suivants sont correctement remplis.",
+    "required_fields": "Prénom & Nom, Adresse e-mail et Adresse géographique 🌎",
+    "thank_you_note": "Merci de considérer commander des articles!",
+    "order_overview": "Résumé de la Commande!",
+    "order_number_instruction": "Votre commande #",
+    "confirmation_note": "Veuillez confirmer tous les détails, la mise à jour ne sera pas possible. Prenez une capture d'écran des informations de la commande et assurez-vous que votre paiement mentionne le numéro de commande!",
+    "agreement_instruction": "Vous devez accepter nos conditions de livraison et d'utilisation en cliquant sur la case en bas.",
+    "shipping_address": "Adresse de livraison",
+    "shipping_method": "Méthode d'expédition",
+    "free_global_shipping": "Livraison Mondiale Gratuite",
+    "order_shipping_time": "Commande expédiée en jusqu'à 7 jours",
+    "delivery_time": "Délai de livraison : 5 jours ouvrables",
+    "order_information": "Informations de la commande",
+    "timestamp": "Horodatage",
+    "order_id": "ID de la commande",
+    "current_btc_price": "Prix actuel du BTC",
+    "total_bitcoin_price": "Prix total en Bitcoin",
+    "total_approximate_in_fiat": "Total approximatif en Fiat",
+    "confirmation_agreement": "Je confirme que les informations ci-dessus sont correctes et j'accepte les conditions de livraison",
+    "payment_instructions": "Choisissez votre méthode de paiement pour terminer votre commande.",
+    "final_thank_you_note": "Merci d'avoir commandé des articles 🎉!",
+    "order_registered_note": "Votre commande avec l'ID a été enregistrée, pour finaliser votre commande, veuillez continuer en choisissant le paiement onchain ou lightning. Une fois le paiement vérifié, nous expédierons votre commande dès que possible.",
+    "Email": "E-mail",
+    "I confirm the above information is correct and agree with the": "Je confirme que les informations ci-dessus sont correctes et j'accepte",
+    "shipping": "les conditions de livraison",
+    "TOS": "TOS",
+    "Your_id": "Votre commande avec l'ID",
+    "finalregister": "a été enregistrée, pour finaliser votre commande, veuillez continuer en choisissant le paiement onchain ou lightning. Une fois le paiement vérifié, nous expédierons votre commande dès que possible."
   },
   "nl": {
     "Shopcart": "Winkelwagen",
@@ -915,7 +1069,7 @@ const { t } = useI18n({ useScope: "local" });
     "Ordertotal": "Totaal van de Bestelling",
     "ContinueOrder": "Doorgaan naar besteloverzicht",
     "ContinuePay": "Doorgaan naar betalen",
-    "ContinueShop": "Doorgaan met winkelen ",
+    "ContinueShop": "Doorgaan met winkelen",
     "ShippingAddress": "Verzendadres",
     "FirstName": "Voornaam",
     "LastName": "Achternaam",
@@ -925,7 +1079,38 @@ const { t } = useI18n({ useScope: "local" });
     "City": "Stad",
     "Postcode": "Postcode",
     "StateProvince": "Staat / Provincie",
-    "Country": "Land"
+    "Country": "Land",
+    "message": "De verzendinformatie mist wat invoer! 👀",
+    "instructions": "Zorg ervoor dat de volgende velden correct zijn ingevuld.",
+    "required_fields": "Voor- en Achternaam, E-mailadres en Geografisch Adres 🌎",
+    "thank_you_note": "Bedankt voor het overwegen om dingen te bestellen!",
+    "order_overview": "Bestellingsoverzicht!",
+    "order_number_instruction": "Je bestelling #",
+    "confirmation_note": "Bevestig alle details alstublieft, bijwerken zal niet mogelijk zijn. Maak een screenshot van de bestelgegevens en zorg ervoor dat uw betaling het bestelnummer vermeldt!",
+    "agreement_instruction": "Je moet akkoord gaan met onze verzend- en servicevoorwaarden door op het vakje onderaan te klikken.",
+    "shipping_address": "Verzendadres",
+    "shipping_method": "Verzendmethode",
+    "free_global_shipping": "Gratis Wereldwijde Verzending",
+    "order_shipping_time": "Bestelling wordt verzonden tot 7 dagen",
+    "delivery_time": "Levertijd: 5 werkdagen",
+    "order_information": "Bestelinformatie",
+    "timestamp": "Tijdstempel",
+    "order_id": "Bestel ID",
+    "current_btc_price": "Huidige BTC-prijs",
+    "total_bitcoin_price": "Totale Bitcoin-prijs",
+    "total_approximate_in_fiat": "Totale geschatte waarde in Fiat",
+    "confirmation_agreement": "Ik bevestig dat bovenstaande informatie correct is en ga akkoord met de verzendvoorwaarden",
+    "payment_instructions": "Kies uw betaalmethode om uw bestelling af te ronden.",
+    "final_thank_you_note": "Bedankt voor het bestellen van dingen 🎉!",
+    "order_registered_note": "Je bestelling met id is geregistreerd, om je bestelling af te ronden, ga je verder door te kiezen voor onchain- of lightningbetaling. Zodra de betaling is geverifieerd, verzenden we je bestelling zo snel mogelijk.",
+    "Email": "E-mail",
+    "I confirm the above information is correct and agree with the": "Ik bevestig dat bovenstaande informatie correct is en ga akkoord met de",
+    "shipping": "verzendvoorwaarden",
+    "TOS": "TOS",
+    "Your_id": "Je bestelling met id",
+    "finalregister": "is geregistreerd, om je bestelling af te ronden, ga verder door te kiezen voor onchain- of lightningbetaling. Zodra de betaling is geverifieerd, verzenden we je bestelling zo snel mogelijk."
   }
 }
+
+
 </i18n>
