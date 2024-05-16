@@ -4,10 +4,12 @@ import { defineStore } from 'pinia'
 export const useProjectStore = defineStore('setupStore', () => {
   const cartItems = ref([])
 
-  const addToCart = (item: { id: number; amount: number, image: string, variation: string, title: string, price:number }) => {
+  const addToCart = (item: { id: number; amount: number, image: string, variation: string, title: string, price: number }) => {
     const { id, amount, image, variation, title, price } = item;
-    const existingItem = cartItems.value.find((cartItem) => cartItem.id === id);
-
+    
+    // Find existing item in the cart that matches both id and variation
+    const existingItem = cartItems.value.find((cartItem) => cartItem.id === id && cartItem.variation === variation);
+  
     if (existingItem) {
       // If the item already exists in the cart, update its quantity
       existingItem.amount += amount;
@@ -16,12 +18,16 @@ export const useProjectStore = defineStore('setupStore', () => {
       cartItems.value.push({ id, amount, image, title, variation, price });
     }
   };
-
-  const removeFromCart = (id: number) => {
-    const index = cartItems.value.findIndex((cartItem) => cartItem.id === id);
+  
+  const removeFromCart = (id: number, variation: string) => {
+    const index = cartItems.value.findIndex((cartItem) => cartItem.id === id && cartItem.variation === variation);
+  
     if (index !== -1) {
       cartItems.value.splice(index, 1);
+    } else {
+      console.error(`Item with id ${id} and variation ${variation} not found in the cart.`);
     }
+
   };
 
   const clearCart = () => {

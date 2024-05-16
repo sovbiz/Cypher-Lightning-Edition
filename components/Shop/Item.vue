@@ -208,6 +208,9 @@ const selectedVariation = ref('')
 
 const variationwarning = ref(false)
 
+watch(selectedVariation, (newValue) => {
+  console.log('Checkbox state is now:', selectedVariation.value);
+});
 
 function cartAddStore() {
 if (selectedVariation.value !== '' || product.variations == '' ){
@@ -216,7 +219,7 @@ if (selectedVariation.value !== '' || product.variations == '' ){
                     amount: 1,
                     image: product.images[0].src,
                     title: product.title,
-                    variation: selectedVariation,
+                    variation: selectedVariation.value,
                     price: product.fiat,
                   })
 

@@ -98,7 +98,7 @@
                     >
 
                     <button
-                      @click="removeFromCart((id = product.id))"
+                      @click="removeFromCart(id = product.id, variation = product.variation)"
                       class="ml-4 text-sm font-medium text-indigo-600 hover:text-indigo-500 sm:ml-0 sm:mt-3"
                     >
                       <span>{{ t("Remove") }}</span>
@@ -768,15 +768,16 @@ watch(
 //   totalPriceBtc.value = (store.getTotalPrice() * btcprices).toFixed(8)
 // }, { deep: true });
 
-watch(ordercheck, (newValue) => {
-  console.log('Checkbox state is now:', newValue);
-});
+// watch(ordercheck, (newValue) => {
+//   console.log('Checkbox state is now:', newValue);
+// });
 
 onMounted(() => {
   totalPrice.value = store.getTotalPrice();
   // totalPriceBtc.value = (store.getTotalPrice() * btcprices).toFixed(8)
   randomid.value = randomId(10);
   // console.log(randomId(10));
+  console.log(store.cartItems)
 });
 
 const timenow = Date.now()

@@ -161,7 +161,7 @@
                   class="snipcart-add-item max-w-xs flex-1 bg-colorBtnLight hover:bg-colorBtnHoverLight dark:bg-colorBtnDark dark:hover:bg-colorBtnHoverDark border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white dark:text-black dark:hover:text-white sm:w-full"
                   @click="cartAddStore()
                   "
-                  :disabled="product[0].stock == 'out'"
+                  :disabled="product[0].stock == 0"
                 >
                   {{ t("Addtocart") }}
                 </button>
@@ -300,7 +300,7 @@ if (selectedVariation.value !== '' || product[0].variations == '' ){
                       amount: 1,
                       image: product[0].images[0].src,
                       title: product[0].title,
-                      variation: selectedVariation,
+                      variation: selectedVariation.value,
                       price: product[0].fiat,
                   })
 
