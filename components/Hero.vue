@@ -67,17 +67,12 @@ Your browser does not support the video tag.
 
         <img
             
-            class="block mt-6 dark:hidden mx-auto h-48 md:h-72"
-            src="/stock/nogood/NG_Cypher_Block_LowRes.gif"
+            class="block mt-6  mx-auto h-48 md:h-72"
+            src="/stock/nogood/NG_Cypher_Blocks.gif"
             :alt="data.name"
 
           />
-          <img
-            
-            class="hidden mt-6 dark:block mx-auto h-48 md:h-72"
-            src="/stock/nogood/NG_Cypher_Block_LowRes.gif"
-            :alt="data.name"
-          />
+
 
 
 
