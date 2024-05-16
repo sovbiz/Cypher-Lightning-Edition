@@ -153,7 +153,7 @@ const btcprices = Number(btcprice.data.rates.BTC).toFixed(8);
 
           </NuxtLink>
 
-          <button
+          <!-- <button
             class="mt-2 w-full snipcart-add-item hover:shadow-lg font-semibold py-2 px-4 rounded shadow max-h-10 text-black dark:text-white dark:hover:text-black hover:text-white
             
                             bg-white hover:bg-black
@@ -178,7 +178,7 @@ const btcprices = Number(btcprice.data.rates.BTC).toFixed(8);
           {{ t("Addtocart") }}
 
             
-          </button>
+          </button> -->
 
 
           </div>
