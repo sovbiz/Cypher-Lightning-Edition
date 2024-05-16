@@ -99,7 +99,7 @@ onMounted(() => {
           >
             <span
               id="numbered"
-              class="text-center font-semibold text-xs align-text-top px-1"
+              class="text-center font-semibold text-xs align-text-center px-1"
             >
               {{ totalItems }}</span
             >
@@ -240,7 +240,8 @@ onMounted(() => {
           >
             <span
               id="numbered"
-              class="text-center font-semibold text-xs align-text-top px-1"
+              class="text-center font-semibold text-xs align-text-center px-1 "
+
             >
               {{ totalItems }}</span
             >

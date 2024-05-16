@@ -121,28 +121,23 @@
             </div>
 
 
-            <!-- <div class="mt-6" v-if="product[0].variations">
-              <h3 class="sr-only">Variations</h3>
-
-              <p
-                class="space-y-6 text-base text-gray-700 dark:text-white"
-
-              >Variations: </p>
 
 
-              <div v-for="item in product[0].variations" :key="item">
-                <p class="mt-2 dark:text-white">{{ item }} </p>
-              </div>
-              
-            </div> -->
+            <div class="mt-6 rounded-md bg-yellow-50 p-4 max-w-3xl mx-auto border-2 border-black dark:border-white" v-if="variationwarning == true" >
+    <div class="flex">
 
+      <div class="ml-3">
+        <ExclamationTriangleIcon class="h-5 w-5 text-yellow-400 inline mr-3" aria-hidden="true" />
 
+        <p class="text-sm font-medium text-yellow-800 inline"> {{ t("Warning") }}</p>
+
+      </div>
+    </div>
+  </div>
 
 
             <div class="mt-8" v-if="product[0].variations != ''">
-                <div class="flex items-center justify-between">
-                  <h2 class="text-sm font-medium text-gray-900 dark:text-white">Variations</h2>
-                </div>
+
 
                 <RadioGroup v-model="selectedVariation" class="mt-2">
                   <RadioGroupLabel class="sr-only">Choose a size</RadioGroupLabel>
@@ -164,15 +159,7 @@
               <div class="mt-10 flex sm:flex-col1">
                 <button
                   class="snipcart-add-item max-w-xs flex-1 bg-colorBtnLight hover:bg-colorBtnHoverLight dark:bg-colorBtnDark dark:hover:bg-colorBtnHoverDark border border-transparent rounded-md py-3 px-8 flex items-center justify-center text-base font-medium text-white dark:text-black dark:hover:text-white sm:w-full"
-                  @click="
-                    addToCart({
-                      id: product[0].id,
-                      amount: 1,
-                      image: product[0].images[0].src,
-                      title: product[0].title,
-                      variation: selectedVariation,
-                      price: product[0].fiat,
-                    })
+                  @click="cartAddStore()
                   "
                   :disabled="product[0].stock == 'out'"
                 >
@@ -283,7 +270,7 @@ import {
   TabPanels,
 } from "@headlessui/vue";
 import { StarIcon } from "@heroicons/vue/20/solid";
-import { HeartIcon, MinusIcon, PlusIcon } from "@heroicons/vue/24/outline";
+import { HeartIcon, MinusIcon, PlusIcon,ExclamationTriangleIcon } from "@heroicons/vue/24/outline";
 
 import { useFiltersStore } from "~/store/currency";
 import { storeToRefs } from "pinia";
@@ -299,6 +286,35 @@ const inputVal = ref("");
 const filtersStore = useFiltersStore();
 const { addValueToFilterList } = filtersStore;
 const { filtersList } = storeToRefs(filtersStore);
+
+
+const variationwarning = ref(false)
+
+
+
+
+function cartAddStore() {
+if (selectedVariation.value !== '' || product[0].variations == '' ){
+  addToCart({
+    id: product[0].id,
+                      amount: 1,
+                      image: product[0].images[0].src,
+                      title: product[0].title,
+                      variation: selectedVariation,
+                      price: product[0].fiat,
+                  })
+
+
+                  variationwarning.value = false
+
+
+                }
+                else {
+    variationwarning.value = true
+  }
+
+}
+
 
 const btcprice = await $fetch(
   "https://api.coinbase.com/v2/exchange-rates?currency=" + ticker.fiat.denomination
@@ -328,7 +344,7 @@ const slugroute = route.params.slug;
 
 const product = products.filter((item) => item.id == slugroute);
 
-const selectedVariation = ref()
+const selectedVariation = ref('')
 
 const { t } = useI18n({ useScope: "local" });
 </script>
@@ -338,37 +354,44 @@ const { t } = useI18n({ useScope: "local" });
     "Addtocart": "Tilføj til kurv",
     "Nostock": "Udsolgt",
     "Lastitems": "Få på lager",
-    "Instock": "På lager"
+    "Instock": "På lager",
+    "Warning": "Ups, det ser ud til, at du ikke har valgt en produktvariation"
   },
   "de": {
     "Addtocart": "In den Warenkorb legen",
     "Nostock": "Ausverkauft",
     "Lastitems": "Letzte Stücke",
-    "Instock": "Auf Lager"
+    "Instock": "Auf Lager",
+    "Warning": "Hoppla, sieht so aus, als hättest du keine Produktvariante ausgewählt"
   },
   "en": {
     "Addtocart": "Add to cart",
     "Nostock": "Out of stock",
     "Lastitems": "Last items",
-    "Instock": "In stock"
+    "Instock": "In stock",
+    "Warning": "Woops looks like you didn't select a product variation"
   },
   "es": {
     "Addtocart": "Añadir a la cesta",
     "Nostock": "Agotado",
-    "Lastitems": "Ultimas piezas",
-    "Instock": "En stock"
+    "Lastitems": "Últimas piezas",
+    "Instock": "En stock",
+    "Warning": "Ups, parece que no seleccionaste una variación del producto"
   },
   "fr": {
     "Addtocart": "Ajouter au panier",
     "Nostock": "Rupture de stock",
     "Lastitems": "Dernières pièces",
-    "Instock": "Disponible"
+    "Instock": "Disponible",
+    "Warning": "Oups, on dirait que vous n'avez pas sélectionné une variation de produit"
   },
   "nl": {
     "Addtocart": "Voeg toe aan winkelkar",
     "Nostock": "Uitverkocht",
     "Lastitems": "Laatste stuks",
-    "Instock": "In voorraad"
+    "Instock": "In voorraad",
+    "Warning": "Oeps, het lijkt erop dat je geen productvariatie hebt geselecteerd"
   }
 }
+
 </i18n>
