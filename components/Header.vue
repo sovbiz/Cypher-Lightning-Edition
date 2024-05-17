@@ -138,7 +138,7 @@ onMounted(() => {
           :to="localePath('/blog')"
           class="text-sm font-semibold leading-6 text-black dark:text-white"
         >
-          Blog</NuxtLink
+        {{menu.Headernavigation.bloglabel}}</NuxtLink
         >
 
         <NuxtLink
@@ -146,7 +146,7 @@ onMounted(() => {
           class="text-sm font-semibold leading-6 text-black dark:text-white"
           :to="localePath('/shop')"
         >
-          Shop
+          {{menu.Headernavigation.shoplabel}}
         </NuxtLink>
 
         <NuxtLink
@@ -365,7 +365,7 @@ onMounted(() => {
                 :to="localePath('/blog')"
                 @click="mobileMenuOpen = false"
               >
-                Blog
+              {{menu.Headernavigation.bloglabel}}
               </NuxtLink>
 
               <NuxtLink
@@ -374,7 +374,7 @@ onMounted(() => {
                 :to="localePath('/shop')"
                 @click="mobileMenuOpen = false"
               >
-                Shop
+              {{menu.Headernavigation.shoplabel}}
               </NuxtLink>
 
               <NuxtLink

@@ -5,6 +5,8 @@ import { ExclamationTriangleIcon } from '@heroicons/vue/20/solid'
 
 import data from "~/config/setup";
 
+import design from "~/config/design";
+
 </script>
 
 <template>
@@ -12,26 +14,26 @@ import data from "~/config/setup";
 
 <!-- IMAGE BACKGROUND -->
 
-    <div class="min-h-screen isolate px-6 pt-14 lg:px-8 bg-[url('/stock/nogood/NG_Cypher_Header_Light.png')] dark:bg-[url('/stock/nogood/NG_Cypher_Header_Dark.png')] bg-hero bg-no-repeat md:bg-cover bg-center bg-fixed"></div>
- 
+    <div v-if="design.hero == 'image'" :class="['min-h-screen isolate px-6 pt-14 lg:px-8 bg-hero bg-no-repeat md:bg-cover bg-center bg-fixed', `bg-[url('${design.herobackgroundimagepathlight}')] dark:bg-[url('${design.herobackgroundimagepathdark}')]`]"></div>
+    
 
 <!-- YOUTUBE BACKGROUND -->
 
-    <!-- <div class="min-h-screen">  
-      <iframe class="w-full h-screen" src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=5_-Pk2Rb4_k&loop=1&autoplay=1&mute=1&controls=0"></iframe>  
-    </div>-->
+     <div v-if="design.hero == 'youtube'" class="min-h-screen">  
+      <iframe class="w-full h-screen" :src="design.herobackgroundyoutubelink"></iframe>  
+    </div>
 
  
 <!-- LOCAL BACKGROUND -->
 
 
-    <!-- <div class=" md:min-h-screen h-lvh ">  
+     <div v-if="design.hero == 'video'" class=" md:min-h-screen h-lvh ">  
     <video class="w-full h-screen object-cover hidden md:block"  autoplay muted loop>
-  <source src="/project/Background-Video.mp4" type="video/mp4">
+  <source :src="design.herobackgroundlocalvideopath" type="video/mp4">
 
 Your browser does not support the video tag.
 </video> 
-</div> -->
+</div> 
 
 
 
@@ -68,7 +70,7 @@ Your browser does not support the video tag.
         <img
             
             class="block mt-6  mx-auto h-48 md:h-72"
-            src="/stock/nogood/NG_Cypher_Blocks.gif"
+            :src="design.herologopath"
             :alt="data.name"
 
           />
@@ -76,7 +78,7 @@ Your browser does not support the video tag.
 
 
 
-          <h1 v-if="!data.logo" class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-8xl">{{data.textlogo}}</h1>
+          <h1 v-if="!data.logo" class="text-4xl font-semibold tracking-tight text-gray-900 dark:text-white sm:text-8xl">{{data.textlogo}}</h1>
 
 
 
