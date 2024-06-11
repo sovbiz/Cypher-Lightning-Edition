@@ -4,10 +4,7 @@
       Nostr
     </h1>
 
-
     <AdminSubsettings />
-
-
 
     <form class="max-w-4xl mx-auto mt-12">
       <div class="space-y-12">
@@ -28,38 +25,64 @@
 
           <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div class="sm:col-span-4">
-              <label
-                class="block text-sm font-medium leading-6 text-gray-900 dark:text-white"
-                >Admin Npub</label
-              >
+              <label class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">
+                Status
+              </label>
+              <div class="flex">
+                <span class="relative flex mx-2 my-auto h-3 w-3">
+                  <span class="animate-ping delay-300 absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                </span>
+                <span class="flex-initial">
+                  {{ nostrConnectStatus }}
+                </span>
+              </div>
+            </div>
+            <div class="sm:col-span-4">
+              <label class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">
+                Admin npub
+              </label>
               <div class="mt-2">
-                <div
-                  class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md"
-                >
+                <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                   <input
                     type="text"
                     class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 dark:text-white placeholder:text-gray-400 focus:ring-0 text-gray-900 dark:text-white"
                     :placeholder="data.nostradmin"
                   />
                 </div>
+                <div class="mt-2" v-if="nostrProfile">
+                  Name: {{ nostrProfile.name }}
+                  <br />
+                  Display name: {{ nostrProfile.displayName }}
+                  <br />
+                  About
+                  <br />
+                  <small>{{ nostrProfile.about }}</small>
+                  <br />
+                  Website: {{ nostrProfile.website }}
+                  <br />
+                  NIP-05: {{ nostrProfile.nip05 }}
+                  <br />
+                  LUD-16: {{ nostrProfile.lud16 }}
+                  <br />
+                </div>
               </div>
             </div>
-
             <div class="sm:col-span-4">
-              <label
-                class="block text-sm font-medium leading-6 text-gray-900 dark:text-white"
-                >Relay</label
-              >
-              <div class="mt-2">
-                <div
-                  class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md"
-                >
+              <label class="block text-sm font-medium leading-6 text-gray-900 dark:text-white">
+                Conntected relays
+              </label>
+              <div class="mt-2"  v-for="(relay) in data.nostrrelays">
+                <div class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                   <input
                     type="text"
                     class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 dark:text-white placeholder:text-gray-400 focus:ring-0 text-gray-900 dark:text-white"
-                    :placeholder="data.nostrrelay"
+                    :placeholder="relay"
                   />
                 </div>
+              </div>
+              <div class="mt-4 text-xs">
+                These relays are configured in <code>config/setup.json</code>
               </div>
             </div>
           </div>
@@ -132,10 +155,45 @@
 </template>
 
 <script setup>
-import data from "~/config/setup";
+import data from "~/config/setup"
+import { PhotoIcon, UserCircleIcon } from "@heroicons/vue/24/solid"
+import { useNdkStore } from '~/store/Ndk'
 
-import { PhotoIcon, UserCircleIcon } from "@heroicons/vue/24/solid";
+const NdkStore = useNdkStore()
+const nostrConnectStatus = ref()
+const nostrProfile = ref()
+nostrConnectStatus.value = "Not connected"
+
+/**
+ * Init.
+ */
+onMounted(async () => {
+  try {
+    NdkStore.setExplicitRelays(data.nostrrelays)
+    await NdkStore.initNdk()
+    nostrConnectStatus.value = "NDK initialized"
+    await NdkStore.connect()
+    nostrConnectStatus.value = "Connected"
+    if (NdkStore.connected) {
+      await fetchProfile()
+    }
+  } catch (e) {
+    console.log(e)
+  }
+})
+
+/**
+ * Fetch Nostr profile of connected npub.
+ * @returns {Promise<void>}
+ */
+const fetchProfile = async() => {
+  const u = NdkStore.ndk.getUser({
+    npub: data.nostradmin
+  })
+  nostrProfile.value = await u.fetchProfile()
+}
+
 definePageMeta({
   layout: "admin",
-});
+})
 </script>

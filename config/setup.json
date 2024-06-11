@@ -25,7 +25,9 @@
   "orderwebhook":"https://discord.com/api/webhooks/1233156502043361451/MO8cg2GcvehH51uTxrCE9e0T3albAHeYqdHxTqrRRZk1CoJp9--mR8_IN3PBqp5_JfIr",
   "nostr":true,
   "nostradmin":"npub1nkmta4dmsa7pj25762qxa6yqxvrhzn7ug0gz5frp9g7p3jdscnhsu049fn",
-  "nostrrelay":"wss://relay.damus.io",
+  "nostrrelays": [
+    "wss://relay.damus.io"
+  ],
   "footerlanguage":true,
   "footersocials":true,
   "footertheme":true,

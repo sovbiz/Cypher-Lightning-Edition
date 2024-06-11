@@ -32,11 +32,10 @@ const stats = [
 
 
 const nostr = [
-{ name: "Posts", stat: "6" },
+  { name: "Posts", stat: "6" },
   { name: "Products", stat: "4" },
   { name: "Followers", stat: "0" },
-  { name: "Relay Connection", stat: data.nostrrelay },
-
+  { name: "Relay Connection", stat: data.nostrrelays },
 ];
 
 </script>
