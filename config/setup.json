@@ -15,6 +15,7 @@
   "contact":true,
   "cart":"latest",
   "basecurrency":"btc",
+  "lightningonly":"true",
   "fiat":{
     "denomination": "EUR",
     "symbol": "€"

@@ -589,6 +589,7 @@
           :payamount="totalPriceBtc * 100000000000"
           :setpayamount="totalPriceBtc"
           products=""
+          :onchain="data.lightningonly"
           :orderid="'Order: ' + randomid"
         />
 
