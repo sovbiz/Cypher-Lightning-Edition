@@ -457,75 +457,85 @@ const filteredProducts = computed(() => {
   const mobileMenuOpen = ref(false)
   const mobileFiltersOpen = ref(false)
   </script>
-    <i18n lang="json">
-{
-  "da": {
-    "Addtocart": "Tilføj til kurv",
-    "Nostock": "Udsolgt",
-    "Lastitems": "Få på lager",
-    "Instock": "På lager",
-    "Filters": "Filtre",
-    "Inventory": "Lager",
-    "title": "Se alle vores produkter",
-    "subtitle": "Opdag alle vores produkter, der er tilgængelige gennem bitcoin eller lightning-køb!",
-    "Allitems": "Alle varer"
-  },
-  "de": {
-    "Addtocart": "In den Warenkorb",
-    "Nostock": "Ausverkauft",
-    "Lastitems": "Letzte Stücke",
-    "Instock": "Auf Lager",
-    "Filters": "Filter",
-    "Inventory": "Inventar",
-    "title": "Durchsuchen Sie unsere Produkte",
-    "subtitle": "Entdecken Sie alle unsere Produkte, die über Bitcoin oder Lightning-Kauf verfügbar sind!",
-    "Allitems": "Alle Artikel"
-  },
-  "en": {
-    "Addtocart": "Add to cart",
-    "Nostock": "Out of stock",
-    "Lastitems": "Last items",
-    "Instock": "In stock",
-    "Filters": "Filters",
-    "Inventory": "Inventory",
-    "title": "Browse our products",
-    "subtitle": "Discover all our products that are available through bitcoin or lightning purchase!",
-    "Allitems": "All items"
-  },
-  "es": {
-    "Addtocart": "Añadir a la cesta",
-    "Nostock": "Agotado",
-    "Lastitems": "Ultimas piezas",
-    "Instock": "En stock",
-    "Filters": "Filtros",
-    "Inventory": "Inventario",
-    "title": "Explora nuestros productos",
-    "subtitle": "¡Descubre todos nuestros productos disponibles para compra con bitcoin o lightning!",
-    "Allitems": "Todos los artículos"
-  },
-  "fr": {
-    "Addtocart": "Ajouter au panier",
-    "Nostock": "Rupture de stock",
-    "Lastitems": "Dernières pièces",
-    "Instock": "Disponible",
-    "Filters": "Filtres",
-    "Inventory": "Inventaire",
-    "title": "Parcourir nos produits",
-    "subtitle": "Découvrez tous nos produits disponibles à l'achat via bitcoin ou lightning!",
-    "Allitems": "Tous les articles"
-  },
-  "nl": {
-    "Addtocart": "In de winkelwagen",
-    "Nostock": "Uitverkocht",
-    "Lastitems": "Laatste stuks",
-    "Instock": "Op voorraad",
-    "Filters": "Filters",
-    "Inventory": "Voorraad",
-    "title": "Blader door onze producten",
-    "subtitle": "Ontdek al onze producten die beschikbaar zijn voor aankoop via bitcoin of lightning!",
-    "Allitems": "Alle artikelen"
+<i18n lang="json">
+  {
+    "da": {
+      "Addtocart": "Tilføj til kurv",
+      "Nostock": "Udsolgt",
+      "Lastitems": "Få på lager",
+      "Instock": "På lager",
+      "Filters": "Filtre",
+      "Inventory": "Lager",
+      "title": "Se alle vores produkter",
+      "subtitle": "Opdag alle vores produkter, der er tilgængelige gennem bitcoin eller lightning-køb!",
+      "Allitems": "Alle varer"
+    },
+    "de": {
+      "Addtocart": "In den Warenkorb",
+      "Nostock": "Ausverkauft",
+      "Lastitems": "Letzte Stücke",
+      "Instock": "Auf Lager",
+      "Filters": "Filter",
+      "Inventory": "Inventar",
+      "title": "Durchsuchen Sie unsere Produkte",
+      "subtitle": "Entdecken Sie alle unsere Produkte, die über Bitcoin oder Lightning-Kauf verfügbar sind!",
+      "Allitems": "Alle Artikel"
+    },
+    "en": {
+      "Addtocart": "Add to cart",
+      "Nostock": "Out of stock",
+      "Lastitems": "Last items",
+      "Instock": "In stock",
+      "Filters": "Filters",
+      "Inventory": "Inventory",
+      "title": "Browse our products",
+      "subtitle": "Discover all our products that are available through bitcoin or lightning purchase!",
+      "Allitems": "All items"
+    },
+    "es": {
+      "Addtocart": "Añadir a la cesta",
+      "Nostock": "Agotado",
+      "Lastitems": "Últimas piezas",
+      "Instock": "En stock",
+      "Filters": "Filtros",
+      "Inventory": "Inventario",
+      "title": "Explora nuestros productos",
+      "subtitle": "¡Descubre todos nuestros productos disponibles para compra con bitcoin o lightning!",
+      "Allitems": "Todos los artículos"
+    },
+    "fr": {
+      "Addtocart": "Ajouter au panier",
+      "Nostock": "Rupture de stock",
+      "Lastitems": "Dernières pièces",
+      "Instock": "Disponible",
+      "Filters": "Filtres",
+      "Inventory": "Inventaire",
+      "title": "Parcourir nos produits",
+      "subtitle": "Découvrez tous nos produits disponibles à l'achat via bitcoin ou lightning!",
+      "Allitems": "Tous les articles"
+    },
+    "nl": {
+      "Addtocart": "In de winkelwagen",
+      "Nostock": "Uitverkocht",
+      "Lastitems": "Laatste stuks",
+      "Instock": "Op voorraad",
+      "Filters": "Filters",
+      "Inventory": "Voorraad",
+      "title": "Blader door onze producten",
+      "subtitle": "Ontdek al onze producten die beschikbaar zijn voor aankoop via bitcoin of lightning!",
+      "Allitems": "Alle artikelen"
+    },
+    "pt": {
+      "Addtocart": "Adicionar ao carrinho",
+      "Nostock": "Fora de estoque",
+      "Lastitems": "Últimos itens",
+      "Instock": "Em estoque",
+      "Filters": "Filtros",
+      "Inventory": "Inventário",
+      "title": "Veja todos os nossos produtos",
+      "subtitle": "Descubra todos os nossos produtos disponíveis para compra com bitcoin ou lightning!",
+      "Allitems": "Todos os itens"
+    }
   }
-}
-
-
-        </i18n>
+  </i18n>
+  

@@ -55,6 +55,12 @@ i18n: {
       file: "fr-FR.json",
     },
     {
+      code: "pt",
+      iso: "pt-PT",
+      name: "Português",
+      file: "pt-PT.json"
+    },
+    {
       code: "nl",
       iso: "nl-NL",
       name: "Nederlands",

@@ -249,50 +249,55 @@ const { t } = useI18n({ useScope: "local" });
 // console.log(products);
 </script>
 <i18n lang="json">
-{
-  "da": {
-    "Addtocart": "Tilføj til kurv",
-    "Nostock": "Udsolgt",
-    "Lastitems": "Få på lager",
-    "Instock": "På lager",
-    "Warning": "Ups, det ser ud til, at du ikke har valgt en produktvariation"
-  },
-  "de": {
-    "Addtocart": "In den Warenkorb legen",
-    "Nostock": "Ausverkauft",
-    "Lastitems": "Letzte Stücke",
-    "Instock": "Auf Lager",
-    "Warning": "Hoppla, sieht so aus, als hättest du keine Produktvariante ausgewählt"
-  },
-  "en": {
-    "Addtocart": "Add to cart",
-    "Nostock": "Out of stock",
-    "Lastitems": "Last items",
-    "Instock": "In stock",
-    "Warning": "Woops looks like you didn't select a product variation"
-  },
-  "es": {
-    "Addtocart": "Añadir a la cesta",
-    "Nostock": "Agotado",
-    "Lastitems": "Últimas piezas",
-    "Instock": "En stock",
-    "Warning": "Ups, parece que no seleccionaste una variación del producto"
-  },
-  "fr": {
-    "Addtocart": "Ajouter au panier",
-    "Nostock": "Rupture de stock",
-    "Lastitems": "Dernières pièces",
-    "Instock": "Disponible",
-    "Warning": "Oups, on dirait que vous n'avez pas sélectionné une variation de produit"
-  },
-  "nl": {
-    "Addtocart": "Voeg toe aan winkelkar",
-    "Nostock": "Uitverkocht",
-    "Lastitems": "Laatste stuks",
-    "Instock": "In voorraad",
-    "Warning": "Oeps, het lijkt erop dat je geen productvariatie hebt geselecteerd"
+  {
+    "da": {
+      "Addtocart": "Tilføj til kurv",
+      "Nostock": "Udsolgt",
+      "Lastitems": "Få på lager",
+      "Instock": "På lager",
+      "Warning": "Ups, det ser ud til, at du ikke har valgt en produktvariation"
+    },
+    "de": {
+      "Addtocart": "In den Warenkorb legen",
+      "Nostock": "Ausverkauft",
+      "Lastitems": "Letzte Stücke",
+      "Instock": "Auf Lager",
+      "Warning": "Hoppla, sieht so aus, als hättest du keine Produktvariante ausgewählt"
+    },
+    "en": {
+      "Addtocart": "Add to cart",
+      "Nostock": "Out of stock",
+      "Lastitems": "Last items",
+      "Instock": "In stock",
+      "Warning": "Woops looks like you didn't select a product variation"
+    },
+    "es": {
+      "Addtocart": "Añadir a la cesta",
+      "Nostock": "Agotado",
+      "Lastitems": "Últimas piezas",
+      "Instock": "En stock",
+      "Warning": "Ups, parece que no seleccionaste una variación del producto"
+    },
+    "fr": {
+      "Addtocart": "Ajouter au panier",
+      "Nostock": "Rupture de stock",
+      "Lastitems": "Dernières pièces",
+      "Instock": "Disponible",
+      "Warning": "Oups, on dirait que vous n'avez pas sélectionné une variation de produit"
+    },
+    "nl": {
+      "Addtocart": "Voeg toe aan winkelkar",
+      "Nostock": "Uitverkocht",
+      "Lastitems": "Laatste stuks",
+      "Instock": "In voorraad",
+      "Warning": "Oeps, het lijkt erop dat je geen productvariatie hebt geselecteerd"
+    },
+    "pt": {
+      "Addtocart": "Adicionar ao carrinho",
+      "Nostock": "Fora de estoque",
+      "Lastitems": "Últimos itens",
+      "Instock": "Em estoque",
+      "Warning": "Ops, parece que você não selecionou uma variação do produto"
+    }
   }
-}
-
-
-</i18n>
+  </i18n>

@@ -34,59 +34,67 @@ const btcprices = Number(btcprice.data.rates.BTC).toFixed(8);
     const { t } = useI18n({ useScope: "local" });
 
 </script>
-  <i18n lang="json">
-{
-  "da": {
-    "Addtocart": "Tilføj til kurv",
-    "Nostock": "Udsolgt",
-    "Lastitems": "Få på lager",
-    "Instock": "På lager",
-    "title": "Nyt lager",
-    "subtitle": "De nyeste drops fra din butiksfront"
-  },
-  "de": {
-    "Addtocart": "In den Warenkorb legen",
-    "Nostock": "Ausverkauft",
-    "Lastitems": "Letzte Stücke",
-    "Instock": "Auf Lager",
-    "title": "Neuer Lagerbestand",
-    "subtitle": "Die frischesten Drops aus deinem Storefront"
-  },
-  "en": {
-    "Addtocart": "Add to cart",
-    "Nostock": "Out of stock",
-    "title": "New Stock",
-    "subtitle": "Freshest Drops from your storefront",
-    "Lastitems": "Last items",
-    "Instock": "In stock"
-  },
-  "es": {
-    "Addtocart": "Añadir a la cesta",
-    "Nostock": "Agotado",
-    "Lastitems": "Ultimas piezas",
-    "Instock": "En stock",
-    "title": "Nuevo stock",
-    "subtitle": "Las novedades más frescas de tu tienda"
-  },
-  "fr": {
-    "Addtocart": "Ajouter au panier",
-    "Nostock": "Rupture de stock",
-    "Lastitems": "Dernières pièces",
-    "Instock": "Disponible",
-    "title": "Nouveau stock",
-    "subtitle": "Les dernières nouveautés de votre magasin"
-  },
-  "nl": {
-    "Addtocart": "Voeg toe aan winkelkar",
-    "Nostock": "Uitverkocht",
-    "Lastitems": "Laatste stuks",
-    "Instock": "In voorraad",
-    "title": "Nieuwe voorraad",
-    "subtitle": "De nieuwste drops van je winkel"
+<i18n lang="json">
+  {
+    "da": {
+      "Addtocart": "Tilføj til kurv",
+      "Nostock": "Udsolgt",
+      "Lastitems": "Få på lager",
+      "Instock": "På lager",
+      "title": "Nyt lager",
+      "subtitle": "De nyeste drops fra din butiksfront"
+    },
+    "de": {
+      "Addtocart": "In den Warenkorb legen",
+      "Nostock": "Ausverkauft",
+      "Lastitems": "Letzte Stücke",
+      "Instock": "Auf Lager",
+      "title": "Neuer Lagerbestand",
+      "subtitle": "Die frischesten Drops aus deinem Storefront"
+    },
+    "en": {
+      "Addtocart": "Add to cart",
+      "Nostock": "Out of stock",
+      "title": "New Stock",
+      "subtitle": "Freshest Drops from your storefront",
+      "Lastitems": "Last items",
+      "Instock": "In stock"
+    },
+    "es": {
+      "Addtocart": "Añadir a la cesta",
+      "Nostock": "Agotado",
+      "Lastitems": "Últimas piezas",
+      "Instock": "En stock",
+      "title": "Nuevo stock",
+      "subtitle": "Las novedades más frescas de tu tienda"
+    },
+    "fr": {
+      "Addtocart": "Ajouter au panier",
+      "Nostock": "Rupture de stock",
+      "Lastitems": "Dernières pièces",
+      "Instock": "Disponible",
+      "title": "Nouveau stock",
+      "subtitle": "Les dernières nouveautés de votre magasin"
+    },
+    "nl": {
+      "Addtocart": "Voeg toe aan winkelkar",
+      "Nostock": "Uitverkocht",
+      "Lastitems": "Laatste stuks",
+      "Instock": "In voorraad",
+      "title": "Nieuwe voorraad",
+      "subtitle": "De nieuwste drops van je winkel"
+    },
+    "pt": {
+      "Addtocart": "Adicionar ao carrinho",
+      "Nostock": "Fora de estoque",
+      "Lastitems": "Últimos itens",
+      "Instock": "Em estoque",
+      "title": "Novo Estoque",
+      "subtitle": "As novidades mais frescas da sua loja"
+    }
   }
-}
-
-    </i18n>
+  </i18n>
+  
 <template>
     <div class="border-t-4 pt-12">
       <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">

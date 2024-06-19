@@ -39,45 +39,52 @@ import {
 const { t } = useI18n({ useScope: "local" });
 </script>
 <i18n lang="json">
-{
-  "da": {
-    "Addtocart": "Tilføj til kurv",
-    "Nostock": "Udsolgt",
-    "Lastitems": "Få på lager",
-    "Instock": "På lager"
-  },
-  "de": {
-    "Addtocart": "In den Warenkorb legen",
-    "Nostock": "Ausverkauft",
-    "Lastitems": "Letzte Stücke",
-    "Instock": "Auf Lager"
-  },
-  "en": {
-    "Addtocart": "Add to cart",
-    "Nostock": "Out of stock",
-    "Lastitems": "Last items",
-    "Instock": "In stock"
-  },
-  "es": {
-    "Addtocart": "Añadir a la cesta",
-    "Nostock": "Agotado",
-    "Lastitems": "Ultimas piezas",
-    "Instock": "En stock"
-  },
-  "fr": {
-    "Addtocart": "Ajouter au panier",
-    "Nostock": "Rupture de stock",
-    "Lastitems": "Dernières pièces",
-    "Instock": "Disponible"
-  },
-  "nl": {
-    "Addtocart": "Voeg toe aan winkelkar",
-    "Nostock": "Uitverkocht",
-    "Lastitems": "Laatste stuks",
-    "Instock": "In voorraad"
+  {
+    "da": {
+      "Addtocart": "Tilføj til kurv",
+      "Nostock": "Udsolgt",
+      "Lastitems": "Få på lager",
+      "Instock": "På lager"
+    },
+    "de": {
+      "Addtocart": "In den Warenkorb legen",
+      "Nostock": "Ausverkauft",
+      "Lastitems": "Letzte Stücke",
+      "Instock": "Auf Lager"
+    },
+    "en": {
+      "Addtocart": "Add to cart",
+      "Nostock": "Out of stock",
+      "Lastitems": "Last items",
+      "Instock": "In stock"
+    },
+    "es": {
+      "Addtocart": "Añadir a la cesta",
+      "Nostock": "Agotado",
+      "Lastitems": "Últimas piezas",
+      "Instock": "En stock"
+    },
+    "fr": {
+      "Addtocart": "Ajouter au panier",
+      "Nostock": "Rupture de stock",
+      "Lastitems": "Dernières pièces",
+      "Instock": "Disponible"
+    },
+    "nl": {
+      "Addtocart": "Voeg toe aan winkelkar",
+      "Nostock": "Uitverkocht",
+      "Lastitems": "Laatste stuks",
+      "Instock": "In voorraad"
+    },
+    "pt": {
+      "Addtocart": "Adicionar ao carrinho",
+      "Nostock": "Fora de estoque",
+      "Lastitems": "Últimos itens",
+      "Instock": "Em estoque"
+    }
   }
-}
-</i18n>
+  </i18n>
+  
 <template>
   <div class="bg-colorBgLight dark:bg-colorBgDark">
     <div class="mx-auto max-w-2xl lg:max-w-4xl">

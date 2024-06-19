@@ -47,7 +47,6 @@ const slugroute = route.fullPath.substring(3);
 const { t } = useI18n({ useScope: "local" });
 
 </script>
-
 <i18n lang="json">
   {
     "da": {
@@ -85,6 +84,13 @@ const { t } = useI18n({ useScope: "local" });
       "subtitle": "Sorry, we konden de pagina die u zocht niet vinden.",
       "followtitle": "Deze pagina is mogelijk ook niet beschikbaar in uw taal",
       "homeroute": "Probeer de pagina in de standaardtaal te bezoeken"
+    },
+    "pt": {
+      "notfound": "Página não encontrada.",
+      "subtitle": "Desculpe, não conseguimos encontrar a página que você está procurando.",
+      "followtitle": "Esta página também pode não estar disponível no seu idioma",
+      "homeroute": "Tente visitar a página no idioma padrão"
     }
   }
   </i18n>
+  
