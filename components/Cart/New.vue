@@ -169,19 +169,32 @@
 <!-- SHIPPING INFO -->
 
 
-<div class=" px-4 pb-24 pt-16 sm:px-6 sm:pt-24 lg:px-8 lg:py-16 rounded-3xl border-4 border-gray-600 mt-4">
+<div class=" px-4 pb-24 pt-16 sm:px-6 sm:pt-12 lg:px-8 lg:py-16 rounded-3xl border-4 border-gray-600 mt-4">
 
-  <div class="max-w-xl">
-      <p class="mt-2 text-4xl font-bold tracking-tight">{{ t('ShippingAddress') }}</p>
+      <p class="mt-2 text-4xl font-bold tracking-tight">Delivery Options</p>
 
-      <!-- <dl class="mt-12 text-sm font-medium">
-        <dt class="text-gray-900">Tracking number</dt>
-        <dd class="mt-2 text-indigo-600">51547878755545848512</dd>
-      </dl> -->
-    </div>
+
 
 <section aria-labelledby="shipping-heading" class="mt-10">
-          <h2 id="shipping-heading" class="text-lg font-medium text-gray-900 dark:text-white"></h2>
+
+
+
+
+
+  
+<div v-if="data.checkout == 'full'">
+
+  <button v-if="data.checkout == 'full' ||data.checkout ==  'local'" @click="toggleLocal" class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 mr-6"> 📍 Local Pickup </button>
+    <button v-if="data.checkout == 'full' ||data.checkout ==  'ship'" @click="toggleShipping" class="px-4 py-2 bg-green-500 text-white font-semibold rounded-lg shadow-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75"> ⛴️ Shipping</button>
+    
+  </div>
+    
+
+    
+
+
+
+
 
 
           <div class="rounded-md bg-red-50 p-4" v-if="missingInfo == true">
@@ -205,7 +218,36 @@
 
 
 
-          <div class="mt-6 grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-4">
+          <div v-if="isLocalVisible || data.checkout == 'local'" class="toggle-div">
+   
+    
+
+          <div v-if="data.checkout == 'full' ||data.checkout ==  'local'" class="mt-6 grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-4">
+            <h2 id="shipping-heading" class="text-lg font-medium text-gray-900 dark:text-white sm:col-span-4">Local Pickup</h2>
+
+
+
+            <div class="sm:col-span-2">
+              <label class="block text-sm font-medium text-gray-700 dark:text-white">{{ data.localid }}</label>
+              <div class="mt-1">
+                <input v-model="localidentity" type="text" id="" name="" autocomplete="" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm dark:text-black">
+              </div>
+            </div>
+
+</div>
+</div>
+
+
+
+      
+            <div v-if="isShippingVisible || data.checkout == 'ship'" class="toggle-div">
+
+
+
+
+          <div v-if="data.checkout == 'full'||data.checkout == 'ship'" class="mt-6 grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-4">
+            <h2 id="shipping-heading" class="text-lg font-medium text-gray-900 dark:text-white sm:col-span-4">{{ t('ShippingAddress') }}</h2>
+
 
 
             <div class="sm:col-span-2">
@@ -281,6 +323,7 @@
             </div>
 
           </div>
+        </div>
         </section>
 
 
@@ -294,7 +337,7 @@
 
 
 
-          <div class="mt-10">
+          <div class="mt-10" v-if="isLocalVisible !== false || isShippingVisible !== false || data.checkout !== 'full'">
             <button
               @click="orderView()"
               class="w-full rounded-md border border-transparent bg-indigo-600 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-50"
@@ -470,7 +513,7 @@
 
       <div class="">
         <h3 class="sr-only">Your information</h3>
-
+        <div v-if="isLocalVisible.value == false">
         <h4 class="sr-only">Addresses</h4>
         <dl class="grid grid-cols-2 gap-x-6 py-10 text-sm">
           <div>
@@ -496,7 +539,7 @@
             </dd>
           </div>
         </dl>
-
+      </div>
 
 
         <h3 class="dark:text-white">{{ t('order_information') }}</h3>
@@ -642,6 +685,19 @@ import ticker from '~/config/setup'
 
 const displaymode = ref(false)
 
+const isLocalVisible = ref(false)
+const isShippingVisible = ref(false)
+
+const toggleLocal = () => {
+  isLocalVisible.value = true
+  isShippingVisible.value = false
+}
+
+const toggleShipping = () => {
+  isShippingVisible.value = true
+  isLocalVisible.value = false
+}
+
 const launchStep = ref('');
 
 const randomid = ref("");
@@ -651,6 +707,9 @@ const { removeFromCart } = cartStore;
 const { cartItems } = storeToRefs(cartStore);
 
 // console.log(cartItems);
+
+
+const localidentity = ref('');
 
 // SHIPPING SECTION
 
@@ -697,20 +756,32 @@ const myArray = ["apple", "", "banana"];
 
 
 function orderView() {
+  if (isLocalVisible.value == true || data.checkout == 'local') {
+    if(localidentity.value !== ''){
+    launchStep.value = 'view';
+  totalPriceBtc.value = (store.getTotalPrice() * btcprices).toFixed(8);
+
+  window.scrollTo(0, 0);
+}
+else{missingInfo.value = true}
+  }
+  else {
 if (firstname.value == '' || lastname.value == '' || email.value == '' || address.value == '' || city.value == '' || postalcode.value == '' || country.value == ''){
   missingInfo.value = true
   window.scrollTo(0, 0);
 }
 else{
 
-  //Continue with 
-  launchStep.value = 'view';
-  totalPriceBtc.value = (store.getTotalPrice() * btcprices).toFixed(8);
+//Continue with 
+launchStep.value = 'view';
+totalPriceBtc.value = (store.getTotalPrice() * btcprices).toFixed(8);
 
-  window.scrollTo(0, 0);
+window.scrollTo(0, 0);
 
 
 }
+}
+
 
 }
 

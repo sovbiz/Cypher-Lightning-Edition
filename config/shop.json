@@ -3,9 +3,7 @@
       "id": 1,
       "type": "Product",
       "category": [
-         "t-shirt",
-         "apparel"
-      ],
+         "t-shirt"      ],
       "variations": [
          "xs",
          "sm",
@@ -55,9 +53,7 @@
       "id": 2,
       "type": "Product",
       "category": [
-         "stickers",
-         "new"
-      ],
+         "stickers"      ],
       "variations": [
 
       ],
@@ -97,9 +93,7 @@
       "id": 3,
       "type": "Product",
       "category": [
-         "t-shirt",
-         "apparel"
-      ],
+         "t-shirt"      ],
       "variations": [
          "sm",
          "md"
@@ -108,7 +102,7 @@
       "description": "T-shirt only in small & medium.",
       "fulldescription": "<h1>The Second Shirt </h1>    <p>This classic cotton T-shirt is a staple for any wardrobe. Made from 100% organic cotton, it offers both comfort and durability. Available in multiple colors, this tee is perfect for any casual occasion.</p>      ",
       "stock": 0,
-      "inStock": true,
+      "inStock": false,
       "fiat": 35,
       "sats": 45000,
       "shipfiat": 0,
@@ -141,16 +135,14 @@
       "id": 4,
       "type": "Product",
       "category": [
-         "new",
-         "apparel"
-      ],
+         "new"      ],
       "variations": [
       ],      
       "title": "Cypher Snapback Hat",
       "description": "New Demo Hat",
       "fulldescription": "<h1>Cypher Cap </h1> <p>Shield yourself from the sun in style with our durable baseball cap! Made from high-quality materials, this cap ensures comfort and protection while maintaining a stylish edge. Ideal for outdoor activities or everyday wear.</p> ",
       "stock": 0,
-      "inStock": true,
+      "inStock": false,
       "fiat": 0.1,
       "sats": 150,
       "shipfiat": 0,

@@ -14,6 +14,8 @@
   "shop":true,
   "contact":true,
   "cart":"latest",
+  "checkout":"full",
+  "localid":"Name / Handle",
   "basecurrency":"btc",
   "lightningonly":"true",
   "fiat":{
