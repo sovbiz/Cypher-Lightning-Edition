@@ -3,7 +3,7 @@
       "id": 1,
       "type": "Product",
       "category": [
-         "t-shirt"      ],
+         "t-shirt" , "new"     ],
       "variations": [
          "xs",
          "sm",
@@ -157,6 +157,35 @@
             "id": 2,
             "src": "/stock/product4/2.jpg",
             "alt": "Guy wearing Snapback"
+         }
+      ],
+      "features": [
+         "Adjustable strap", 
+         "Breathable fabric", 
+         "Curved visor"
+      ]
+   },
+   {
+      "id": 5,
+      "type": "Product",
+      "category": [
+         "new"      ],
+      "variations": [
+      ],      
+      "title": "Cypher Snapback Hat",
+      "description": "New Demo Hat",
+      "fulldescription": "<h1>Cypher Cap </h1> <p>Shield yourself from the sun in style with our durable baseball cap! Made from high-quality materials, this cap ensures comfort and protection while maintaining a stylish edge. Ideal for outdoor activities or everyday wear.</p> ",
+      "stock": 10,
+      "inStock": true,
+      "fiat": 0.1,
+      "sats": 150,
+      "shipfiat": 0,
+      "shipsats": 0,
+      "images": [
+         {
+            "id": 1,
+            "src": "",
+            "alt": ""
          }
       ],
       "features": [

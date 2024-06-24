@@ -26,7 +26,7 @@
               :key="product.id"
               class="flex py-6 sm:py-10"
             >
-              <div class="flex-shrink-0">
+              <div class="flex-shrink-0" v-if="product.image">
                 <img
                   :src="product.image"
                   :alt="product.image"

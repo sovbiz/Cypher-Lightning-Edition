@@ -1,26 +1,37 @@
 <script setup>
+import { ref, onBeforeMount, defineProps } from 'vue';
+import data from '~/config/shop';
+import ticker from '~/config/setup';
+import design from '~/config/design';
+import { useFiltersStore } from '~/store/currency';
+import { storeToRefs } from 'pinia';
+import { useProjectStore } from '~/store/shopcart';
 
-import data from '~/config/shop'
+// Define the prop
+const props = defineProps({
+  category: {
+    type: String,
+    required: true
+  }
+});
 
-import ticker from '~/config/setup'
+const tickersymbol = ticker.fiat.symbol;
 
-const tickersymbol = ticker.fiat.symbol 
+const products = ref([]);
 
-const products = data.slice(0, 3)
+onBeforeMount(() => {
+  // Use the prop value to filter the products
+  products.value = data.filter(product => product.category.includes(props.category)).slice(0, 3);
+});
 
-import { useFiltersStore } from '~/store/currency'
-import { storeToRefs } from 'pinia'
+const cartStore = useProjectStore();
+const { addToCart } = cartStore;
 
-import { useProjectStore } from '~/store/shopcart'
+const inputVal = ref('');
 
-const cartStore = useProjectStore()
-const { addToCart } = cartStore
-
-const inputVal = ref('')
-
-const filtersStore = useFiltersStore()
-const { addValueToFilterList } = filtersStore
-const { filtersList } = storeToRefs(filtersStore)
+const filtersStore = useFiltersStore();
+const { addValueToFilterList } = filtersStore;
+const { filtersList } = storeToRefs(filtersStore);
 
 const btcprice = await $fetch(
   "https://api.coinbase.com/v2/exchange-rates?currency=" + ticker.fiat.denomination
@@ -28,170 +39,116 @@ const btcprice = await $fetch(
 
 const btcprices = Number(btcprice.data.rates.BTC).toFixed(8);
 
-    import { BitcoinIcon, SatoshiV2Icon, NoDollarsIcon } from '@bitcoin-design/bitcoin-icons-vue/filled'
-
-
-    const { t } = useI18n({ useScope: "local" });
-
+import { BitcoinIcon, SatoshiV2Icon, NoDollarsIcon } from '@bitcoin-design/bitcoin-icons-vue/filled';
+const { t } = useI18n({ useScope: "local" });
 </script>
-<i18n lang="json">
-  {
-    "da": {
-      "Addtocart": "Tilføj til kurv",
-      "Nostock": "Udsolgt",
-      "Lastitems": "Få på lager",
-      "Instock": "På lager",
-      "title": "Nyt lager",
-      "subtitle": "De nyeste drops fra din butiksfront"
-    },
-    "de": {
-      "Addtocart": "In den Warenkorb legen",
-      "Nostock": "Ausverkauft",
-      "Lastitems": "Letzte Stücke",
-      "Instock": "Auf Lager",
-      "title": "Neuer Lagerbestand",
-      "subtitle": "Die frischesten Drops aus deinem Storefront"
-    },
-    "en": {
-      "Addtocart": "Add to cart",
-      "Nostock": "Out of stock",
-      "title": "New Stock",
-      "subtitle": "Freshest Drops from your storefront",
-      "Lastitems": "Last items",
-      "Instock": "In stock"
-    },
-    "es": {
-      "Addtocart": "Añadir a la cesta",
-      "Nostock": "Agotado",
-      "Lastitems": "Últimas piezas",
-      "Instock": "En stock",
-      "title": "Nuevo stock",
-      "subtitle": "Las novedades más frescas de tu tienda"
-    },
-    "fr": {
-      "Addtocart": "Ajouter au panier",
-      "Nostock": "Rupture de stock",
-      "Lastitems": "Dernières pièces",
-      "Instock": "Disponible",
-      "title": "Nouveau stock",
-      "subtitle": "Les dernières nouveautés de votre magasin"
-    },
-    "nl": {
-      "Addtocart": "Voeg toe aan winkelkar",
-      "Nostock": "Uitverkocht",
-      "Lastitems": "Laatste stuks",
-      "Instock": "In voorraad",
-      "title": "Nieuwe voorraad",
-      "subtitle": "De nieuwste drops van je winkel"
-    },
-    "pt": {
-      "Addtocart": "Adicionar ao carrinho",
-      "Nostock": "Fora de estoque",
-      "Lastitems": "Últimos itens",
-      "Instock": "Em estoque",
-      "title": "Novo Estoque",
-      "subtitle": "As novidades mais frescas da sua loja"
-    }
-  }
-  </i18n>
-  
+
 <template>
-    <div class="border-t-4 pt-12">
-      <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-        <div class="mx-auto max-w-2xl text-center ">
-        <h2
-          class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl"
-        >
-        {{ t("title") }}
+  <div class="border-t-4 pt-12">
+    <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
+          {{ t("title") }}
         </h2>
         <p class="mt-2 text-lg leading-8 text-gray-900 dark:text-gray-100">
           {{ t("subtitle") }}
         </p>
       </div>
-        <div class="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 xl:gap-x-8">
-          <div v-for="product in products" :key="product.id">
-            <NuxtLink :to="localePath('/product/' + product.id )">
-
+      <div class="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-3 xl:gap-x-8">
+        <div v-for="product in products" :key="product.id">
+          <NuxtLink :to="localePath('/product/' + product.id)">
             <div class="relative">
-              <div class="relative h-72 w-full overflow-hidden rounded-lg">
-                <img :src="product.images[0].src" :alt="product.images[0].src" class="h-full w-full object-cover object-center" />
+              <div v-if="product.images[0].src && design.productimage" class="relative h-72 w-full overflow-hidden rounded-lg">
+                <img :src="product.images[0].src" :alt="product.images[0].alt" class="h-full w-full object-cover object-center" />
               </div>
-              <div class="relative mt-4">
-                <h3 class="text-sm font-medium text-gray-900 dark:text-white">{{ product.name }}</h3>
-                <p class="mt-1 text-sm text-gray-500">{{ product.color }}</p>
+              <div v-if="!product.images[0].src && design.productimage" class="relative h-72 w-full overflow-hidden rounded-lg">
+                <img src="/project/No-Image.png"  class="h-full w-full object-cover object-center" />
               </div>
 
             </div>
-
             <div class="mt-4 flex justify-between">
               <div>
-                <h3 class="text-lg font-extrabold text-gray-700 dark:text-white">
-                  {{ product.title }}
-                </h3>
-                <p class="mt-1 text-sm text-gray-500 dark:text-white line-clamp-2  h-10">
-                  {{ product.description }}
-                </p>
+                <h3 class="text-lg font-extrabold text-gray-700 dark:text-white">{{ product.title }}</h3>
+                <p class="mt-1 text-sm text-gray-500 dark:text-white line-clamp-2 h-10">{{ product.description }}</p>
               </div>
-
             </div>
-
-            <div class="basis-full flex flex-col ">
-              
+            <div class="basis-full flex flex-col">
               <div class="text-lg font-medium text-gray-900 dark:text-white w-full basis-full">
-
-                <p v-if="filtersList == 'Bitcoin'" class="float-left dark:text-white font-semibold text-black">{{ (product.fiat * btcprices).toFixed(8) }} <BitcoinIcon  class="h-6 w-6 inline" aria-hidden="true" /></p>
-
-                <p v-if="filtersList == 'Sats'" class="float-left dark:text-white font-semibold text-black">{{ (product.fiat * btcprices * 100000000).toFixed(0) }} <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" /></p>
-
-                <p v-if="filtersList == 'Fiat'" class="float-left dark:text-white font-semibold text-black">{{ product.fiat  }} {{ tickersymbol }}</p>
-
+                <p v-if="filtersList.value == 'Bitcoin'" class="float-left dark:text-white font-semibold text-black">{{ (product.fiat * btcprices).toFixed(8) }} <BitcoinIcon class="h-6 w-6 inline" aria-hidden="true" /></p>
+                <p v-if="filtersList.value == 'Sats'" class="float-left dark:text-white font-semibold text-black">{{ (product.fiat * btcprices * 100000000).toFixed(0) }} <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" /></p>
+                <p v-if="filtersList.value == 'Fiat'" class="float-left dark:text-white font-semibold text-black">{{ product.fiat }} {{ tickersymbol }}</p>
               </div>
-
-          <div class="w-full dark:text-white basis-full"> 
-            
-            <span v-if="product.stock < 5 && product.stock > 0" class="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span class="flex w-2.5 h-2.5 bg-orange-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Lastitems") }}</span>
-
-            <span v-if="product.stock == 0"  class="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span class="flex w-2.5 h-2.5 bg-red-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Nostock") }}</span>
-
-            <span v-if="product.stock > 5 && product.stock != 0" class="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span class="flex w-2.5 h-2.5 bg-green-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Instock") }}</span>
-
-          </div>
-
-        </div>
-
+              <div class="w-full dark:text-white basis-full">
+                <span v-if="product.stock < 5 && product.stock > 0" class="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span class="flex w-2.5 h-2.5 bg-orange-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Lastitems") }}</span>
+                <span v-if="product.stock == 0" class="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span class="flex w-2.5 h-2.5 bg-red-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Nostock") }}</span>
+                <span v-if="product.stock > 5 && product.stock != 0" class="flex items-center text-sm font-medium text-gray-900 dark:text-white"><span class="flex w-2.5 h-2.5 bg-green-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Instock") }}</span>
+              </div>
+            </div>
           </NuxtLink>
-
-          <!-- <button
-            class="mt-2 w-full snipcart-add-item hover:shadow-lg font-semibold py-2 px-4 rounded shadow max-h-10 text-black dark:text-white dark:hover:text-black hover:text-white
-            
-                            bg-white hover:bg-black
-                dark:bg-gray-700 dark:hover:bg-white
-            "
-            @click="addToCart({ id: product.id, amount: 1, image: product.images[0].src, title: product.title, price: product.fiat })"
-            :disabled="product.stock == 0"
-            >
-          
-          <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              class="w-6 h-6 fill-gray-400 inline mr-4 "
-            >
-              <path fill="none" d="M0 0h24v24H0z" />
-              <path
-                d="M4 16V4H2V2h3a1 1 0 0 1 1 1v12h12.438l2-8H8V5h13.72a1 1 0 0 1 .97 1.243l-2.5 10a1 1 0 0 1-.97.757H5a1 1 0 0 1-1-1zm2 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm12 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"
-              />
-            </svg>
-          
-          
-          {{ t("Addtocart") }}
-
-            
-          </button> -->
-
-
-          </div>
         </div>
       </div>
     </div>
-  </template>
+  </div>
+</template>
+
   
+  <i18n lang="json">
+    {
+      "da": {
+        "Addtocart": "Tilføj til kurv",
+        "Nostock": "Udsolgt",
+        "Lastitems": "Få på lager",
+        "Instock": "På lager",
+        "title": "Nyt lager",
+        "subtitle": "De nyeste drops fra din butiksfront"
+      },
+      "de": {
+        "Addtocart": "In den Warenkorb legen",
+        "Nostock": "Ausverkauft",
+        "Lastitems": "Letzte Stücke",
+        "Instock": "Auf Lager",
+        "title": "Neuer Lagerbestand",
+        "subtitle": "Die frischesten Drops aus deinem Storefront"
+      },
+      "en": {
+        "Addtocart": "Add to cart",
+        "Nostock": "Out of stock",
+        "title": "New Stock",
+        "subtitle": "Freshest Drops from your storefront",
+        "Lastitems": "Last items",
+        "Instock": "In stock"
+      },
+      "es": {
+        "Addtocart": "Añadir a la cesta",
+        "Nostock": "Agotado",
+        "Lastitems": "Últimas piezas",
+        "Instock": "En stock",
+        "title": "Nuevo stock",
+        "subtitle": "Las novedades más frescas de tu tienda"
+      },
+      "fr": {
+        "Addtocart": "Ajouter au panier",
+        "Nostock": "Rupture de stock",
+        "Lastitems": "Dernières pièces",
+        "Instock": "Disponible",
+        "title": "Nouveau stock",
+        "subtitle": "Les dernières nouveautés de votre magasin"
+      },
+      "nl": {
+        "Addtocart": "Voeg toe aan winkelkar",
+        "Nostock": "Uitverkocht",
+        "Lastitems": "Laatste stuks",
+        "Instock": "In voorraad",
+        "title": "Nieuwe voorraad",
+        "subtitle": "De nieuwste drops van je winkel"
+      },
+      "pt": {
+        "Addtocart": "Adicionar ao carrinho",
+        "Nostock": "Fora de estoque",
+        "Lastitems": "Últimos itens",
+        "Instock": "Em estoque",
+        "title": "Novo Estoque",
+        "subtitle": "As novidades mais frescas da sua loja"
+      }
+    }
+    </i18n>

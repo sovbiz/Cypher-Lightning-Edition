@@ -216,12 +216,11 @@
         <div v-for="product in filteredProducts.filter(p => p.category.includes(category.name))" :key="product.id" class="mt-6">
           <NuxtLink :to="localePath('/product/' + product.id )">
             <div class="relative">
-              <div class="relative h-72 w-full overflow-hidden rounded-lg">
-                <img :src="product.images[0].src" :alt="product.images[0].src" class="h-full w-full object-cover object-center" />
+              <div v-if="product.images[0].src && design.productimage" class="relative h-72 w-full overflow-hidden rounded-lg">
+                <img :src="product.images[0].src" :alt="product.images[0].alt" class="h-full w-full object-cover object-center" />
               </div>
-              <div class="relative mt-4">
-                <h3 class="text-sm font-medium text-gray-900 dark:text-white">{{ product.name }}</h3>
-                <p class="mt-1 text-sm text-gray-500">{{ product.color }}</p>
+              <div v-if="!product.images[0].src && design.productimage" class="relative h-72 w-full overflow-hidden rounded-lg">
+                <img src="/project/No-Image.png"  class="h-full w-full object-cover object-center" />
               </div>
             </div>
             <div class="mt-4 flex justify-between">
@@ -274,7 +273,7 @@
   import data from '~/config/shop'
 
   import ticker from '~/config/setup'
-
+import design from '~/config/design'
 const tickersymbol = ticker.fiat.symbol 
 
 

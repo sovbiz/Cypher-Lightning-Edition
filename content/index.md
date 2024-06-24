@@ -23,7 +23,7 @@ head:
 
 :Hero 
 
-:ShopNew
+:ShopNew{category="new"}
 
 :BlogFeatured
 

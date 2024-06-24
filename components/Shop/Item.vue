@@ -24,10 +24,16 @@
       <div class="flex md:gap-x-6 flex-col md:flex-row">
         <!-- Image gallery -->
 
-        <img
-          :src="product.images[0].src"
-          class="h-full w-full object-cover object-center sm:rounded-lg max-w-xs mx-auto "
-        />
+
+
+
+        <div v-if="product.images[0].src && design.productimage" class="relative h-72 w-full overflow-hidden rounded-lg">
+                <img :src="product.images[0].src" :alt="product.images[0].alt" class="h-full w-full object-cover object-center" />
+              </div>
+              <div v-if="!product.images[0].src && design.productimage" class="relative h-72 w-full overflow-hidden rounded-lg">
+                <img src="/project/No-Image.png"  class="h-full w-full object-cover object-center" />
+              </div>
+
 
         <!-- Product info -->
         <div
@@ -172,6 +178,9 @@ const { filtersList } = storeToRefs(filtersStore);
 import { useProjectStore } from "~/store/shopcart";
 
 import ticker from '~/config/setup'
+
+import design from '~/config/design'
+
 
 const tickersymbol = ticker.fiat.symbol 
 

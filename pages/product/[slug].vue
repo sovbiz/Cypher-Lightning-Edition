@@ -5,12 +5,13 @@
       <div
         class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8"
       >
-        <div class="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
-          <TabGroup as="div" class="flex flex-col-reverse">
+        <div  class="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
+          <TabGroup as="div" class="flex flex-col-reverse" v-if="!product[0].images.src && design.productimage">
             <div
               class="mx-auto mt-6 w-full max-w-2xl block lg:max-w-none"
+              
             >
-              <TabList class="grid grid-cols-4 gap-6">
+              <TabList class="grid grid-cols-4 gap-6" v-if="!product[0].images.src && design.productimage">
                 <Tab
                   v-for="image in product[0].images"
                   :key="image.id"
@@ -36,7 +37,7 @@
               </TabList>
             </div>
 
-            <TabPanels class="aspect-h-1 aspect-w-1 w-full">
+            <TabPanels class="aspect-h-1 aspect-w-1 w-full" v-if="!product[0].images.src && design.productimage">
               <TabPanel v-for="image in product[0].images" :key="image.id">
                 <img
                   :src="image.src"
@@ -331,6 +332,8 @@ import {
 import data from "~/config/shop";
 
 import ticker from '~/config/setup'
+
+import design from '~/config/design'
 
 const tickersymbol = ticker.fiat.symbol 
 
