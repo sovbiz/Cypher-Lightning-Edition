@@ -10,7 +10,7 @@
           <TabGroup as="div" class="flex flex-col-reverse" >
             <div
               class="mx-auto mt-6 w-full max-w-2xl block lg:max-w-none"
-              v-if="product[0].images.src && design.productimage"
+              v-if="!product[0].images.src && design.productimage"
             >
               <TabList class="grid grid-cols-4 gap-6" v-if="!product[0].images.src && design.productimage">
                 <Tab

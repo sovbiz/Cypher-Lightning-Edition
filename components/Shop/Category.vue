@@ -248,6 +248,9 @@
                 <span v-if="product.stock < 5 && product.stock > 0" class="flex items-center text-sm font-medium text-gray-900 dark:text-white">
                   <span class="flex w-2.5 h-2.5 bg-orange-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Lastitems") }}
                 </span>
+                <span v-if="product.stock == 0" class="flex items-center text-sm font-medium text-gray-900 dark:text-white">
+                  <span class="flex w-2.5 h-2.5 bg-red-400 rounded-full mr-1.5 flex-shrink-0"></span>{{ t("Nostock") }}
+                </span>
               </div>
             </div>
           </NuxtLink>
