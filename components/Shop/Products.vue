@@ -1,6 +1,6 @@
 <script setup>
 
-import data from '~/config/shop'
+import data from '~/config/products'
 
 import design from '~/config/design'
 

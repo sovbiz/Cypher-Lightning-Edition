@@ -1,5 +1,5 @@
 <script setup>
-import data from "~/config/shop";
+import data from "~/config/products";
 
 const products = data;
 

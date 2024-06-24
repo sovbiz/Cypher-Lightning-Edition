@@ -200,7 +200,7 @@ import {
   NoDollarsIcon,
 } from "@bitcoin-design/bitcoin-icons-vue/filled";
 
-import data from "~/config/shop";
+import data from "~/config/products";
 
 const props = defineProps({
   productid: {

@@ -270,7 +270,7 @@
   <script setup>
   import { ref } from 'vue'
 
-  import data from '~/config/shop'
+  import data from '~/config/products'
 
   import ticker from '~/config/setup'
 import design from '~/config/design'
