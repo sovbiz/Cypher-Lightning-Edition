@@ -5,7 +5,7 @@
       <lightning-fixed-alby-trigger
         name=""
         accent="#"
-        :to="data.lnurl"
+        :to="data.lightningaddress"
         image="/project/alby.png"
         button-text="Unlock with Alby"
         amounts="10,105,1000"

@@ -24,7 +24,7 @@
   },
   "testnet":"false",
   "btcadress":"bc1q5j9h5dfr6gctjc0tl9gaz02f0p0qs7ecdlcat8",
-  "lnurl":"cypherspace@getalby.com",
+  "lightningaddress":"cypherspace@getalby.com",
   "orderwebhook":"https://discord.com/api/webhooks/1233156502043361451/MO8cg2GcvehH51uTxrCE9e0T3albAHeYqdHxTqrRRZk1CoJp9--mR8_IN3PBqp5_JfIr",
   "nostr":true,
   "nostradmin":"npub1nkmta4dmsa7pj25762qxa6yqxvrhzn7ug0gz5frp9g7p3jdscnhsu049fn",

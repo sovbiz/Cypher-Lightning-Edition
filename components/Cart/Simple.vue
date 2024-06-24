@@ -583,7 +583,7 @@
         <lightning-widget
 
           accent=""
-          :to="data.lnurl"
+          :to="data.lightningaddress"
           :addressbtc="data.btcadress"
           shippingpay="0.0000"
           :payamount="totalPriceBtc * 100000000000"

@@ -15,7 +15,7 @@
       <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
         <div>
           <label
-            for="lnurl"
+            for="lightningaddress"
             class="block text-sm font-semibold leading-6 text-gray-900 dark:text-white"
             >Lightning Address</label
           >
@@ -23,9 +23,9 @@
             <input
               type="text"
               v-model="to"
-              name="lnurl"
-              id="lnurl"
-              autocomplete="lnurl"
+              name="lightningaddress"
+              id="lightningaddress"
+              autocomplete="lightningaddress"
               class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
             />
           </div>
@@ -107,7 +107,7 @@ import QRCode from "qrcode";
 import data from "~/config/setup";
 
 // Define the data properties
-const to = ref(data.lnurl);
+const to = ref(data.lightningaddress);
 const amount = ref("");
 const comment = ref("");
 const invoice = ref("");

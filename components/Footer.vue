@@ -11,7 +11,7 @@ const currentDate = new Date();
 </script>
 <template>
   <footer
-    class="bg-colorBgLight dark:bg-colorBgDark border-t-4 md:mt-24"
+    class="bg-colorBgLight dark:bg-colorBgDark border-t-4"
     aria-labelledby="footer-heading"
   >
     <h2 id="footer-heading" class="sr-only">Footer</h2>
