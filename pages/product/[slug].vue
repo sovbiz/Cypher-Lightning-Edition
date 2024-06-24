@@ -4,12 +4,13 @@
     <div v-if="product !== null">
       <div
         class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8"
+        v-if="!product[0].images.src && design.productimage"
       >
-        <div  class="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8">
-          <TabGroup as="div" class="flex flex-col-reverse" v-if="!product[0].images.src && design.productimage">
+        <div  class="lg:grid lg:grid-cols-2 lg:items-start lg:gap-x-8" >
+          <TabGroup as="div" class="flex flex-col-reverse" >
             <div
               class="mx-auto mt-6 w-full max-w-2xl block lg:max-w-none"
-              
+              v-if="product[0].images.src && design.productimage"
             >
               <TabList class="grid grid-cols-4 gap-6" v-if="!product[0].images.src && design.productimage">
                 <Tab
