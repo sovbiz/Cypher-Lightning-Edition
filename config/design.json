@@ -1,8 +1,8 @@
 {
-   "herologopath": "/stock/nogood/NG_Cypher_Blocks.gif",
+   "herologopath": "/project/NG_Cypher_Blocks.gif",
    "hero":"image",
-   "herobackgroundimagepathlight":"/stock/nogood/NG_Cypher_Header_Light.png",
-   "herobackgroundimagepathdark":"/stock/nogood/NG_Cypher_Header_Dark.png",
+   "herobackgroundimagepathlight":"/project/Background-Light.png",
+   "herobackgroundimagepathdark":"/project/Background-Dark.png",
    "herobackgroundlocalvideopath":"/project/Background-Video.mp4",
    "herobackgroundyoutubelink":"https://www.youtube.com/embed/tgbNymZ7vqY?playlist=5_-Pk2Rb4_k&loop=1&autoplay=1&mute=1&controls=0",
    "productimage": true

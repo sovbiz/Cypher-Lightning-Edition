@@ -3,7 +3,7 @@
       "id": 1,
       "type": "Product",
       "category": [
-         "t-shirt" , "new"     ],
+         "t-shirt"     ],
       "variations": [
          "xs",
          "sm",

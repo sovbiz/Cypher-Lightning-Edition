@@ -16,7 +16,7 @@ authorhref: "https://coracle.social/npub1nkmta4dmsa7pj25762qxa6yqxvrhzn7ug0gz5fr
 authorimageUrl: "https://cypher.space/avatar/NG_Cypher.gif"
 
 image:
-  src: 'https://cypher.space/project/blog-img/advanced-post.jpg'
+  src: 'https://cypher.space/stock/blog-img/advanced-post.jpg'
   alt: 'An image showcasing My Page.'
   width: 1200
   height: 630

@@ -10,7 +10,7 @@ date: "Nov 20, 2023"
 datetime: "2023-11-20"
 
 image:
-  src: 'https://cypher.space/project/blog-img/simple-post.jpg'
+  src: 'https://cypher.space/stock/blog-img/simple-post.jpg'
   alt: 'An AI image showcasing My Page.'
   width: 1200
   height: 630
@@ -41,7 +41,7 @@ Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
 
 ## Images
 
-![Alt text for the image](https://dev.cypher.space/stock/nogood/Placeholder.gif)
+![Alt text for the image](https://dev.cypher.space/project/Placeholder.gif)
 
 ## List
 
