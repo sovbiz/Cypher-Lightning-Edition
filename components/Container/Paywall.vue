@@ -11,7 +11,8 @@
         <p class="mt-2 text-center">
           👋 Hey thanks for visiting this article, we don't run add's or track
           on our site but we could use a sats donation to keep the 💡 on and the
-          🌈 flowing. Any satoshi amount is appreciated and unlocks the article, enless you are a code wizard 🪄.
+          🌈 flowing. Any satoshi amount is appreciated and unlocks the article,
+          enless you are a code wizard 🪄.
         </p>
       </div>
       <div class="my-auto flex-1">

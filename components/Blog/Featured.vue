@@ -7,8 +7,7 @@ const { data } = await useAsyncData("home", () =>
     .find()
 );
 
-import ticker from '~/config/setup';
-
+import ticker from "~/config/setup";
 
 const posts = data;
 
@@ -16,40 +15,43 @@ const { t } = useI18n({ useScope: "local" });
 // console.log(products);
 </script>
 <i18n lang="json">
-  {
-    "da": {
-      "title": "Fremhævede Artikler",
-      "subtitle": "Sandsynligvis de ting, vi finder vigtigst at dele."
-    },
-    "de": {
-      "title": "Ausgewählte Artikel",
-      "subtitle": "Wahrscheinlich die Dinge, die wir am wichtigsten finden, zu teilen."
-    },
-    "en": {
-      "title": "Featured Articles",
-      "subtitle": "Probably the things we find the most important to share."
-    },
-    "es": {
-      "title": "Artículos Destacados",
-      "subtitle": "Probablemente las cosas que consideramos más importantes para compartir."
-    },
-    "fr": {
-      "title": "Articles en Vedette",
-      "subtitle": "Probablement les choses que nous trouvons les plus importantes à partager."
-    },
-    "nl": {
-      "title": "Aanbevolen Artikelen",
-      "subtitle": "Waarschijnlijk de dingen die we het belangrijkst vinden om te delen."
-    },
-    "pt": {
-      "title": "Artigos em Destaque",
-      "subtitle": "Provavelmente as coisas que achamos mais importantes para compartilhar."
-    }
+{
+  "da": {
+    "title": "Fremhævede Artikler",
+    "subtitle": "Sandsynligvis de ting, vi finder vigtigst at dele."
+  },
+  "de": {
+    "title": "Ausgewählte Artikel",
+    "subtitle": "Wahrscheinlich die Dinge, die wir am wichtigsten finden, zu teilen."
+  },
+  "en": {
+    "title": "Featured Articles",
+    "subtitle": "Probably the things we find the most important to share."
+  },
+  "es": {
+    "title": "Artículos Destacados",
+    "subtitle": "Probablemente las cosas que consideramos más importantes para compartir."
+  },
+  "fr": {
+    "title": "Articles en Vedette",
+    "subtitle": "Probablement les choses que nous trouvons les plus importantes à partager."
+  },
+  "nl": {
+    "title": "Aanbevolen Artikelen",
+    "subtitle": "Waarschijnlijk de dingen die we het belangrijkst vinden om te delen."
+  },
+  "pt": {
+    "title": "Artigos em Destaque",
+    "subtitle": "Provavelmente as coisas que achamos mais importantes para compartilhar."
   }
-  </i18n>
-  
+}
+</i18n>
+
 <template>
-  <div class="bg-colorBgLight dark:bg-colorBgDark sm:pt-0 my-24" v-if="ticker.blog">
+  <div
+    class="bg-colorBgLight dark:bg-colorBgDark sm:pt-0 my-24"
+    v-if="ticker.blog"
+  >
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl text-center">
         <h2
@@ -81,7 +83,7 @@ const { t } = useI18n({ useScope: "local" });
               />
             </div>
           </NuxtLink>
-          <div v-if="post._draft == false" class="max-w-xl ">
+          <div v-if="post._draft == false" class="max-w-xl">
             <div class="mt-8 flex items-center gap-x-4 text-xs">
               <time
                 :datetime="post.datetime"

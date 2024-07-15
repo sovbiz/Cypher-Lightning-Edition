@@ -11,38 +11,37 @@ const { t } = useI18n({ useScope: "local" });
 // console.log(products);
 </script>
 <i18n lang="json">
-  {
-    "da": {
-      "title": "Seneste Nyheder",
-      "subtitle": "Alt hvad vi nogensinde har skrevet i en simpel feed."
-    },
-    "de": {
-      "title": "Neueste Nachrichten",
-      "subtitle": "Alles, was wir jemals geschrieben haben, in einem einfachen Feed."
-    },
-    "en": {
-      "title": "Latest News Feed",
-      "subtitle": "Everything we've ever written in one simple feed."
-    },
-    "es": {
-      "title": "Últimas Noticias",
-      "subtitle": "Todo lo que hemos escrito en un feed sencillo."
-    },
-    "fr": {
-      "title": "Dernières Nouvelles",
-      "subtitle": "Tout ce que nous avons jamais écrit dans un flux simple."
-    },
-    "nl": {
-      "title": "Laatste Nieuws",
-      "subtitle": "Alles wat we ooit hebben geschreven in één eenvoudige feed."
-    },
-    "pt": {
-      "title": "Últimas Notícias",
-      "subtitle": "Tudo o que já escrevemos em um feed simples."
-    }
+{
+  "da": {
+    "title": "Seneste Nyheder",
+    "subtitle": "Alt hvad vi nogensinde har skrevet i en simpel feed."
+  },
+  "de": {
+    "title": "Neueste Nachrichten",
+    "subtitle": "Alles, was wir jemals geschrieben haben, in einem einfachen Feed."
+  },
+  "en": {
+    "title": "Latest News Feed",
+    "subtitle": "Everything we've ever written in one simple feed."
+  },
+  "es": {
+    "title": "Últimas Noticias",
+    "subtitle": "Todo lo que hemos escrito en un feed sencillo."
+  },
+  "fr": {
+    "title": "Dernières Nouvelles",
+    "subtitle": "Tout ce que nous avons jamais écrit dans un flux simple."
+  },
+  "nl": {
+    "title": "Laatste Nieuws",
+    "subtitle": "Alles wat we ooit hebben geschreven in één eenvoudige feed."
+  },
+  "pt": {
+    "title": "Últimas Notícias",
+    "subtitle": "Tudo o que já escrevemos em um feed simples."
   }
-  </i18n>
-  
+}
+</i18n>
 
 <template>
   <div

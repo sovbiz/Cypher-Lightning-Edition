@@ -22,5 +22,4 @@ onMounted(() => {
     }
   });
 });
-
 </script>

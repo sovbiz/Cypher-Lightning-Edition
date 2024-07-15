@@ -25,11 +25,7 @@ const filtersStore = useFiltersStore();
 const { addValueToFilterList } = filtersStore;
 const { filtersList } = storeToRefs(filtersStore);
 
-const setCurrency = [
-  { name: "Bitcoin" },
-  { name: "Sats" },
-  { name: "Fiat" },
-];
+const setCurrency = [{ name: "Bitcoin" }, { name: "Sats" }, { name: "Fiat" }];
 </script>
 <template>
   <div class="ml-6 flex items-center">

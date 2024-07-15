@@ -3,10 +3,9 @@ import data from "~/config/products";
 
 const products = data;
 
-import ticker from '~/config/setup'
+import ticker from "~/config/setup";
 
-const tickersymbol = ticker.fiat.symbol 
-
+const tickersymbol = ticker.fiat.symbol;
 
 import { useFiltersStore } from "~/store/currency";
 import { storeToRefs } from "pinia";
@@ -25,7 +24,8 @@ const { addValueToFilterList } = filtersStore;
 const { filtersList } = storeToRefs(filtersStore);
 
 const btcprice = await $fetch(
-  "https://api.coinbase.com/v2/exchange-rates?currency=" + ticker.fiat.denomination
+  "https://api.coinbase.com/v2/exchange-rates?currency=" +
+    ticker.fiat.denomination
 );
 
 const btcprices = Number(btcprice.data.rates.BTC).toFixed(8);
@@ -39,52 +39,52 @@ import {
 const { t } = useI18n({ useScope: "local" });
 </script>
 <i18n lang="json">
-  {
-    "da": {
-      "Addtocart": "Tilføj til kurv",
-      "Nostock": "Udsolgt",
-      "Lastitems": "Få på lager",
-      "Instock": "På lager"
-    },
-    "de": {
-      "Addtocart": "In den Warenkorb legen",
-      "Nostock": "Ausverkauft",
-      "Lastitems": "Letzte Stücke",
-      "Instock": "Auf Lager"
-    },
-    "en": {
-      "Addtocart": "Add to cart",
-      "Nostock": "Out of stock",
-      "Lastitems": "Last items",
-      "Instock": "In stock"
-    },
-    "es": {
-      "Addtocart": "Añadir a la cesta",
-      "Nostock": "Agotado",
-      "Lastitems": "Últimas piezas",
-      "Instock": "En stock"
-    },
-    "fr": {
-      "Addtocart": "Ajouter au panier",
-      "Nostock": "Rupture de stock",
-      "Lastitems": "Dernières pièces",
-      "Instock": "Disponible"
-    },
-    "nl": {
-      "Addtocart": "Voeg toe aan winkelkar",
-      "Nostock": "Uitverkocht",
-      "Lastitems": "Laatste stuks",
-      "Instock": "In voorraad"
-    },
-    "pt": {
-      "Addtocart": "Adicionar ao carrinho",
-      "Nostock": "Fora de estoque",
-      "Lastitems": "Últimos itens",
-      "Instock": "Em estoque"
-    }
+{
+  "da": {
+    "Addtocart": "Tilføj til kurv",
+    "Nostock": "Udsolgt",
+    "Lastitems": "Få på lager",
+    "Instock": "På lager"
+  },
+  "de": {
+    "Addtocart": "In den Warenkorb legen",
+    "Nostock": "Ausverkauft",
+    "Lastitems": "Letzte Stücke",
+    "Instock": "Auf Lager"
+  },
+  "en": {
+    "Addtocart": "Add to cart",
+    "Nostock": "Out of stock",
+    "Lastitems": "Last items",
+    "Instock": "In stock"
+  },
+  "es": {
+    "Addtocart": "Añadir a la cesta",
+    "Nostock": "Agotado",
+    "Lastitems": "Últimas piezas",
+    "Instock": "En stock"
+  },
+  "fr": {
+    "Addtocart": "Ajouter au panier",
+    "Nostock": "Rupture de stock",
+    "Lastitems": "Dernières pièces",
+    "Instock": "Disponible"
+  },
+  "nl": {
+    "Addtocart": "Voeg toe aan winkelkar",
+    "Nostock": "Uitverkocht",
+    "Lastitems": "Laatste stuks",
+    "Instock": "In voorraad"
+  },
+  "pt": {
+    "Addtocart": "Adicionar ao carrinho",
+    "Nostock": "Fora de estoque",
+    "Lastitems": "Últimos itens",
+    "Instock": "Em estoque"
   }
-  </i18n>
-  
+}
+</i18n>
+
 <template>
   <div class="bg-colorBgLight dark:bg-colorBgDark">
     <div class="mx-auto max-w-2xl lg:max-w-4xl">
@@ -107,7 +107,6 @@ const { t } = useI18n({ useScope: "local" });
                 </h3>
                 <p class="mt-1 text-sm text-gray-500">{{ product.color }}</p>
               </div>
-
             </div>
 
             <div class="mt-4 flex justify-between">
@@ -157,7 +156,7 @@ const { t } = useI18n({ useScope: "local" });
 
               <div class="w-full dark:text-white basis-full">
                 <span
-                v-if="product.stock < 5 && product.stock > 0"
+                  v-if="product.stock < 5 && product.stock > 0"
                   class="flex items-center text-sm font-medium text-gray-900 dark:text-white"
                   ><span
                     class="flex w-2.5 h-2.5 bg-orange-400 rounded-full mr-1.5 flex-shrink-0"
@@ -166,7 +165,7 @@ const { t } = useI18n({ useScope: "local" });
                 >
 
                 <span
-                v-if="product.stock == 0"
+                  v-if="product.stock == 0"
                   class="flex items-center text-sm font-medium text-gray-900 dark:text-white"
                   ><span
                     class="flex w-2.5 h-2.5 bg-red-400 rounded-full mr-1.5 flex-shrink-0"
@@ -175,7 +174,7 @@ const { t } = useI18n({ useScope: "local" });
                 >
 
                 <span
-                v-if="product.stock > 5 && product.stock != 0"
+                  v-if="product.stock > 5 && product.stock != 0"
                   class="flex items-center text-sm font-medium text-gray-900 dark:text-white"
                   ><span
                     class="flex w-2.5 h-2.5 bg-green-400 rounded-full mr-1.5 flex-shrink-0"

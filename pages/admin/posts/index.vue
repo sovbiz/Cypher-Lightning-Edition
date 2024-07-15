@@ -12,11 +12,7 @@
     </div>
     <AdminNotes />
 
-
-
     <AdminFooter />
-
-
   </div>
 </template>
 

@@ -6,11 +6,8 @@
 
     <AdminMetrics />
 
-
-<!-- 
+    <!-- 
     <AdminNostr /> -->
-
-
 
     <!-- <AdminCodeprop :target=data.nostradmin /> -->
 
@@ -21,19 +18,14 @@
     <FundsTicker />
     </div> -->
 
-<AdminHomelinks />
+    <AdminHomelinks />
 
-
-
-<AdminFooter />
-
+    <AdminFooter />
   </div>
 </template>
 
 <script setup>
-
 import data from "~/config/setup";
-
 
 definePageMeta({
   layout: "admin",

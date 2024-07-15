@@ -28,7 +28,6 @@ import data from "~/config/setup";
 
 import menu from "~/config/menu";
 
-
 const links = data.socialnavigation;
 import { useProjectStore } from "~/store/shopcart";
 
@@ -132,13 +131,12 @@ onMounted(() => {
           {{ item.name }}</NuxtLink
         >
 
-
         <NuxtLink
-        v-if="data.blog"
+          v-if="data.blog"
           :to="localePath('/blog')"
           class="text-sm font-semibold leading-6 text-black dark:text-white"
         >
-        {{menu.Headernavigation.bloglabel}}</NuxtLink
+          {{ menu.Headernavigation.bloglabel }}</NuxtLink
         >
 
         <NuxtLink
@@ -146,7 +144,7 @@ onMounted(() => {
           class="text-sm font-semibold leading-6 text-black dark:text-white"
           :to="localePath('/shop')"
         >
-          {{menu.Headernavigation.shoplabel}}
+          {{ menu.Headernavigation.shoplabel }}
         </NuxtLink>
 
         <NuxtLink
@@ -157,12 +155,7 @@ onMounted(() => {
           Contact
         </NuxtLink>
 
-
-
-
-
-
-        <Popover class="relative"  v-if="menu.Headernavigation.MenuPopupName">
+        <Popover class="relative" v-if="menu.Headernavigation.MenuPopupName">
           <PopoverButton
             class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-black dark:text-white"
           >
@@ -222,8 +215,6 @@ onMounted(() => {
             </PopoverPanel>
           </transition>
         </Popover>
-
-
       </PopoverGroup>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <NuxtLink
@@ -240,8 +231,7 @@ onMounted(() => {
           >
             <span
               id="numbered"
-              class="text-center font-semibold text-xs align-text-center px-1 "
-
+              class="text-center font-semibold text-xs align-text-center px-1"
             >
               {{ totalItems }}</span
             >
@@ -295,7 +285,6 @@ onMounted(() => {
           </svg>
         </a>
 
-
         <SettingsLanguage v-if="data.multilang" />
 
         <SettingsCurrency />
@@ -348,24 +337,24 @@ onMounted(() => {
                 {{ item.name }}</NuxtLink
               >
               <div v-if="menu.Headernavigation.MenuPopupName">
-              <NuxtLink
-                :to="localePath(item.href)"
-                
-                v-for="item in menu.Headernavigation.MenuPopup"
-                @click="mobileMenuOpen = false"
-                :key="item.name"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-black dark:text-white"
-              >
-                {{ item.name }}</NuxtLink
-              ></div>
+                <NuxtLink
+                  :to="localePath(item.href)"
+                  v-for="item in menu.Headernavigation.MenuPopup"
+                  @click="mobileMenuOpen = false"
+                  :key="item.name"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-black dark:text-white"
+                >
+                  {{ item.name }}</NuxtLink
+                >
+              </div>
 
-        <NuxtLink
+              <NuxtLink
                 v-if="data.blog"
                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-black dark:text-white"
                 :to="localePath('/blog')"
                 @click="mobileMenuOpen = false"
               >
-              {{menu.Headernavigation.bloglabel}}
+                {{ menu.Headernavigation.bloglabel }}
               </NuxtLink>
 
               <NuxtLink
@@ -374,7 +363,7 @@ onMounted(() => {
                 :to="localePath('/shop')"
                 @click="mobileMenuOpen = false"
               >
-              {{menu.Headernavigation.shoplabel}}
+                {{ menu.Headernavigation.shoplabel }}
               </NuxtLink>
 
               <NuxtLink
@@ -385,9 +374,6 @@ onMounted(() => {
               >
                 Contact
               </NuxtLink>
-
-
-
             </div>
 
             <div class="py-6">

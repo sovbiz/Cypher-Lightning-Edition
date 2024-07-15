@@ -38,17 +38,15 @@
                 <span class="sr-only">{{ data.name }}</span>
 
                 <img
-                class="block dark:hidden h-12"
-                src="/project/NG_Logo_CypherSpace.gif"
-                :alt="data.name"
-
-              />
-              <img
-                class="hidden dark:block h-12"
-                src="/project/NG_Logo_CypherSpace_Dark.gif"
-                :alt="data.name"
-
-              />
+                  class="block dark:hidden h-12"
+                  src="/project/NG_Logo_CypherSpace.gif"
+                  :alt="data.name"
+                />
+                <img
+                  class="hidden dark:block h-12"
+                  src="/project/NG_Logo_CypherSpace_Dark.gif"
+                  :alt="data.name"
+                />
 
                 <span
                   v-if="data.logo"
@@ -122,20 +120,16 @@
               <NuxtLink :to="localePath('/')" class="flex ml-6">
                 <span class="sr-only">{{ data.name }}</span>
 
-
                 <img
-                class="block dark:hidden h-12"
-                src="/project/NG_Logo_CypherSpace.gif"
-                :alt="data.name"
-
-              />
-              <img
-                class="hidden dark:block h-12"
-                src="/project/NG_Logo_CypherSpace_Dark.gif"
-                :alt="data.name"
-
-              />
-
+                  class="block dark:hidden h-12"
+                  src="/project/NG_Logo_CypherSpace.gif"
+                  :alt="data.name"
+                />
+                <img
+                  class="hidden dark:block h-12"
+                  src="/project/NG_Logo_CypherSpace_Dark.gif"
+                  :alt="data.name"
+                />
               </NuxtLink>
             </div>
             <nav
@@ -168,8 +162,6 @@ Your browser does not support the video tag.
 
                 {{ item.name }}</NuxtLink
               >
-
-
             </nav>
           </div>
 
@@ -188,37 +180,26 @@ Your browser does not support the video tag.
     <div
       class="fixed justify-between bg-colorHeaderBgLight dark:bg-colorHeaderBgDark w-full z-30 flex shadow-lg dark:shadow-gray-100/10"
     >
-      <div
-        class=" flex items-center  px-6   md:justify-start md:space-x-10"
-      >
+      <div class="flex items-center px-6 md:justify-start md:space-x-10">
         <div>
           <NuxtLink :to="localePath('/')" class="flex">
             <span class="sr-only">{{ data.name }}</span>
 
-
-
-
             <img
-                class="block dark:hidden h-12"
-                src="/project/NG_Logo_CypherSpace.gif"
-                :alt="data.name"
-
-              />
-              <img
-                class="hidden dark:block h-12"
-                src="/project/NG_Logo_CypherSpace_Dark.gif"
-                :alt="data.name"
-
-              />
-
-
-
-
+              class="block dark:hidden h-12"
+              src="/project/NG_Logo_CypherSpace.gif"
+              :alt="data.name"
+            />
+            <img
+              class="hidden dark:block h-12"
+              src="/project/NG_Logo_CypherSpace_Dark.gif"
+              :alt="data.name"
+            />
           </NuxtLink>
         </div>
       </div>
 
-      <div class=" my-2 mr-2">
+      <div class="my-2 mr-2">
         <button
           @click="togglemenu"
           class="dark:bg-colorBgLight bg-colorBgDark rounded w-12 h-10 my-2 mr-3"
@@ -254,6 +235,4 @@ let showMobileMenu = ref(true);
 function togglemenu() {
   showMobileMenu.value = !showMobileMenu.value;
 }
-
-
 </script>

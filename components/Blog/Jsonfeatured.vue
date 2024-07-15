@@ -7,37 +7,37 @@ const { t } = useI18n({ useScope: "local" });
 // console.log(products);
 </script>
 <i18n lang="json">
-  {
-    "da": {
-      "title": "Fremhævede Artikler",
-      "subtitle": "Sandsynligvis de ting, vi finder vigtigst at dele."
-    },
-    "de": {
-      "title": "Ausgewählte Artikel",
-      "subtitle": "Wahrscheinlich die Dinge, die wir am wichtigsten finden, zu teilen."
-    },
-    "en": {
-      "title": "Featured Articles",
-      "subtitle": "Probably the things we find the most important to share."
-    },
-    "es": {
-      "title": "Artículos Destacados",
-      "subtitle": "Probablemente las cosas que consideramos más importantes para compartir."
-    },
-    "fr": {
-      "title": "Articles en Vedette",
-      "subtitle": "Probablement les choses que nous trouvons les plus importantes à partager."
-    },
-    "nl": {
-      "title": "Aanbevolen Artikelen",
-      "subtitle": "Waarschijnlijk de dingen die we het belangrijkst vinden om te delen."
-    },
-    "pt": {
-      "title": "Artigos em Destaque",
-      "subtitle": "Provavelmente as coisas que achamos mais importantes para compartilhar."
-    }
+{
+  "da": {
+    "title": "Fremhævede Artikler",
+    "subtitle": "Sandsynligvis de ting, vi finder vigtigst at dele."
+  },
+  "de": {
+    "title": "Ausgewählte Artikel",
+    "subtitle": "Wahrscheinlich die Dinge, die wir am wichtigsten finden, zu teilen."
+  },
+  "en": {
+    "title": "Featured Articles",
+    "subtitle": "Probably the things we find the most important to share."
+  },
+  "es": {
+    "title": "Artículos Destacados",
+    "subtitle": "Probablemente las cosas que consideramos más importantes para compartir."
+  },
+  "fr": {
+    "title": "Articles en Vedette",
+    "subtitle": "Probablement les choses que nous trouvons les plus importantes à partager."
+  },
+  "nl": {
+    "title": "Aanbevolen Artikelen",
+    "subtitle": "Waarschijnlijk de dingen die we het belangrijkst vinden om te delen."
+  },
+  "pt": {
+    "title": "Artigos em Destaque",
+    "subtitle": "Provavelmente as coisas que achamos mais importantes para compartilhar."
   }
-  </i18n>  
+}
+</i18n>
 
 <template>
   <div class="bg-colorBgLight dark:bg-colorBgDark sm:pt-0 mt-24">

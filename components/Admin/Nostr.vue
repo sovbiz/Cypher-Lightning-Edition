@@ -4,7 +4,6 @@
       Nostr Admin :
     </h3>
     <dl class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-4">
-
       <div
         v-for="item in nostr"
         :key="item.name"
@@ -24,19 +23,12 @@
 <script setup>
 import data from "~/config/setup";
 
-const stats = [
-
-  { name: "Version", stat: data.version },
-
-];
-
+const stats = [{ name: "Version", stat: data.version }];
 
 const nostr = [
-{ name: "Posts", stat: "6" },
+  { name: "Posts", stat: "6" },
   { name: "Products", stat: "4" },
   { name: "Followers", stat: "0" },
   { name: "Relay Connection", stat: data.nostrrelay },
-
 ];
-
 </script>

@@ -27,11 +27,11 @@
 </template>
 
 <script setup>
-
 const route = useRoute();
 
 // Rendering the index content const slug = "/";
 const slug = ref("/" + route.params.slug);
-const { data } = await useAsyncData(`${route.params.slug}`, () => queryContent(`${route.params.slug}`).findOne())
-
+const { data } = await useAsyncData(`${route.params.slug}`, () =>
+  queryContent(`${route.params.slug}`).findOne()
+);
 </script>

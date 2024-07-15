@@ -4,10 +4,6 @@ import data from "~/config/setup";
 import menu from "~/config/menu";
 
 const currentDate = new Date();
-
-
-
-
 </script>
 <template>
   <footer
@@ -15,7 +11,7 @@ const currentDate = new Date();
     aria-labelledby="footer-heading"
   >
     <h2 id="footer-heading" class="sr-only">Footer</h2>
-    <div class="mx-auto max-w-7xl px-3 pb-8 pt-12 lg:px-8 ">
+    <div class="mx-auto max-w-7xl px-3 pb-8 pt-12 lg:px-8">
       <div class="xl:grid xl:grid-cols-3 xl:gap-8">
         <div class="text-center">
           <img
@@ -23,14 +19,12 @@ const currentDate = new Date();
             :class="[data.logodark ? 'block dark:hidden' : '', 'h-12 mx-auto']"
             :src="'/project/' + data.logoimage"
             :alt="data.name"
-
           />
           <img
             v-if="data.logodark"
             class="hidden dark:block h-12 mx-auto"
             :src="'/project/' + data.logodarkimage"
             :alt="data.name"
-
           />
 
           <span
@@ -69,7 +63,7 @@ const currentDate = new Date();
                 </li>
               </ul>
             </div>
-            <div class="mt-10 md:mt-0 text-center" >
+            <div class="mt-10 md:mt-0 text-center">
               <h3
                 class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
               >
@@ -90,7 +84,7 @@ const currentDate = new Date();
               </ul>
             </div>
           </div>
-          <div class="md:grid md:grid-cols-2 md:gap-8" >
+          <div class="md:grid md:grid-cols-2 md:gap-8">
             <div class="text-center" v-if="data.blog">
               <h3
                 class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
@@ -111,7 +105,6 @@ const currentDate = new Date();
               </ul>
             </div>
 
-
             <div class="mt-10 md:mt-0 text-center" v-if="data.shop">
               <h3
                 class="text-sm font-semibold leading-6 text-gray-900 dark:text-white"
@@ -131,9 +124,6 @@ const currentDate = new Date();
                 </li>
               </ul>
             </div>
-
-
-
           </div>
         </div>
       </div>
@@ -143,18 +133,12 @@ const currentDate = new Date();
       <div
         class="mx-auto max-w-7xl px-6 py-2 md:flex md:items-center md:justify-between lg:px-8"
       >
-
-      
-
         <div class="flex w-full justify-center space-x-6 md:order-2">
-          
-          
-          
-
           <p
             class="text-xs leading-5 text-black dark:text-black dark:text-white mt-1"
           >
-            &copy; {{ currentDate.getFullYear() }} {{ data.name }}, Inc. All rights reserved.
+            &copy; {{ currentDate.getFullYear() }} {{ data.name }}, Inc. All
+            rights reserved.
           </p>
         </div>
       </div>

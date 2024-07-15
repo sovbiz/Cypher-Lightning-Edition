@@ -12,38 +12,37 @@ const { t } = useI18n({ useScope: "local" });
 // console.log(products);
 </script>
 <i18n lang="json">
-  {
-    "da": {
-      "title": "Seneste Nyheder",
-      "subtitle": "Alt hvad vi nogensinde har skrevet i en simpel feed."
-    },
-    "de": {
-      "title": "Neueste Nachrichten",
-      "subtitle": "Alles, was wir jemals geschrieben haben, in einem einfachen Feed."
-    },
-    "en": {
-      "title": "Latest News Feed",
-      "subtitle": "Everything we've ever written in one simple feed."
-    },
-    "es": {
-      "title": "Últimas Noticias",
-      "subtitle": "Todo lo que hemos escrito en un feed sencillo."
-    },
-    "fr": {
-      "title": "Dernières Nouvelles",
-      "subtitle": "Tout ce que nous avons jamais écrit dans un flux simple."
-    },
-    "nl": {
-      "title": "Laatste Nieuws",
-      "subtitle": "Alles wat we ooit hebben geschreven in één eenvoudige feed."
-    },
-    "pt": {
-      "title": "Últimas Notícias",
-      "subtitle": "Tudo o que já escrevemos em um feed simples."
-    }
+{
+  "da": {
+    "title": "Seneste Nyheder",
+    "subtitle": "Alt hvad vi nogensinde har skrevet i en simpel feed."
+  },
+  "de": {
+    "title": "Neueste Nachrichten",
+    "subtitle": "Alles, was wir jemals geschrieben haben, in einem einfachen Feed."
+  },
+  "en": {
+    "title": "Latest News Feed",
+    "subtitle": "Everything we've ever written in one simple feed."
+  },
+  "es": {
+    "title": "Últimas Noticias",
+    "subtitle": "Todo lo que hemos escrito en un feed sencillo."
+  },
+  "fr": {
+    "title": "Dernières Nouvelles",
+    "subtitle": "Tout ce que nous avons jamais écrit dans un flux simple."
+  },
+  "nl": {
+    "title": "Laatste Nieuws",
+    "subtitle": "Alles wat we ooit hebben geschreven in één eenvoudige feed."
+  },
+  "pt": {
+    "title": "Últimas Notícias",
+    "subtitle": "Tudo o que já escrevemos em um feed simples."
   }
-  </i18n>
-  
+}
+</i18n>
 
 <template>
   <div class="bg-colorBgLight dark:bg-colorBgDark pb-6 sm:pb-0 mt-12">
@@ -88,7 +87,7 @@ const { t } = useI18n({ useScope: "local" });
                   >{{ post.date }}</time
                 >
                 <div
-                v-if="post.categorytitle"
+                  v-if="post.categorytitle"
                   class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-900 hover:bg-gray-100"
                 >
                   {{ post.categorytitle }}
@@ -113,7 +112,7 @@ const { t } = useI18n({ useScope: "local" });
               <div class="mt-6 flex border-t border-gray-900/5 pt-6">
                 <div class="relative flex items-center gap-x-4">
                   <img
-                  v-if="post.authorimageUrl"
+                    v-if="post.authorimageUrl"
                     :src="post.authorimageUrl"
                     alt=""
                     class="h-16 w-16 rounded-full bg-gray-50"

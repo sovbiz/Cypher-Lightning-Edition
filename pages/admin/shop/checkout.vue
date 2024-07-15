@@ -9,11 +9,7 @@
 <p> Shipping rates </p>
          -->
 
-
-         <AdminSubshop class="mt-12"/>
-
-
-
+    <AdminSubshop class="mt-12" />
 
     <form class="max-w-4xl mx-auto">
       <div class="space-y-12">
@@ -161,9 +157,6 @@
     </form>
 
     <AdminFooter />
-
-
-
   </div>
 </template>
 

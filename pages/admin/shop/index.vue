@@ -12,15 +12,11 @@
       </div>
     </div>
 
-
     <AdminSubshop />
-
 
     <AdminProducts />
 
     <AdminFooter />
-
-
   </div>
 </template>
 

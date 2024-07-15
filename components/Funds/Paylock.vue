@@ -10,8 +10,8 @@
         button-text="Unlock with Alby"
         amounts="10,105,1000"
         orderid="#42069"
-        :wizard=wizardkey
-        freeamount=true
+        :wizard="wizardkey"
+        freeamount="true"
       />
     </div>
   </div>
@@ -19,14 +19,9 @@
 <script setup>
 import data from "~/config/setup";
 
-
-const wizardkey = ref(false)
-
+const wizardkey = ref(false);
 
 watch(wizardkey, (newValue, oldValue) => {
-  console.log('myData changed from', oldValue, 'to', newValue);
+  console.log("myData changed from", oldValue, "to", newValue);
 });
-
-
-
 </script>

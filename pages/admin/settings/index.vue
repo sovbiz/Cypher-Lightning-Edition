@@ -4,11 +4,7 @@
       Settings
     </h1>
 
-
-
-<AdminSubsettings />
-
-
+    <AdminSubsettings />
 
     <form class="max-w-4xl mx-auto mt-12">
       <div class="space-y-12">
@@ -16,7 +12,7 @@
           <h2
             class="text-base font-semibold leading-7 text-gray-900 dark:text-white"
           >
-          General Settings 🫡
+            General Settings 🫡
           </h2>
           <p class="mt-1 text-sm leading-6 text-gray-600 dark:text-white">
             This information will be displayed publicly ,always think about what
@@ -377,8 +373,6 @@
     </form>
 
     <AdminFooter />
-
-
   </div>
 </template>
 

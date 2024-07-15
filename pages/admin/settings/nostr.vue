@@ -4,10 +4,7 @@
       Nostr
     </h1>
 
-
     <AdminSubsettings />
-
-
 
     <form class="max-w-4xl mx-auto mt-12">
       <div class="space-y-12">
@@ -124,10 +121,7 @@
       </div>
     </form>
 
-
     <AdminFooter />
-
-
   </div>
 </template>
 

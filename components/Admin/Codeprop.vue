@@ -2,7 +2,7 @@
   <div
     class="container relative max-w-4xl p-3 mx-auto mt-12 bg-gray-800 dark:bg-gray-400 text-left rounded-lg text-white"
   >
-    <p id="#code" class=" truncate" > {{target}}</p>
+    <p id="#code" class="truncate">{{ target }}</p>
     <button
       ref="copy"
       class="copy absolute text-white dark:text-white text-sm bottom-1.5 right-1.5 ring-1 dark:ring-black ring-white bg-colorHeaderBgLight p-2 rounded-lg mt-1"
@@ -56,7 +56,7 @@ export default {
     };
   },
   props: {
-    target: String
+    target: String,
   },
   mounted() {
     const copyCode = new Clipboard(this.$refs.copy, {
