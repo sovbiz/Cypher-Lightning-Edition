@@ -481,7 +481,7 @@
       </div>
 
       <div>
-        <Script async src="/BTCart-Checkout.js"></Script>
+        <Script async src="/BTCart-Checkout-Alby.js"></Script>
         <div class="mt-12"></div>
         <div class="" v-if="launchStep == 'view' || displaymode == true">
           <!-- ORDER OVERVIEW -->
@@ -728,6 +728,34 @@
                         />
                       </dd>
                     </div>
+
+
+                    <div v-if="isLocalVisible == false" class="flex justify-between">
+                      <dt class="font-medium text-gray-900 dark:text-white">
+                        Shipping Cost
+                      </dt>
+                      <dd class="text-gray-700 dark:text-white">
+                        {{ (totalShipPrice * btcprices).toFixed(8) }}
+                        <BitcoinIcon
+                          class="h-6 w-6 inline -mt-1"
+                          aria-hidden="true"
+                        />
+                      </dd>
+                    </div>
+
+                    <div v-if="isLocalVisible == false" class="flex justify-between">
+                      <dt class="font-medium text-gray-900 dark:text-white">
+                        Total Order BTC
+                      </dt>
+                      <dd class="text-gray-900 dark:text-white">
+                        {{ ((totalPrice + totalShipPrice) * btcprices).toFixed(8)  }} 
+                        <BitcoinIcon
+                          class="h-6 w-6 inline -mt-1"
+                          aria-hidden="true"
+                        />
+                      </dd>
+                    </div>
+
                     <div class="flex justify-between">
                       <dt class="font-medium text-gray-900 dark:text-white">
                         {{ t("total_approximate_in_fiat") }}
@@ -908,21 +936,31 @@ const btcprices = Number(btcprice.data.rates.BTC).toFixed(8);
 
 const store = useProjectStore();
 const totalPrice = ref(store.getTotalPrice());
+const totalShipPrice = ref(store.getTotalShippingCost());
+
 
 // const totalPriceSats = (totalPrice * btcprices * 100000000).toFixed(0);
 const totalPriceBtc = ref(0);
+
+
 
 function hasEmptyItem(array) {
   return array.some((item) => !item);
 }
 
-const myArray = ["apple", "", "banana"];
 
 function orderView() {
   if (isLocalVisible.value == true || data.checkout == "local") {
     if (localidentity.value !== "") {
       launchStep.value = "view";
-      totalPriceBtc.value = (store.getTotalPrice() * btcprices).toFixed(8);
+      if (isShippingVisible.value == true){
+        totalPriceBtc.value = ((store.getTotalPrice() + store.getTotalShippingCost()) * btcprices).toFixed(8);
+
+      }
+      else{
+        totalPriceBtc.value = (store.getTotalPrice() * btcprices).toFixed(8);
+
+      }
 
       window.scrollTo(0, 0);
     } else {
@@ -943,8 +981,14 @@ function orderView() {
     } else {
       //Continue with
       launchStep.value = "view";
-      totalPriceBtc.value = (store.getTotalPrice() * btcprices).toFixed(8);
+      if (isShippingVisible.value == true){
+        totalPriceBtc.value = ((store.getTotalPrice() + store.getTotalShippingCost()) * btcprices).toFixed(8);
 
+      }
+      else{
+        totalPriceBtc.value = (store.getTotalPrice() * btcprices).toFixed(8);
+
+      }
       window.scrollTo(0, 0);
     }
   }
@@ -956,8 +1000,14 @@ function paymentstart() {
     window.scrollTo(0, 0);
   } else {
     launchStep.value = "payment";
-    totalPriceBtc.value = (store.getTotalPrice() * btcprices).toFixed(8);
+    if (isShippingVisible.value == true){
+        totalPriceBtc.value = ((store.getTotalPrice() + store.getTotalShippingCost()) * btcprices).toFixed(8);
 
+      }
+      else{
+        totalPriceBtc.value = (store.getTotalPrice() * btcprices).toFixed(8);
+
+      }
     // SENDING OFF THE DATA
 
     fetch(data.orderwebhook, {
@@ -999,6 +1049,8 @@ watch(
   () => store.cartItems,
   () => {
     totalPrice.value = store.getTotalPrice();
+    totalShipPrice.value = store.getTotalShippingCost();
+
     // totalPriceBtc.value = (store.getTotalPrice() * btcprices).toFixed(8)
   },
   { deep: true }
@@ -1014,6 +1066,7 @@ watch(
 
 onMounted(() => {
   totalPrice.value = store.getTotalPrice();
+  totalShipPrice.value = store.getTotalShippingCost();
   // totalPriceBtc.value = (store.getTotalPrice() * btcprices).toFixed(8)
   randomid.value = randomId(10);
   // console.log(randomId(10));

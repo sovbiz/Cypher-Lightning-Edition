@@ -321,6 +321,7 @@ function cartAddStore() {
       title: product[0].title,
       variation: selectedVariation.value,
       price: product[0].price,
+      shipprice: product[0].shipprice,
     });
 
     variationwarning.value = false;

@@ -15,7 +15,7 @@ const props = defineProps({
   },
 });
 
-const tickersymbol = ticker.price.symbol;
+const tickersymbol = ticker.fiat.symbol;
 
 const products = ref([]);
 
@@ -37,7 +37,7 @@ const { filtersList } = storeToRefs(filtersStore);
 
 const btcprice = await $fetch(
   "https://api.coinbase.com/v2/exchange-rates?currency=" +
-    ticker.price.denomination
+    ticker.fiat.denomination
 );
 
 const btcprices = Number(btcprice.data.rates.BTC).toFixed(8);

@@ -206,6 +206,7 @@ const { t } = useI18n({ useScope: "local" });
                 image: product.images[0].src,
                 title: product.title,
                 price: product.price,
+                shipprice: product.shipprice,
               })
             "
             :disabled="product.stock == 0"

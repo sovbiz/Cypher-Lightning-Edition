@@ -16,8 +16,8 @@
       "fulldescription": "<h1>The First Shirt </h1>    <p>This classic cotton T-shirt is a staple for any wardrobe. Made from 100% organic cotton, it offers both comfort and durability. Available in multiple colors, this tee is perfect for any casual occasion.</p>      ",
       "stock": 10,
       "inStock": true,
-      "price": 0.01,
-      "shipprice": 0,
+      "price": 0.50,
+      "shipprice": 4,
       "images": [
          {
             "id": 1,
@@ -60,7 +60,7 @@
       "fulldescription": "<h1>Block Sticker </h1>    <p>Add a touch of fun to your belongings with this vibrant emoji sticker! Perfect for decorating laptops, notebooks, and more, this sticker is made from durable, high-quality vinyl that resists scratches, water, and sunlight.</p>     ",
       "stock": 2,
       "inStock": true,
-      "price": 0.01,
+      "price": 1,
       "shipprice": 0,
       "images": [
          {
@@ -99,7 +99,7 @@
       "fulldescription": "<h1>The Second Shirt </h1>    <p>This classic cotton T-shirt is a staple for any wardrobe. Made from 100% organic cotton, it offers both comfort and durability. Available in multiple colors, this tee is perfect for any casual occasion.</p>      ",
       "stock": 0,
       "inStock": false,
-      "price": 0.02,
+      "price": 1,
       "shipprice": 0,
       "images": [
          {
@@ -137,7 +137,7 @@
       "fulldescription": "<h1>Cypher Cap </h1> <p>Shield yourself from the sun in style with our durable baseball cap! Made from high-quality materials, this cap ensures comfort and protection while maintaining a stylish edge. Ideal for outdoor activities or everyday wear.</p> ",
       "stock": 0,
       "inStock": false,
-      "price": 0.1,
+      "price": 0.7,
       "shipprice": 0,
       "images": [
          {
@@ -169,7 +169,7 @@
       "fulldescription": "<h1>Cypher Cap </h1> <p>Shield yourself from the sun in style with our durable baseball cap! Made from high-quality materials, this cap ensures comfort and protection while maintaining a stylish edge. Ideal for outdoor activities or everyday wear.</p> ",
       "stock": 10,
       "inStock": true,
-      "price": 0.1,
+      "price": 0.75,
       "shipprice": 0,
       "images": [
          {
