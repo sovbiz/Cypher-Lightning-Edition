@@ -460,7 +460,7 @@
                             v-if="filtersList == 'Bitcoin'"
                             class="float-left dark:text-white font-semibold text-black"
                           >
-                            {{ (product.fiat * btcprices).toFixed(8) }}
+                            {{ (product.price * btcprices).toFixed(8) }}
                             <BitcoinIcon
                               class="h-6 w-6 inline"
                               aria-hidden="true"
@@ -471,7 +471,7 @@
                             class="float-left dark:text-white font-semibold text-black"
                           >
                             {{
-                              (product.fiat * btcprices * 100000000).toFixed(0)
+                              (product.price * btcprices * 100000000).toFixed(0)
                             }}
                             <SatoshiV2Icon
                               class="h-6 w-6 inline"
@@ -482,7 +482,7 @@
                             v-if="filtersList == 'Fiat'"
                             class="float-left dark:text-white font-semibold text-black"
                           >
-                            {{ product.fiat }} {{ tickersymbol }}
+                            {{ product.price }} {{ tickersymbol }}
                           </p>
                         </div>
                         <div class="w-full dark:text-white basis-full">

@@ -148,7 +148,7 @@ const { t } = useI18n({ useScope: "local" });
                   v-if="filtersList == 'Bitcoin'"
                   class="float-left dark:text-white font-semibold text-black"
                 >
-                  {{ (product.fiat * btcprices).toFixed(8) }}
+                  {{ (product.price * btcprices).toFixed(8) }}
                   <BitcoinIcon class="h-6 w-6 inline" aria-hidden="true" />
                 </p>
 
@@ -156,7 +156,7 @@ const { t } = useI18n({ useScope: "local" });
                   v-if="filtersList == 'Sats'"
                   class="float-left dark:text-white font-semibold text-black"
                 >
-                  {{ (product.fiat * btcprices * 100000000).toFixed(0) }}
+                  {{ (product.price * btcprices * 100000000).toFixed(0) }}
                   <SatoshiV2Icon class="h-6 w-6 inline" aria-hidden="true" />
                 </p>
 
@@ -164,7 +164,7 @@ const { t } = useI18n({ useScope: "local" });
                   v-if="filtersList == 'Fiat'"
                   class="float-left dark:text-white font-semibold text-black"
                 >
-                  {{ product.fiat }} {{ tickersymbol }}
+                  {{ product.price }} {{ tickersymbol }}
                 </p>
 
                 <!-- <span class="text-right float-right dark:text-white" v-if="$store.state.currency.currency == 'eur' " > {{ p.price.eur }} €</span>
@@ -211,7 +211,7 @@ const { t } = useI18n({ useScope: "local" });
                 amount: 1,
                 image: product.images[0].src,
                 title: product.title,
-                price: product.fiat,
+                price: product.price,
               })
             "
             :disabled="product.stock == 0"

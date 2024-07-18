@@ -59,7 +59,7 @@
               v-if="filtersList == 'Bitcoin'"
               class="text-xl text-gray-900 dark:text-white"
             >
-              {{ (product.fiat * btcprices).toFixed(8) }}
+              {{ (product.price * btcprices).toFixed(8) }}
               <BitcoinIcon class="h-6 w-6 inline -mt-1" aria-hidden="true" />
             </p>
 
@@ -67,7 +67,7 @@
               v-if="filtersList == 'Sats'"
               class="text-xl text-gray-900 dark:text-white"
             >
-              {{ (product.fiat * btcprices * 100000000).toFixed(0) }}
+              {{ (product.price * btcprices * 100000000).toFixed(0) }}
               <SatoshiV2Icon class="h-6 w-6 inline -mt-1" aria-hidden="true" />
             </p>
 
@@ -75,7 +75,7 @@
               v-if="filtersList == 'Fiat'"
               class="text-xl text-gray-900 dark:text-white"
             >
-              {{ product.fiat }} {{ tickersymbol }}
+              {{ product.price }} {{ tickersymbol }}
             </p>
           </div>
 
@@ -250,7 +250,7 @@ function cartAddStore() {
       image: product.images[0].src,
       title: product.title,
       variation: selectedVariation.value,
-      price: product.fiat,
+      price: product.price,
     });
 
     variationwarning.value = false;
