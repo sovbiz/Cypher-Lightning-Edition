@@ -26,4 +26,3 @@ head:
 :ShopNew{category="new"}
 
 :BlogFeatured
-

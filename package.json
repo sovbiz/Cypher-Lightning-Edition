@@ -15,6 +15,8 @@
   },
   "dependencies": {
     "@bitcoin-design/bitcoin-icons-vue": "^0.1.9",
+    "@getalby/bitcoin-connect": "^3.5.3",
+    "@getalby/lightning-tools": "^5.0.3",
     "@headlessui/vue": "^1.7.14",
     "@heroicons/vue": "^2.0.18",
     "@nostr-dev-kit/ndk": "^2.8.1",

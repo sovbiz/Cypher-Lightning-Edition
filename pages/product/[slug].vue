@@ -88,11 +88,24 @@
               </p>
 
               <p
-                v-if="filtersList == 'Fiat'"
+                v-if="filtersList == 'Fiat' && ticker.fiat.denomination != 'BTC'"
                 class="text-3xl text-gray-900 dark:text-white"
               >
                 {{ product[0].price }} {{ tickersymbol }}
               </p>
+
+
+
+              <p
+                v-if="filtersList == 'Fiat' && ticker.fiat.denomination == 'BTC'"
+                class="text-3xl text-gray-900 dark:text-white"
+              >
+                {{  (product[0].price * btcusdprices).toFixed(2) }} $
+              </p>
+
+
+
+
             </div>
 
             <div class="w-full dark:text-white basis-full">
@@ -335,7 +348,14 @@ const btcprice = await $fetch(
     ticker.fiat.denomination
 );
 
+const btcusdprice = await $fetch(
+  "https://api.coinbase.com/v2/exchange-rates?currency=BTC"
+);
+
 const btcprices = Number(btcprice.data.rates.BTC).toFixed(8);
+
+const btcusdprices = Number(btcusdprice.data.rates.USD).toFixed(2);
+
 
 import {
   BitcoinIcon,

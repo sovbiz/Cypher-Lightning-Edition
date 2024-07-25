@@ -36,10 +36,13 @@
 
     <CartSimple v-if="data.cart == 'simple'" />
     <CartNew v-if="data.cart == 'latest'" />
+    <CartBitcoinconnect v-if="data.cart == 'bitcoinconnect'" />
   </div>
 </template>
 <script setup>
 import data from "~/config/setup";
+import { ExclamationTriangleIcon } from "@heroicons/vue/20/solid";
+
 const { t } = useI18n({ useScope: "local" });
 </script>
 <i18n lang="json">

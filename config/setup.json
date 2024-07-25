@@ -1,6 +1,7 @@
 {
   "version": "1.0.1 Beta",
   "initsetup": true,
+  "maintenancemode": true,
   "name":"Cypher.Space",
   "tagline":"Setup a Bitcoin Only Business",
   "textlogo":"CYPHER",
@@ -13,13 +14,13 @@
   "blog":true,
   "shop":true,
   "contact":true,
-  "cart":"latest",
+  "cart":"bitcoinconnect",
   "checkout":"full",
   "localid":"Name / Handle",
   "basecurrency":"btc",
   "lightningonly":"true",
   "fiat":{
-    "denomination": "EUR",
+    "denomination": "BTC",
     "symbol": "€"
   },
   "testnet":"false",
