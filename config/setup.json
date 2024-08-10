@@ -25,7 +25,7 @@
   },
   "testnet":"false",
   "btcadress":"",
-  "lightningaddress":"cypher@npub.cash",
+  "lightningaddress":"sync@walletofsatoshi.com",
   "orderwebhook":"",
   "nostr":true,
   "nostradmin":"npub1nkmta4dmsa7pj25762qxa6yqxvrhzn7ug0gz5frp9g7p3jdscnhsu049fn",
