@@ -6,23 +6,12 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare",
-    "lint": "npm run lint:eslint && npm run lint:prettier",
-    "lint:eslint": "eslint .",
-    "lint:prettier": "prettier . --check",
-    "lintfix": "eslint . --fix && prettier --write --list-different ."
+    "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@eslint/js": "^9.14.0",
     "@nuxt/devtools": "^1.0.2",
     "@types/node": "^18",
-    "eslint": "^9.14.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-vue": "^9.30.0",
-    "globals": "^15.11.0",
-    "nuxt": "^3.10.0",
-    "prettier": "^3.3.3"
+    "nuxt": "^3.10.0"
   },
   "dependencies": {
     "@bitcoin-design/bitcoin-icons-vue": "^0.1.9",
