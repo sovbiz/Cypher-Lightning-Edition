@@ -1,10 +1,14 @@
-# Cypher Lightning Edition
+# Cypher Nuxt3 Template
 
 ![Licence](https://img.shields.io/github/license/cypher-space/V0.9-Beta) ![Issues](https://img.shields.io/github/issues/cypher-space/V0.9-Beta) 
 
 <a href="https://dev.cypher.space" target="_blank">
 Live Build Preview
 </a>
+
+## Dev & Build Setup
+
+## 📋 How to use
 
 ### Step1: Install NodeJS
  
@@ -34,26 +38,9 @@ npx create-cypher
 All configuration options are stored in the config folder of the application.
 You can edit these parameters using VS code or use the github website to make minor edits.
 
-## Install the dependencies
+### Step4: Deploy your website
 
 ```bash
-npm install
-```
-
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-
-```bash
-npm run dev
-```
-
-### Lint the files
-
-```bash
-npm run lint
-```
-
-### Build the app for production
-
-```bash
-npm run build
+# generate build to the /dist folder
+$ npm run build
 ```
